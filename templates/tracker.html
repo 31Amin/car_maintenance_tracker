@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+    <h3 class="blue-text text-darken-4 center-align text-shadow">Car Maintenance Tracker</h3>
+    
+    {% for log in logs %}
+    
+        <div class="row ">
+            <div class="col s12 m6 offset-m3">
+                <div class="card teal darken-2">
+                    <div class="card-content white-text">
+                        <span class="card-title">{{ maintenance.reg_no }} qsa</span>
+                        <p>I am a very simple card. I am good at containing small bits of information.
+                            I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">This is a link</a>
+                        <a href="#">This is a link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    
+            
+{% endblock %}

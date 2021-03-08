@@ -1,0 +1,57 @@
+
+/* -_-_-_-_-_-_-_-_-_-_ Sticky Footer  _-_-_-_-_-_-_-_-_-_- */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+main {
+    flex: 1 0 auto;
+  }
+/* -_-_-_-_-_-_-_-_-_-_ Title _-_-_-_-_-_-_-_-_-_- */
+.header-title{
+    font-size: 20px;
+    padding-left: 10px;
+}
+.fa-car {
+       font-size: 20px; 
+       padding-left: 10px;
+    }
+@media(min-width: 992px){
+    .header-title{
+        font-size: 30px;
+        padding-left: 10px;
+    }
+    .fa-car {
+       font-size: 30px; 
+       padding-left: 10px;
+    }
+}
+
+  #mobile-demo {
+    background-color: #004d40;
+}
+
+/* -_-_-_-_-_-_-_-_-_-_ Footer _-_-_-_-_-_-_-_-_-_- */
+.footer-copyright  {
+    font-size: 10px;
+}
+.footer-copyright i {
+    font-size: 18px;
+    margin-right: 20px;
+}
+.footer-copyright i:hover{
+    color: darkgrey;
+}
+
+@media(min-width: 992px){
+    .footer-copyright  {
+       font-size: 18px;
+    }
+    .footer-copyright i {
+    font-size: 30px;
+    margin-right: 50px;
+    }
+}
+/* -_-_-_-_-_-_-_-_-_-_  _-_-_-_-_-_-_-_-_-_- */
