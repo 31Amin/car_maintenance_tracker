@@ -1,21 +1,45 @@
 {% extends "base.html" %}
 {% block content %}
     <h3 class="blue-text text-darken-4 center-align text-shadow">Car Maintenance Tracker</h3>
-    
+  
     {% for log in logs %}
-    
+    {{loop.index}}
         <div class="row ">
             <div class="col s12 m6 offset-m3">
                 <div class="card teal darken-2">
                     <div class="card-content white-text">
-                        <span class="card-title">{{ maintenance.reg_no }} qsa</span>
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
-                        <a href="#">This is a link</a>
-                    </div>
+                        <!-- Header row f box-->
+                        <div class="row box_header">
+                            <div class="col m4">
+                               <h5>{{ logs[loop.index0].reg_no }}</h5>
+                            </div><div class="col m4">
+                                {% if logs[loop.index0].service_paid == "no" %}
+                                    <h6 class="red-text"> Unpaid </h6>
+                                {% else %}
+                                    <h6> Paid </h6>
+                                {% endif %}
+                            </div>
+                            <div class="col m4">
+                                <p>place holder for buttons</p>
+                            </div>
+                        </div>
+                        <!-- Secondary row f box-->
+                        <div class="row ">
+                            <div class="col m4">
+                               <h6>User : {{ logs[loop.index0].username }}</h6>
+                            </div><div class="col m4">
+                                <h6>{{ logs[loop.index0].service_date }}</h6>
+                            </div>
+                            <div class="col m4">
+                                <h6>Cost : € {{ logs[loop.index0].service_cost }}</h6>
+                            </div>
+                        </div>
+                        <p>The vechical was services at {{ logs[loop.index0].odometer_reading }} Kilometres</p>
+                        <h6>Service Summary : </h6>
+                        <p>{{ logs[loop.index0].service_desc }}</p>
+                        
+                        <h6>Details Information</h6>
+                    </div> 
                 </div>
             </div>
         </div>

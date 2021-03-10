@@ -54,4 +54,7 @@ main {
     margin-right: 50px;
     }
 }
-/* -_-_-_-_-_-_-_-_-_-_  _-_-_-_-_-_-_-_-_-_- */
+/* -_-_-_-_-_-_-_-_-_-_  Tracker Page Boxes _-_-_-_-_-_-_-_-_-_- */
+.box_header{
+    border-bottom: 1px solid black;
+}

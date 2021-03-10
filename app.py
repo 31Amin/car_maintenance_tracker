@@ -24,6 +24,7 @@ mongo = PyMongo(app)
 @app.route("/tracker")
 def tracker():
     logs = list(mongo.db.maintenance.find())
+    print(logs)
     return render_template("tracker.html", logs=logs)
 
 
