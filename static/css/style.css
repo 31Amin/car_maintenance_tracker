@@ -58,3 +58,6 @@ main {
 .box_header{
     border-bottom: 1px solid black;
 }
+.left_indent {
+    padding-left: 20px;
+}
