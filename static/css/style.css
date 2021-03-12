@@ -61,3 +61,26 @@ main {
 .left_indent {
     padding-left: 20px;
 }
+
+/* -_-_-_-_-_-_-_-_-_-_  Add Record Page _-_-_-_-_-_-_-_-_-_- */
+/* Remove arrows from number boxes
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+    -moz-appearance: textfield;
+    }
+
+    .input-field{
+        color: white;
+    }
+.item_button{
+    font-size: 30px;
+    padding-left: 30px;
+}
+

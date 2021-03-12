@@ -24,7 +24,7 @@
                         <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                         <ul class="right hide-on-med-and-down">
                             <li><a href="{{ url_for('tracker') }}">List</a></li>
-                            <li><a href="#">Login</a></li>
+                            <li><a href="{{ url_for('add_record') }}">Add Record</a></li>
                             <li><a href="#">Register</a></li>
                             <li><a href="#">Information</a></li>
                             <li><a href="#">Logout</a></li>
@@ -38,7 +38,7 @@
                         <h5 class="center-align white-text">Car Maintenance Tracker</h5>
                     </li>
                     <li><a class="white-text" href="{{ url_for('tracker') }}">List</a></li>
-                    <li><a class="white-text" href="#">Login</a></li>
+                    <li><a href="{{ url_for('add_record') }}">Add Record</a></li>
                     <li><a class="white-text" href="#">Register</a></li>
                     <li><a class="white-text" href="#">Information</a></li>
                     <li><a class="white-text" href="#">Logout</a></li>

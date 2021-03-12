@@ -24,8 +24,15 @@ mongo = PyMongo(app)
 @app.route("/tracker")
 def tracker():
     logs = list(mongo.db.maintenance.find())
-    print(logs)
     return render_template("tracker.html", logs=logs)
+
+
+@app.route("/add_record", methods=["GET", "POST"])
+def add_record():
+
+    cars = mongo.db.cars.find()
+    garages = mongo.db.garage.find()
+    return render_template("add_record.html", cars=cars, garages=garages)
 
 
 if __name__ == "__main__":
