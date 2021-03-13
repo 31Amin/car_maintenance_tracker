@@ -3,6 +3,7 @@ $(document).ready(function () {
     $('.collapsible').collapsible();
     $('select').formSelect();
     $(".remove_item").hide();
+    $('.tooltipped').tooltip();
     });
 
 // Add / remove lines to service item list in add_record task.
