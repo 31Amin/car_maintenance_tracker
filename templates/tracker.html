@@ -2,8 +2,9 @@
 {% block content %}
     <h3 class="blue-text text-darken-4 center-align text-shadow">Car Maintenance Tracker</h3>
   
-    {% for log in logs %}
+    
         <div class="row ">
+            {% for log in logs %}
             <div class="col s12 m6 offset-m3">
                 <div class="card teal darken-2">
                     <div class="card-content white-text">
@@ -78,8 +79,8 @@
                     </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
-    {% endfor %}
     
             
 {% endblock %}
