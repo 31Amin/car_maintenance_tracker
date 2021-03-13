@@ -1,86 +1,85 @@
 {% extends "base.html" %}
 {% block content %}
-    <h3 class="blue-text text-darken-4 center-align text-shadow">Car Maintenance Tracker</h3>
-  
-    
-        <div class="row ">
-            {% for log in logs %}
-            <div class="col s12 m6 offset-m3">
-                <div class="card teal darken-2">
-                    <div class="card-content white-text">
-                        <!-- Header row f box-->
-                        <div class="row box_header">
-                            <div class="col m4 s6">
-                                <h5>{{ logs[loop.index0].reg_no }}</h5>
-                            </div>
-                            <div class="col m4 s6">
-                                {% if logs[loop.index0].service_paid == "no" %}
-                                <h6 class="red-text"> Invoice : Unpaid </h6>
-                                {% else %}
-                                <h6> Invoice : Paid </h6>
-                                {% endif %}
-                            </div>
-                            <div class="col m4 s12">
-                                <p>place holder for buttons</p>
-                            </div>
-                        </div>
-                        <!-- Secondary row f box-->
-                        <div class="row ">
-                            <div class="col m4">
-                                <h6>User : {{ logs[loop.index0].username }}</h6>
-                            </div>
-                            <div class="col m4">
-                                <h6>{{ logs[loop.index0].service_date }}</h6>
-                            </div>
-                            <div class="col m4">
-                                <h6>Cost : € {{ logs[loop.index0].service_cost }}</h6>
-                            </div>
-                        </div>
-                        <ul class="collapsible">
-                            <li>
-                                <div class="collapsible-header teal darken-2 fas fa-info-circle">Detailed Information;</div>
-                                <div class="collapsible-body white black-text">
-                                    <div class="row box_header">
-                                        <div class="col m6 s6">
-                                            <h6>Services by ;</h6>
-                                            <span class="left_indent">{{ logs[loop.index0].garage_name }}</span>
-                                        </div>
-                                        <div class="col m6 s6">
-                                            <h6>Odometer ; </h6>
-                                            <span class="left_indent">{{ logs[loop.index0].odometer_reading }} Kilometers</span>
-                                        </div>
-                                    </div>
-                                    <div class="row box_header">
-                                        <div class="col m6 s6">
-                                            <h6>Make ;</h6>
-                                            <span class="left_indent">{{ logs[loop.index0].car_make }}</span>
-                                        </div>
-                                        <div class="col m6 s6">
-                                            <h6>Model ; </h6>
-                                            <span class="left_indent">{{ logs[loop.index0].car_modle }}</span>
-                                        </div>
-                                    </div>
-                                    <div class="row box_header">
-                                        <div class="col">
-                                            <h6>Service Summary : </h6>
-                                            <span class="left_indent">{{ logs[loop.index0].service_desc }}</span>
-                                        </div>
-                                    </div>
+<h3 class="blue-text text-darken-4 center-align text-shadow">Car Maintenance Tracker</h3>
 
-                                    <h6>Detailed list of service Items ; </h6>
-                                    <ol>    
-                                        {% for item in logs[loop.index0].service_items %}
-                                            <li>{{ item }}</li>                                    
-                                      {% endfor %}
-                                    </ol>
-                                </div>
-                            </li>
-                        </ul>
+
+<div class="row ">
+    {% for log in logs %}
+        <div class="col s12 m6 offset-m3">
+            <div class="card teal darken-2">
+                <div class="card-content white-text">
+                    <!-- Header row f box-->
+                    <div class="row box_header">
+                        <div class="col m4 s6">
+                            <h5>{{ logs[loop.index0].reg_no }}</h5>
+                        </div>
+                        <div class="col m4 s6">
+                            {% if logs[loop.index0].service_paid == "no" %}
+                            <h6 class="red-text"> Invoice : Unpaid </h6>
+                            {% else %}
+                            <h6> Invoice : Paid </h6>
+                            {% endif %}
+                        </div>
+                        <div class="col m4 s12">
+                            <p>place holder for buttons</p>
+                        </div>
                     </div>
+                    <!-- Secondary row f box-->
+                    <div class="row ">
+                        <div class="col m4">
+                            <h6>User : {{ logs[loop.index0].username }}</h6>
+                        </div>
+                        <div class="col m4">
+                            <h6>{{ logs[loop.index0].service_date }}</h6>
+                        </div>
+                        <div class="col m4">
+                            <h6>Cost : € {{ logs[loop.index0].service_cost }}</h6>
+                        </div>
+                    </div>
+                    <ul class="collapsible">
+                        <li>
+                            <div class="collapsible-header teal darken-2 fas fa-info-circle">Detailed Information;</div>
+                            <div class="collapsible-body white black-text">
+                                <div class="row box_header">
+                                    <div class="col m6 s6">
+                                        <h6>Services by ;</h6>
+                                        <span class="left_indent">{{ logs[loop.index0].garage_name }}</span>
+                                    </div>
+                                    <div class="col m6 s6">
+                                        <h6>Odometer ; </h6>
+                                        <span class="left_indent">{{ logs[loop.index0].odometer_reading }} Kilometers</span>
+                                    </div>
+                                </div>
+                                <div class="row box_header">
+                                    <div class="col m6 s6">
+                                        <h6>Make ;</h6>
+                                        <span class="left_indent">{{ logs[loop.index0].car_make }}</span>
+                                    </div>
+                                    <div class="col m6 s6">
+                                        <h6>Model ; </h6>
+                                        <span class="left_indent">{{ logs[loop.index0].car_modle }}</span>
+                                    </div>
+                                </div>
+                                <div class="row box_header">
+                                    <div class="col">
+                                        <h6>Service Summary : </h6>
+                                        <span class="left_indent">{{ logs[loop.index0].service_desc }}</span>
+                                    </div>
+                                </div>
+
+                                <h6>Detailed list of service Items ; </h6>
+                                <ol>
+                                    {% for item in logs[loop.index0].service_items %}
+                                    <li>{{ item }}</li>
+                                    {% endfor %}
+                                </ol>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            {% endfor %}
         </div>
-    
-            
+    {% endfor %}
+</div>
+
 {% endblock %}
