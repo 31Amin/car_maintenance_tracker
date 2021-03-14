@@ -27,6 +27,7 @@
                             {% if session.user %}
                                 <li><a href="{{ url_for('add_record') }}">Add Record</a></li>
                                 <li><a href="{{ url_for('userprofile', username=session['user']) }}">User Profile</a></li>
+                                <li><a href="{{ url_for('addcar', username=session['user']) }}">Register Car</a></li>
                                 <li><a href="{{ url_for('logout') }}">Logout</a></li>
                             {% else %}
                                 <li><a href="{{ url_for('login') }}">Login</a></li>
@@ -41,12 +42,16 @@
                     <li>
                         <h5 class="center-align white-text">Car Maintenance Tracker</h5>
                     </li>
-                    <li><a class="white-text" href="{{ url_for('tracker') }}">Maintenance Records</a></li>
-                    <li><a class="white-text" href="{{ url_for('add_record') }}">Add Record</a></li>
-                    <li><a class="white-text" href="{{ url_for('register') }}">Register</a></li>
-                    <li><a class="white-text" href="{{ url_for('userprofile', username=session['user']) }}">User Profile</a></li>
-                    <li><a class="white-text" href="{{ url_for('login') }}">Login</a></li>
-                    <li><a class="white-text" href="{{ url_for('logout') }}">Logout</a></li>
+                    {% if session.user %}
+                        <li><a class="white-text" href="{{ url_for('tracker') }}">Maintenance Records</a></li>
+                        <li><a class="white-text" href="{{ url_for('add_record') }}">Add Record</a></li>
+                        <li><a class="white-text" href="{{ url_for('userprofile', username=session['user']) }}">User Profile</a></li>
+                        <li><a class="white-text" href="{{ url_for('addcar', username=session['user']) }}">Register Car</a></li>
+                        <li><a class="white-text" href="{{ url_for('logout') }}">Logout</a></li>
+                    {% else %}>
+                        <li><a class="white-text" href="{{ url_for('login') }}">Login</a></li>
+                        <li><a class="white-text" href="{{ url_for('register') }}">Register</a></li>
+                    {% endif %}
                 </ul>
         </header>
         
@@ -56,7 +61,7 @@
                 {% if messages %}
                     {% for message in messages %}
                         <div class="row flashes">
-                            <div class="col s12 m6 offset-m3 green">
+                            <div class="col s12 m6 offset-m3 blue darken-4">
                                 <h4 class="white-text center-align">{{ message }}</h4>
                             </div>
                         </div>

@@ -83,7 +83,7 @@ def userprofile(username):
     username = active_user["username"]
     name = active_user["name"]
     email = active_user["email"]
-    
+
     if session["user"]:
         return render_template(
             "userprofile.html", username=username, name=name, email=email)
@@ -96,6 +96,34 @@ def add_record():
     cars = mongo.db.cars.find()
     garages = mongo.db.garage.find()
     return render_template("add_record.html", cars=cars, garages=garages)
+
+
+@app.route("/addcar/<username>", methods=["GET", "POST"])
+def addcar(username):
+    active_user = mongo.db.directory.find_one(
+        {"username": session["user"]})
+    username = active_user["username"]
+    email = active_user["email"]
+    
+    if request.method == "POST":
+        already_registered = mongo.db.cars.find_one(
+            {"reg_no":request.form.get("reg_no")})
+
+        if already_registered:
+            flash("A car with this registration number is already registered in the database.")
+            return render_template("addcar.html", username=username, email=email)
+
+        car_details = {
+            "reg_no":request.form.get("reg_no"),
+            "user":request.form.get("username"),
+            "email":request.form.get("email"),
+            "make":request.form.get("make"),
+            "model":request.form.get("model")
+        }
+        mongo.db.cars.insert_one(car_details)
+        flash("Your car has been added to the database")
+
+    return render_template("addcar.html", username=username, email=email)
 
 
 @app.route("/logout")
