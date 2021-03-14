@@ -104,7 +104,7 @@ def addcar(username):
         {"username": session["user"]})
     username = active_user["username"]
     email = active_user["email"]
-    
+
     if request.method == "POST":
         already_registered = mongo.db.cars.find_one(
             {"reg_no":request.form.get("reg_no")})
@@ -124,6 +124,21 @@ def addcar(username):
         flash("Your car has been added to the database")
 
     return render_template("addcar.html", username=username, email=email)
+
+
+@app.route("/add_garage", methods=["GET", "POST"])
+def add_garage():
+    if request.method == "POST":
+        garage_details ={
+            "garage_name":request.form.get("garage_name"),
+            "garage_contact":request.form.get("garage_contact"),
+            "garage_phone":request.form.get("garage_phone")
+            }
+        mongo.db.garage.insert_one(garage_details)
+        flash("Garage details added to the DB")
+        return redirect(url_for("add_garage"))
+
+    return render_template("add_garage.html")
 
 
 @app.route("/logout")
