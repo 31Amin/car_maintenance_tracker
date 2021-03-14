@@ -40,6 +40,7 @@ def register():
 
         register = {
             "name": request.form.get("name"),
+            "email": request.form.get("email"),
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }
@@ -81,11 +82,11 @@ def userprofile(username):
         {"username": session["user"]})
     username = active_user["username"]
     name = active_user["name"]
-    print(name)
-
+    email = active_user["email"]
+    
     if session["user"]:
         return render_template(
-            "userprofile.html", username=username, name=name)
+            "userprofile.html", username=username, name=name, email=email)
 
     return redirect(url_for("login"))
 
