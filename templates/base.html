@@ -29,7 +29,7 @@
                                 <li><a href="{{ url_for('userprofile', username=session['user']) }}">User Profile</a></li>
                                 <li><a href="{{ url_for('addcar', username=session['user']) }}">Register Car</a></li>
                                 {% if session.user|lower == "admin"|lower or session.user|lower == "administrator" %}
-                                    <li><a href="{{ url_for('add_garage') }}">Add Garage Car</a></li>
+                                    <li><a href="{{ url_for('add_garage') }}">Add Garage</a></li>
                                 {% endif %}
                                 <li><a href="{{ url_for('logout') }}">Logout</a></li>
                             {% else %}
@@ -50,7 +50,7 @@
                         <li><a class="white-text" href="{{ url_for('add_record') }}">Add Record</a></li>
                         <li><a class="white-text" href="{{ url_for('userprofile', username=session['user']) }}">User Profile</a></li>
                         <li><a class="white-text" href="{{ url_for('addcar', username=session['user']) }}">Register Car</a></li>
-                        <li><a class="white-text" href="{{ url_for('add_garage') }}">Add Garage Car</a></li>
+                        <li><a class="white-text" href="{{ url_for('add_garage') }}">Add Garage</a></li>
                         <li><a class="white-text" href="{{ url_for('logout') }}">Logout</a></li>
                     {% else %}>
                         <li><a class="white-text" href="{{ url_for('login') }}">Login</a></li>
