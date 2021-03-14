@@ -83,4 +83,18 @@ main {
     font-size: 30px;
     padding-left: 30px;
 }
+/* -_-_-_-_-_-_-_-_-_-_  Add Record Page _-_-_-_-_-_-_-_-_-_- */
+.profile_card ul li {
+    padding-left: 20px;
+}
+.profile_card ul li strong{
+    padding-left: 20px;
+}
+.profile_card ul li ul {
+    padding-left: 100px;
+}
 
+.admin_help:hover{
+    text-decoration: underline;
+    font-size: 110%;
+}
