@@ -45,8 +45,7 @@
                                 <h5>List of Garages <i class="fas fa-chevron-down"></i></h5>
                             </div>
                             <div class="collapsible-body">
-                                <p>Use the list below to deactivate (will no longer show for user to select) a garage 
-                                    <br> or activate a previously deactivated garage.</p>
+
                                 <table class="striped">
                                     <thead>
                                         <tr class="blue darken-4 white-text">
@@ -64,16 +63,23 @@
                                             <td>{{ garage.garage_contact }}</td>
                                             <td>{{ garage.garage_phone }}</td>
                                             {% if garage.garage_status == "active" %}
-                                            <td>{{ garage.garage_status }}</td>
+                                                <td>{{ garage.garage_status }}</td>
                                             {% else %}
-                                            <td><span class="red-text">{{ garage.garage_status }}</span></td>
+                                                <td><span class="red-text">{{ garage.garage_status }}</span></td>
                                             {% endif %}
                                             {% if garage.garage_status == "active" %}
-                                            <td class="center-align"> <a
-                                                    class="waves-effect waves-light btn-small red">Deactivate</a></td>
+                                                
+                                                <td class="center-align"> 
+                                                    <a href="{{ url_for('deactivate_garage', garage_name=garage_name) }}" class="btn-small green accent-4">Done</a>
+                                                </td>
                                             {% else %}
-                                            <td class="center-align"> <a
-                                                    class="waves-effect waves-light btn-small green">Activate</a></td>
+                                               <td class="center-align"> 
+                                                    <form method="POST"  name="activate">
+                                                        <div class="input-field">
+                                                            <a class="waves-effect waves-light btn-small green act_deact_buttom" >Activate</a>
+                                                        </div>
+                                                    </form>
+                                                </td>
                                             {% endif %}
                                         </tr>
                                         {% endfor %}

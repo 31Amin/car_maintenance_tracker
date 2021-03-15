@@ -125,7 +125,7 @@ def addcar(username):
 
     return render_template("addcar.html", username=username, email=email)
 
-
+# Functions for add gagrage page - add garage, activate / deactivate
 @app.route("/add_garage", methods=["GET", "POST"])
 def add_garage():
     if request.method == "POST":
@@ -142,6 +142,14 @@ def add_garage():
     lst_garages = mongo.db.garage.find().sort("garage_name", 1)
     return render_template("add_garage.html", lst_garages=lst_garages)
 
+
+@app.route("/deactivate_garage/<garage_name>", methods=["POST"])
+def deactivate_garage(garage_name):
+    lst_garages = mongo.db.garage.find().sort("garage_name", 1)
+    print ("running")
+    return render_template("add_garage.html", lst_garages=lst_garages)
+
+# end add garage 
 
 @app.route("/logout")
 def logout():

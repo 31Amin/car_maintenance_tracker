@@ -98,3 +98,9 @@ main {
     text-decoration: underline;
     font-size: 110%;
 }
+.act_deact_buttom{
+    width: 80%;
+    border: 1px solid black;
+    border-radius: 5%;
+    color: white;
+}
