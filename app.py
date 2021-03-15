@@ -132,13 +132,15 @@ def add_garage():
         garage_details ={
             "garage_name":request.form.get("garage_name"),
             "garage_contact":request.form.get("garage_contact"),
-            "garage_phone":request.form.get("garage_phone")
+            "garage_phone":request.form.get("garage_phone"),
+            "garage_status":"active"
             }
         mongo.db.garage.insert_one(garage_details)
         flash("Garage details added to the DB")
         return redirect(url_for("add_garage"))
 
-    return render_template("add_garage.html")
+    lst_garages = mongo.db.garage.find().sort("garage_name", 1)
+    return render_template("add_garage.html", lst_garages=lst_garages)
 
 
 @app.route("/logout")
