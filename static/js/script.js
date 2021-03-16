@@ -4,6 +4,13 @@ $(document).ready(function () {
     $('select').formSelect();
     $(".remove_item").hide();
     $('.tooltipped').tooltip();
+
+    $(".chevron").click(function(){
+        $(".chevron_icon").toggleClass("fa-chevron-up");
+        $(".chevron_icon").toggleClass("fa-chevron-down");
+    });
+   
+    
     });
 
 // Add / remove lines to service item list in add_record task.

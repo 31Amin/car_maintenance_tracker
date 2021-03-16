@@ -129,6 +129,13 @@ def addcar(username):
 @app.route("/add_garage", methods=["GET", "POST"])
 def add_garage():
     if request.method == "POST":
+        garage_exists = mongo.db.garage.find_one(
+            {"garage_name":request.form.get("garage_name")})
+        
+        if garage_exists:
+            flash("A garage with this name already exists in the DB")
+            return redirect(url_for("add_garage"))
+            
         garage_details ={
             "garage_name":request.form.get("garage_name"),
             "garage_contact":request.form.get("garage_contact"),
@@ -155,7 +162,7 @@ def activate_garage(garage_id):
     return redirect(url_for("add_garage"))
 
 
-# end add garage 
+# end add garage
 
 @app.route("/logout")
 def logout():

@@ -1,14 +1,15 @@
 {% extends "base.html" %}
     {% block content %}
-        <h3 class="blue-text text-darken-4 center-align text-shadow">Add an Approved Garage</h3>
+        <h3 class="blue-text text-darken-4 center-align text-shadow">Manage Garages</h3>
         
         <div class="row">
             <form class="col s12 m6 offset-m3 teal darken-2" method="POST" action="{{ url_for('add_garage') }}">
                 <div class="row"></div>
                 <div class="row">
+                     <h4 class="white-text center-align">Add Garages</h4>
                     <div class="col s12 m12">
                         <div class="input-field">
-                            <i class="fas fa-garage prefix white-text"></i>
+                            <i class="fas fa-warehouse prefix white-text"></i>
                             <input placeholder="Name of Garage" id="garage_name" name="garage_name" type="text"
                                 class="validate white-text" required>
                             <label for="make" class="white-text">Garage Name</label>
@@ -41,19 +42,19 @@
             <div class="row">
                     <ul class="collapsible col s12 m6 offset-m3">
                         <li class="active">
-                            <div class="collapsible-header blue-text text-darken-4 center-align">
-                                <h5>List of Garages <i class="fas fa-chevron-down"></i></h5>
+                            <div class="collapsible-header blue-text text-darken-4 center-align chevron">
+                                <h5>List of Garages <i class="fas fa-chevron-up chevron_icon"></i></h5>
                             </div>
                             <div class="collapsible-body">
 
                                 <table class="striped">
                                     <thead>
-                                        <tr class="blue darken-4 white-text">
+                                        <tr class="blue darken-4 white-text center-align">
                                             <th>Name</th>
                                             <th>Contact Name</th>
                                             <th>Contact No.</th>
                                             <th>Status</th>
-                                            <th>Actions</th>
+                                            <th class="center-align">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -69,11 +70,11 @@
                                             {% endif %}
                                             {% if garage.garage_status == "active" %}
                                                 <td class="center-align"> 
-                                                    <a href="{{ url_for('deactivate_garage', garage_id=garage._id) }}" class="btn-small red accent-4">Deactivate</a>
+                                                    <a href="{{ url_for('deactivate_garage', garage_id=garage._id) }}" class="btn-small red accent-4 act_deact_buttom">Deactivate</a>
                                                 </td>
                                             {% else %}
                                                <td class="center-align"> 
-                                                    <a href="{{ url_for('activate_garage', garage_id=garage._id) }}" class="btn-small green accent-4">Activate</a>
+                                                    <a href="{{ url_for('activate_garage', garage_id=garage._id) }}" class="btn-small green accent-4 act_deact_buttom">Activate</a>
                                                 </td>
                                             {% endif %}
                                         </tr>
@@ -83,5 +84,6 @@
                             </div>
                         </li>
                     </ul>
+                </div>
                 </div>
     {% endblock %}
