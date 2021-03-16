@@ -93,7 +93,7 @@ def userprofile(username):
 # add a new maintenance record to the DB.
 @app.route("/add_record", methods=["GET", "POST"])
 def add_record():
-    cars = mongo.db.cars.find()
+    cars = mongo.db.cars.find({"user":session["user"]})
     garages = mongo.db.garage.find({"garage_status":"active"})
     return render_template("add_record.html", cars=cars, garages=garages)
 
