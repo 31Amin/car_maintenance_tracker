@@ -115,8 +115,8 @@ def addcar(username):
 
         car_details = {
             "reg_no":request.form.get("reg_no"),
-            "user":request.form.get("username"),
-            "email":request.form.get("email"),
+            "user":username,
+            "email":email,
             "make":request.form.get("make"),
             "model":request.form.get("model")
         }
