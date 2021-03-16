@@ -142,12 +142,18 @@ def add_garage():
     lst_garages = mongo.db.garage.find().sort("garage_name", 1)
     return render_template("add_garage.html", lst_garages=lst_garages)
 
+# Deactivate Garage
+@app.route("/deactivate_garage/<garage_id>")
+def deactivate_garage(garage_id):
+    mongo.db.garage.update({"_id": ObjectId(garage_id)}, {"$set" : {"garage_status" :"inactive"}} )
+    return redirect(url_for("add_garage"))
 
-@app.route("/deactivate_garage/<garage_name>", methods=["POST"])
-def deactivate_garage(garage_name):
-    lst_garages = mongo.db.garage.find().sort("garage_name", 1)
-    print ("running")
-    return render_template("add_garage.html", lst_garages=lst_garages)
+# Activate Garage
+@app.route("/activate_garage/<garage_id>")
+def activate_garage(garage_id):
+    mongo.db.garage.update({"_id": ObjectId(garage_id)}, {"$set" : {"garage_status" :"active"}} )
+    return redirect(url_for("add_garage"))
+
 
 # end add garage 
 

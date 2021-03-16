@@ -40,7 +40,7 @@
             <div class="row"></div>
             <div class="row">
                     <ul class="collapsible col s12 m6 offset-m3">
-                        <li>
+                        <li class="active">
                             <div class="collapsible-header blue-text text-darken-4 center-align">
                                 <h5>List of Garages <i class="fas fa-chevron-down"></i></h5>
                             </div>
@@ -68,17 +68,12 @@
                                                 <td><span class="red-text">{{ garage.garage_status }}</span></td>
                                             {% endif %}
                                             {% if garage.garage_status == "active" %}
-                                                
                                                 <td class="center-align"> 
-                                                    <a href="{{ url_for('deactivate_garage', garage_name=garage_name) }}" class="btn-small green accent-4">Done</a>
+                                                    <a href="{{ url_for('deactivate_garage', garage_id=garage._id) }}" class="btn-small red accent-4">Deactivate</a>
                                                 </td>
                                             {% else %}
                                                <td class="center-align"> 
-                                                    <form method="POST"  name="activate">
-                                                        <div class="input-field">
-                                                            <a class="waves-effect waves-light btn-small green act_deact_buttom" >Activate</a>
-                                                        </div>
-                                                    </form>
+                                                    <a href="{{ url_for('activate_garage', garage_id=garage._id) }}" class="btn-small green accent-4">Activate</a>
                                                 </td>
                                             {% endif %}
                                         </tr>
