@@ -90,11 +90,11 @@ def userprofile(username):
 
     return redirect(url_for("login"))
 
-
+# add a new maintenance record to the DB.
 @app.route("/add_record", methods=["GET", "POST"])
 def add_record():
     cars = mongo.db.cars.find()
-    garages = mongo.db.garage.find()
+    garages = mongo.db.garage.find({"garage_status":"active"})
     return render_template("add_record.html", cars=cars, garages=garages)
 
 
@@ -131,11 +131,11 @@ def add_garage():
     if request.method == "POST":
         garage_exists = mongo.db.garage.find_one(
             {"garage_name":request.form.get("garage_name")})
-        
+
         if garage_exists:
             flash("A garage with this name already exists in the DB")
             return redirect(url_for("add_garage"))
-            
+
         garage_details ={
             "garage_name":request.form.get("garage_name"),
             "garage_contact":request.form.get("garage_contact"),
@@ -153,12 +153,14 @@ def add_garage():
 @app.route("/deactivate_garage/<garage_id>")
 def deactivate_garage(garage_id):
     mongo.db.garage.update({"_id": ObjectId(garage_id)}, {"$set" : {"garage_status" :"inactive"}} )
+    flash("Selected garage set to inactive")
     return redirect(url_for("add_garage"))
 
 # Activate Garage
 @app.route("/activate_garage/<garage_id>")
 def activate_garage(garage_id):
     mongo.db.garage.update({"_id": ObjectId(garage_id)}, {"$set" : {"garage_status" :"active"}} )
+    flash("Selected garage set to active")
     return redirect(url_for("add_garage"))
 
 
