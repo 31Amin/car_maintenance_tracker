@@ -30,7 +30,6 @@ def tracker():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        print("Im running")
         user_taken = mongo.db.directory.find_one(
             {"username": request.form.get("username").lower()})
 
@@ -90,14 +89,49 @@ def userprofile(username):
 
     return redirect(url_for("login"))
 
+
 # add a new maintenance record to the DB.
 @app.route("/add_record", methods=["GET", "POST"])
 def add_record():
-    cars = mongo.db.cars.find({"user":session["user"]})
-    garages = mongo.db.garage.find({"garage_status":"active"})
+    if request.method == "POST":
+        car_details = mongo.db.cars.find_one(
+            {"reg_no": request.form.get("reg_no")})
+        make = car_details["make"]
+        model = car_details["model"]
+
+        garage_details = mongo.db.garage.find_one(
+            {"garage_name": request.form.get("garage_name")})
+        contact = garage_details["garage_contact"]
+        phone = garage_details["garage_phone"]
+
+        service_paid = "yes" if request.form.get("service_paid") else "no"
+
+        details = {
+            "reg_no": request.form.get("reg_no"),
+            "username": session["user"],
+            "service_date": request.form.get("service_date"),
+            "service_cost": request.form.get("service_cost"),
+            "service_desc": request.form.get("service_desc"),
+            "service_paid": service_paid,
+            "odometer_reading": request.form.get("odometer_reading"),
+            "car_make": make,
+            "car_model": model,
+            "garage_name": request.form.get("garage_name"),
+            "garage_contact": contact,
+            "garage_phone": phone,
+            "service_items": request.form.getlist("service_items")
+
+        }
+
+        mongo.db.maintenance.insert_one(details)
+        flash("Your car has been added to the database")
+
+    cars = mongo.db.cars.find({"user": session["user"]})
+    garages = mongo.db.garage.find({"garage_status": "active"})
     return render_template("add_record.html", cars=cars, garages=garages)
 
 
+# Page for user to add a new car.
 @app.route("/addcar/<username>", methods=["GET", "POST"])
 def addcar(username):
     active_user = mongo.db.directory.find_one(
@@ -163,9 +197,9 @@ def activate_garage(garage_id):
     flash("Selected garage set to active")
     return redirect(url_for("add_garage"))
 
-
 # end add garage
 
+# Log out & remove user session
 @app.route("/logout")
 def logout():
     flash("You have been logged out")
