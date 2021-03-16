@@ -23,7 +23,7 @@ mongo = PyMongo(app)
 
 @app.route("/tracker")
 def tracker():
-    logs = list(mongo.db.maintenance.find())
+    logs = list(mongo.db.maintenance.find().sort("service_date", 1))
     return render_template("tracker.html", logs=logs)
 
 
@@ -127,7 +127,7 @@ def add_record():
         flash("Your car has been added to the database")
 
     cars = mongo.db.cars.find({"user": session["user"]})
-    garages = mongo.db.garage.find({"garage_status": "active"})
+    garages = mongo.db.garage.find({"garage_status": "active"}).sort("garage_name", 1)
     return render_template("add_record.html", cars=cars, garages=garages)
 
 
