@@ -104,8 +104,6 @@ def add_record():
         contact = garage_details["garage_contact"]
         phone = garage_details["garage_phone"]
 
-        service_paid = "yes" if request.form.get("service_paid") else "no"
-
         details = {
             "reg_no": request.form.get("reg_no"),
             "username": session["user"],
@@ -124,7 +122,7 @@ def add_record():
         }
 
         mongo.db.maintenance.insert_one(details)
-        flash("Your car has been added to the database")
+        flash("Maintenance recorded added")
 
     cars = mongo.db.cars.find({"user": session["user"]})
     garages = mongo.db.garage.find({"garage_status": "active"}).sort("garage_name", 1)

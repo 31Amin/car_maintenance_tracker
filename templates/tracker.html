@@ -68,9 +68,17 @@
 
                                 <h6>Detailed list of service Items ; </h6>
                                 <ol>
-                                    {% for item in logs[loop.index0].service_items %}
-                                    <li>{{ item }}</li>
-                                    {% endfor %}
+                                    {% if logs[loop.index0].service_items|length >= 1 %}
+                                        {% for item in logs[loop.index0].service_items %}
+                                            {% if item|length >= 1 %}
+                                                <li>{{ item }}</li>
+                                            {% else %}
+                                                <p>No details provided</p>
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% else %}
+                                            <p>No details provided</p>
+                                    {% endif %}
                                 </ol>
                             </div>
                         </li>
