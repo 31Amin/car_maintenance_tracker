@@ -93,9 +93,12 @@ main {
 .profile_card ul li ul {
     padding-left: 100px;
 }
+.admin_help{
+    text-decoration: underline;
+}
 
 .admin_help:hover{
-    text-decoration: underline;
+    text-decoration: none;
     font-size: 110%;
 }
 .act_deact_buttom{
