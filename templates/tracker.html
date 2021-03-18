@@ -9,30 +9,30 @@
                 <div class="card-content white-text">
                     <!-- Header row f box-->
                     <div class="row box_header">
-                        <div class="col m4 s6">
-                            <h5>{{ logs[loop.index0].reg_no }}</h5>
+                        <div class="col m4 s6 center-align">
+                            <h6>{{ logs[loop.index0].reg_no }}</h6>
                         </div>
-                        <div class="col m4 s6">
+                        <div class="col m4 s6 center-align">
                             {% if logs[loop.index0].service_paid == "no" %}
-                            <h6 class="red-text"> Invoice : Unpaid </h6>
+                            <h6 class="red"> Invoice : Unpaid </h6>
                             {% else %}
                             <h6> Invoice : Paid </h6>
                             {% endif %}
                         </div>
-                        <div class="col m4 s12">
+                        <div class="col m4 s12 center-align">
                             <p>place holder for buttons</p>
                         </div>
                     </div>
                     <!-- Secondary row f box-->
                     <div class="row ">
-                        <div class="col m4">
-                            <h6>User : {{ logs[loop.index0].username }}</h6>
+                        <div class="col m4 center-align">
+                            <h6>Record Owner: <br> {{ logs[loop.index0].username }}</h6>
                         </div>
-                        <div class="col m4">
-                            <h6>{{ logs[loop.index0].service_date }}</h6>
+                        <div class="col m4 center-align">
+                            <h6>Date: <br> {{ logs[loop.index0].service_date }}</h6>
                         </div>
-                        <div class="col m4">
-                            <h6>Cost : € {{ logs[loop.index0].service_cost }}</h6>
+                        <div class="col m4 center-align">
+                            <h6>Cost: <br> € {{ logs[loop.index0].service_cost }}</h6>
                         </div>
                     </div>
                     <ul class="collapsible">
