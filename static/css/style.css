@@ -107,3 +107,21 @@ main {
     border-radius: 5%;
     color: white;
 }
+/* -_-_-_-_-_-_-_-_-_-_ Manage Garages Page _-_-_-_-_-_-_-_-_-_- */
+
+@media screen and (max-width: 600px) {
+  .table {
+    display: flex;  
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+
+  .table tr {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .table td {
+    white-space: nowrap;
+  }
+}

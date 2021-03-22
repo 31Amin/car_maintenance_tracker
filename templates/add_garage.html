@@ -47,7 +47,7 @@
                             </div>
                             <div class="collapsible-body">
 
-                                <table class="striped">
+                                <table class="striped" >
                                     <thead>
                                         <tr class="blue darken-4 white-text center-align">
                                             <th>Name</th>
@@ -57,10 +57,10 @@
                                             <th class="center-align">Actions</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <body>
                                         {% for garage in lst_garages %}
                                         <tr>
-                                            <td>{{ garage.garage_name }}</td>
+                                            <td >{{ garage.garage_name }}</td>
                                             <td>{{ garage.garage_contact }}</td>
                                             <td>{{ garage.garage_phone }}</td>
                                             {% if garage.garage_status == "active" %}
@@ -79,7 +79,7 @@
                                             {% endif %}
                                         </tr>
                                         {% endfor %}
-                                    </tbody>
+                                    </body>
                                 </table>
                             </div>
                         </li>
