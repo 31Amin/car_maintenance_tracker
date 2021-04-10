@@ -23,7 +23,7 @@ mongo = PyMongo(app)
 
 @app.route("/tracker")
 def tracker():
-    logs = list(mongo.db.maintenance.find().sort("service_date", 1))
+    logs = list(mongo.db.maintenance.find().sort("service_date", -1))
     return render_template("tracker.html", logs=logs)
 
 
@@ -103,13 +103,16 @@ def add_record():
         contact = garage_details["garage_contact"]
         phone = garage_details["garage_phone"]
 
+        paid = "yes" if request.form.get("service_paid") else "no"
+
+
         details = {
             "reg_no": request.form.get("reg_no"),
             "username": session["user"],
             "service_date": request.form.get("service_date"),
             "service_cost": request.form.get("service_cost"),
             "service_desc": request.form.get("service_desc"),
-            "service_paid": request.form.get("service_paid"),
+            "service_paid": paid,
             "odometer_reading": request.form.get("odometer_reading"),
             "car_make": make,
             "car_model": model,
