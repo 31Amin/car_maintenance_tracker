@@ -7,7 +7,7 @@
             <div class="input-field col s12">
                 <i class="fas fa-bars prefix teal-text"></i>
                 <select id="reg_no" name="reg_no" class="validate select_car" required>
-                    <option placeholder="Service Date" value="reg_no" disabled selected>Choose Car</option>
+                    <option  value="reg_no" disabled selected>Choose Car</option>
                     {% for car in cars %}
                     <option  value="{{ car.reg_no }}">{{ car.reg_no }}</option>
                     {% endfor %}
@@ -56,7 +56,7 @@
             <div class="input-field col s12">
                 <i class="fas fa-sticky-note prefix teal-text"></i>
                 <textarea placeholder="Provided short description of the work carried out." id="service_desc" name="service_desc" class="materialize-textarea"></textarea>
-                <label for="service_desc">Service Work - Summary</label>
+                <label for="service_desc" class="teal-text">Service Work - Summary</label>
             </div>
         </div>
 
