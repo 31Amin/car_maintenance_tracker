@@ -122,10 +122,12 @@ def add_record():
 
         mongo.db.maintenance.insert_one(details)
         flash("Maintenance recorded added")
+        return redirect(url_for("tracker"))
 
     cars = mongo.db.cars.find({"user": session["user"]})
     garages = mongo.db.garage.find({"garage_status": "active"}).sort("garage_name", 1)
     return render_template("add_record.html", cars=cars, garages=garages)
+
 
 
 # Page for user to add a new car.
