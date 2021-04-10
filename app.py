@@ -109,7 +109,7 @@ def add_record():
             "service_date": request.form.get("service_date"),
             "service_cost": request.form.get("service_cost"),
             "service_desc": request.form.get("service_desc"),
-            "service_paid": service_paid,
+            "service_paid": request.form.get("service_paid"),
             "odometer_reading": request.form.get("odometer_reading"),
             "car_make": make,
             "car_model": model,
