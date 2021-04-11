@@ -59,7 +59,9 @@ main {
 .left_indent {
     padding-left: 20px;
 }
-
+.delete_icon:hover{
+   font-size: 150%;
+}
 /* -_-_-_-_-_-_-_-_-_-_  Add Record Page _-_-_-_-_-_-_-_-_-_- */
 /* Remove arrows from number boxes
     /* Chrome, Safari, Edge, Opera */

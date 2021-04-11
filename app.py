@@ -23,8 +23,16 @@ mongo = PyMongo(app)
 
 @app.route("/tracker")
 def tracker():
-    logs = list(mongo.db.maintenance.find().sort("service_date", -1))
-    return render_template("tracker.html", logs=logs)
+    if session["user"] == "admin":
+        user_cars = list(mongo.db.cars.find())
+        logs = list(mongo.db.maintenance.find().sort("service_date", -1))
+        return render_template("tracker.html", logs=logs, user_cars=user_cars)
+
+    else:
+        user_cars = list(mongo.db.cars.find(
+            {"user": session["user"]}))
+        logs = list(mongo.db.maintenance.find().sort("service_date", -1))
+        return render_template("tracker.html", logs=logs, user_cars=user_cars)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -60,10 +68,12 @@ def login():
 
         if user:
             if check_password_hash(
-                user["password"], request.form.get("password")):
+                user["password"], request.form.get
+                    ("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(request.form.get("username")))
-                return redirect(url_for("userprofile", username=session["user"]))
+                return redirect(url_for(
+                    "userprofile", username=session["user"]))
             else:
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
@@ -105,7 +115,6 @@ def add_record():
 
         paid = "yes" if request.form.get("service_paid") else "no"
 
-
         details = {
             "reg_no": request.form.get("reg_no"),
             "username": session["user"],
@@ -128,9 +137,9 @@ def add_record():
         return redirect(url_for("tracker"))
 
     cars = mongo.db.cars.find({"user": session["user"]})
-    garages = mongo.db.garage.find({"garage_status": "active"}).sort("garage_name", 1)
+    garages = mongo.db.garage.find(
+        {"garage_status": "active"}).sort("garage_name", 1)
     return render_template("add_record.html", cars=cars, garages=garages)
-
 
 
 # Page for user to add a new car.
@@ -143,40 +152,42 @@ def addcar(username):
 
     if request.method == "POST":
         already_registered = mongo.db.cars.find_one(
-            {"reg_no":request.form.get("reg_no")})
+            {"reg_no": request.form.get("reg_no")})
 
         if already_registered:
-            flash("A car with this registration number is already registered in the database.")
-            return render_template("addcar.html", username=username, email=email)
+            flash("A car with this reg #, already registered")
+            return render_template(
+                "addcar.html", username=username, email=email)
 
         car_details = {
-            "reg_no":request.form.get("reg_no"),
-            "user":username,
-            "email":email,
-            "make":request.form.get("make"),
-            "model":request.form.get("model")
+            "reg_no": request.form.get("reg_no"),
+            "user": username,
+            "email": email,
+            "make": request.form.get("make"),
+            "model": request.form.get("model")
         }
         mongo.db.cars.insert_one(car_details)
         flash("Your car has been added to the database")
 
     return render_template("addcar.html", username=username, email=email)
 
+
 # Functions for add gagrage page - add garage, activate / deactivate
 @app.route("/add_garage", methods=["GET", "POST"])
 def add_garage():
     if request.method == "POST":
         garage_exists = mongo.db.garage.find_one(
-            {"garage_name":request.form.get("garage_name")})
+            {"garage_name": request.form.get("garage_name")})
 
         if garage_exists:
             flash("A garage with this name already exists in the DB")
             return redirect(url_for("add_garage"))
 
-        garage_details ={
-            "garage_name":request.form.get("garage_name"),
-            "garage_contact":request.form.get("garage_contact"),
-            "garage_phone":request.form.get("garage_phone"),
-            "garage_status":"active"
+        garage_details = {
+            "garage_name": request.form.get("garage_name"),
+            "garage_contact": request.form.get("garage_contact"),
+            "garage_phone": request.form.get("garage_phone"),
+            "garage_status": "active"
             }
         mongo.db.garage.insert_one(garage_details)
         flash("Garage details added to the DB")
@@ -185,23 +196,29 @@ def add_garage():
     lst_garages = mongo.db.garage.find().sort("garage_name", 1)
     return render_template("add_garage.html", lst_garages=lst_garages)
 
+
 # Deactivate Garage
 @app.route("/deactivate_garage/<garage_id>")
 def deactivate_garage(garage_id):
-    mongo.db.garage.update({"_id": ObjectId(garage_id)}, {"$set" : {"garage_status" :"inactive"}} )
+    mongo.db.garage.update(
+        {"_id": ObjectId(garage_id)}, {"$set": {"garage_status": "inactive"}})
     flash("Selected garage set to inactive")
     return redirect(url_for("add_garage"))
+
 
 # Activate Garage
 @app.route("/activate_garage/<garage_id>")
 def activate_garage(garage_id):
-    mongo.db.garage.update({"_id": ObjectId(garage_id)}, {"$set" : {"garage_status" :"active"}} )
+    mongo.db.garage.update(
+        {"_id": ObjectId(garage_id)}, {"$set": {"garage_status": "active"}})
     flash("Selected garage set to active")
     return redirect(url_for("add_garage"))
 
 # end add garage
 
 # Log out & remove user session
+
+
 @app.route("/logout")
 def logout():
     flash("You have been logged out")

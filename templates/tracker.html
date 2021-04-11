@@ -1,92 +1,60 @@
 {% extends "base.html" %}
 {% block content %}
-<h3 class="blue-text text-darken-4 center-align text-shadow">Car Maintenance Tracker</h3>
+<h3 class="teal-text text-darken-2 center-align text-shadow">Car Maintenance Tracker</h3>
 
-<div class="row ">
-    {% for log in logs %}
+<div class="row">
+    {% for cars in user_cars %}
         <div class="col s12 m6 offset-m3">
-            <div class="card teal darken-2">
-                <div class="card-content white-text">
-                    <!-- Header row f box-->
-                    <div class="row box_header">
-                        <div class="col m4 s6 center-align">
-                            <h6>{{ logs[loop.index0].reg_no }}</h6>
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        <i class="fas fa-chevron-down teal-text text-darken-2"></i>
+                        <div class="col m4 s6">
+                            <h6>Logs for {{cars.reg_no }}</h6>
                         </div>
-                        <div class="col m4 s6 center-align">
-                            {% if logs[loop.index0].service_paid == "no" %}
-                            <h6 class="red"> Invoice : Unpaid </h6>
-                            {% else %}
-                            <h6> Invoice : Paid </h6>
-                            {% endif %}
+                        <div class="col m4 s3">
+                            <h6>{{cars.make }}</h6>
                         </div>
-                        <div class="col m4 s12 center-align">
-                            <p>place holder for buttons</p>
+                        <div class="col m4 s3">
+                            <h6>{{cars.model }}</h6>
                         </div>
                     </div>
-                    <!-- Secondary row f box-->
-                    <div class="row ">
-                        <div class="col m4 center-align">
-                            <h6>Record Owner: <br> {{ logs[loop.index0].username }}</h6>
-                        </div>
-                        <div class="col m4 center-align">
-                            <h6>Date: <br> {{ logs[loop.index0].service_date }}</h6>
-                        </div>
-                        <div class="col m4 center-align">
-                            <h6>Cost: <br> € {{ logs[loop.index0].service_cost }}</h6>
-                        </div>
-                    </div>
-                    <ul class="collapsible">
-                        <li>
-                            <div class="collapsible-header teal darken-2 fas fa-info-circle">Detailed Information;</div>
-                            <div class="collapsible-body white black-text">
-                                <div class="row box_header">
-                                    <div class="col m6 s6">
-                                        <h6>Services by ;</h6>
-                                        <span class="left_indent">{{ logs[loop.index0].garage_name }}</span>
-                                    </div>
-                                    <div class="col m6 s6">
-                                        <h6>Odometer ; </h6>
-                                        <span class="left_indent">{{ logs[loop.index0].odometer_reading }} Kilometers</span>
-                                    </div>
-                                </div>
-                                <div class="row box_header">
-                                    <div class="col m6 s6">
-                                        <h6>Make ;</h6>
-                                        <span class="left_indent">{{ logs[loop.index0].car_make }}</span>
-                                    </div>
-                                    <div class="col m6 s6">
-                                        <h6>Model ; </h6>
-                                        <span class="left_indent">{{ logs[loop.index0].car_model }}</span>
-                                    </div>
-                                </div>
-                                <div class="row box_header">
-                                    <div class="col">
-                                        <h6>Service Summary : </h6>
-                                        <span class="left_indent">{{ logs[loop.index0].service_desc }}</span>
-                                    </div>
-                                </div>
+                    <div class="collapsible-body">
+                        {% for log in logs %}
+                        {% if log.reg_no == cars.reg_no %}
 
-                                <h6>Detailed list of service Items ; </h6>
-                                <ol>
-                                    {% if logs[loop.index0].service_items|length >= 1 %}
-                                        {% for item in logs[loop.index0].service_items %}
-                                            {% if item|length >= 1 %}
-                                                <li>{{ item }}</li>
-                                            {% else %}
-                                                <p>No details provided</p>
-                                            {% endif %}
-                                        {% endfor %}
-                                    {% else %}
-                                            <p>No details provided</p>
-                                    {% endif %}
-                                </ol>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+                        <ul class="collapsible popout">
+                            <li>
+                                <div class="row">
+                                    <div class="col m4">
+                                        {{ logs[loop.index0].service_date }}
+                                    </div>
+                                    <div class="col m2">
+                                        € {{ logs[loop.index0].service_cost }}
+                                    </div>
+                                    <div class="col m2">
+                                        {% if logs[loop.index0].service_paid == "no" %}
+                                    <span class="red-text">Unpaid</span>
+                               {% else %}
+                                    <span>Paid</span>
+                               {% endif %}
+                                    </div>
+                                    <div class="col m4">
+                                        Place holder
+                                    </div>
+                                </div>
+                                
+                                
+                            </li>
+                        </ul>
+                                    
+
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </li>
+            </ul>
         </div>
     {% endfor %}
 </div>
-
 {% endblock %}
