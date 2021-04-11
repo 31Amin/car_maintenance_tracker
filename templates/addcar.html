@@ -1,46 +1,46 @@
 {% extends "base.html" %}
     {% block content %}
-        <h3 class="blue-text text-darken-4 center-align text-shadow">Add a Car to the Database</h3>
+        <h3 class="teal-text text-darken-2 center-align text-shadow">Add a Car to the Database</h3>
         <p class="center-align"><span class="red-text"><strong>Note : </strong></span> only registere a car you are the current users of, 
             <br> your id will be associated with the car <br></p>
         <div class="row">
-            <form class="col s12 m6 offset-m3 teal darken-2" method="POST" action="{{ url_for('addcar', username=username, email=email) }}">
+            <form class="col s12 m6 offset-m3" method="POST" action="{{ url_for('addcar', username=username, email=email) }}">
                 <div class="row"></div>
                 <div class="row">
                     <div class="col s6 m6">
                         <div class="input-field">
-                            <i class="fas fa-pencil-alt prefix white-text"></i>
+                            <i class="fas fa-pencil-alt prefix teal-text"></i>
                             <input placeholder="Car Reg (in form 131-A-123456)." id="reg_no" name="reg_no" type="text" class="validate white-text" required>
                             <label for="reg_no" class="white-text">Car Registration Number</label>
                         </div>
                     </div>
                     <div class="col s3 m3">
-                        <h6 class="white-text center-align">Registered User</h6>
-                        <p id="username" name="username" class="white-text center-align">{{ username }}</p>
+                        <h6 class="teal-text center-align">Registered User</h6>
+                        <p id="username" name="username" class="center-align">{{ username }}</p>
                     </div>
                     <div class="col s3 m3">
-                        <h6 class="white-text center-align">Contact e-mai</h6>
-                        <p id="email" name="email" class="white-text center-align">{{ email }}</p>
+                        <h6 class="teal-text center-align">Contact e-mai</h6>
+                        <p id="email" name="email" class="center-align">{{ email }}</p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col s6 m6">
                         <div class="input-field">
-                            <i class="fas fa-pencil-alt prefix white-text"></i>
+                            <i class="fas fa-pencil-alt prefix teal-text"></i>
                             <input placeholder="Make of car" id="make" name="make" type="text" class="validate white-text" required>
                             <label for="make" class="white-text">Make</label>
                         </div>
                     </div>
                     <div class="col s6 m6">
                         <div class="input-field">
-                            <i class="fas fa-pencil-alt prefix white-text"></i>
+                            <i class="fas fa-pencil-alt prefix teal-text"></i>
                             <input placeholder="Model of car" id="model" name="model" type="text" class="validate white-text" required>
                             <label for="model" class="white-text">Model</label>
                         </div>
                     </div>
                 </div>                
                 <div class="row">
-                    <button type="submit" class="col s8 m8 offset-m2 btn-large blue darken-4">
+                    <button type="submit" class="col s8 m8 offset-m2 btn-large teal darken-2">
                         Register Car<i class="fas fa-car"></i>
                     </button>
                 </div>
