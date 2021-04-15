@@ -44,7 +44,7 @@ def login():
             return redirect(url_for("login"))
     return render_template("login.html")
 
-    
+
 @app.route("/tracker")
 def tracker():
     if session["user"] == "admin":
@@ -57,6 +57,12 @@ def tracker():
             {"user": session["user"]}))
         logs = list(mongo.db.maintenance.find().sort("service_date", -1))
         return render_template("tracker.html", logs=logs, user_cars=user_cars)
+
+
+@app.route("/detailed_record<record_id>")
+def detailed_record(record_id):
+    record = mongo.db.maintenance.find_one({"_id": ObjectId(record_id)})
+    return render_template("detailed_record.html", record=record)
 
 
 @app.route("/register", methods=["GET", "POST"])
