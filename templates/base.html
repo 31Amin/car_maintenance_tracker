@@ -20,8 +20,13 @@
             <main>
                 <nav class="navbar-extended teal darken-4">
                     <div class="nav-wrapper">
-                        <a href="{{ url_for('tracker') }}" class="fas fa-car"><Span class="header-title">Car Maintenance
+                        {% if session.user %}
+                            <a href="{{ url_for('tracker') }}" class="fas fa-car"><Span class="header-title">Car Maintenance
+                                    Tracker</Span></a>
+                        {% else %}
+                            <a href="{{ url_for('login') }}" class="fas fa-car"><Span class="header-title">Car Maintenance
                                 Tracker</Span></a>
+                        {% endif %}
                         <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                         <ul class="right hide-on-med-and-down">
                             <li><a href="{{ url_for('tracker') }}">Maintenance Records</a></li>

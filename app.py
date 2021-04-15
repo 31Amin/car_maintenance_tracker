@@ -21,6 +21,30 @@ mongo = PyMongo(app)
 @app.route("/")
 
 
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        user = mongo.db.directory.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if user:
+            if check_password_hash(
+                user["password"], request.form.get
+                    ("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(request.form.get("username")))
+                return redirect(url_for(
+                    "userprofile", username=session["user"]))
+            else:
+                flash("Incorrect Username and/or Password")
+                return redirect(url_for("login"))
+        else:
+            # username doesn't exist
+            flash("Incorrect Username and/or Password")
+            return redirect(url_for("login"))
+    return render_template("login.html")
+
+    
 @app.route("/tracker")
 def tracker():
     if session["user"] == "admin":
@@ -58,30 +82,6 @@ def register():
         flash("Registration Successful!")
         return redirect(url_for("userprofile", username=session["user"]))
     return render_template("register.html")
-
-
-@app.route("/login", methods=["GET", "POST"])
-def login():
-    if request.method == "POST":
-        user = mongo.db.directory.find_one(
-            {"username": request.form.get("username").lower()})
-
-        if user:
-            if check_password_hash(
-                user["password"], request.form.get
-                    ("password")):
-                session["user"] = request.form.get("username").lower()
-                flash("Welcome, {}".format(request.form.get("username")))
-                return redirect(url_for(
-                    "userprofile", username=session["user"]))
-            else:
-                flash("Incorrect Username and/or Password")
-                return redirect(url_for("login"))
-        else:
-            # username doesn't exist
-            flash("Incorrect Username and/or Password")
-            return redirect(url_for("login"))
-    return render_template("login.html")
 
 
 @app.route("/userprofile/<username>", methods=["GET", "POST"])
