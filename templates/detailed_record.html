@@ -1,64 +1,76 @@
 {% extends "base.html" %}
     {% block content %}
-         <h3 class="teal-text text-darken-4 center-align text-shadow">Service Record</h3>
+        <h3 class="teal-text text-darken-4 center-align text-shadow">Service Record</h3>
         
         <div class="row">
-        
-            <div class="col s12 m6 offset-m3">
-                {{ record.reg_no }}
-            </div>
-        
-        </div>
-        <div class="row">
-        
             <div class="col s12 m6 offset-m3">
                 <div class="row">
-                    <div class="col s12 m6">
-                        <div class="card-panel grey ">
-                            <h5>Service Details</h5>
-                            <p>{{ record.username }}</p>
-                            <p>{{ record.service_date }}</p>
-                            <p>€ {{ record.service_cost }}</p>
-                            <p>{{ record._paid }}</p>
+                    <div class="col s12 m4">
+                        <div class="card-panel grey lighten-5 detailed_info_card">
+                            <h5 class="teal-text"><i class="fas fa-bars teal-text prefix"></i> Record Info</h5>
+                            <p> <strong class="teal-text text-darken-2">User ID </strong>{{ record.username }}</p>
+                            <p><strong class="teal-text text-darken-2">Date </strong> {{ record.service_date }}</p>
+                            <p><strong class="teal-text text-darken-2">Cost </strong> € {{ record.service_cost }}</p>
+                            {% if record.service_paid == "Yes" %}
+                            <p><strong class="teal-text text-darken-2">Service Paid </strong></p>
+                            {% else %}
+                            <p><strong class="red-text text-darken-2">Service Unpaid </strong></p>
+                            {% endif %}
                         </div>
                     </div>
-                    <div class="col s12 m6">
-                        <div class="card-panel grey ">
-                            <h5>Car Details</h5>
-                            <p>{{ record.car_make }} {{ record.car_model }}</p>
+                    <div class="col s12 m4">
+                        <div class="card-panel grey lighten-5 detailed_info_card">
+                            <h5 class="teal-text"><i class="fas fa-car teal-text prefix"></i> Car</h5>
+                            <p> {{ record.car_make }} {{ record.car_model }}</p>
                             <p>{{ record.reg_no }}</p>
-                            <p>{{ record.odometer_reading }}</p>
-                            
+                            <p>{{ record.odometer_reading }} <strong class="teal-text text-darken-2">Kilometers</strong></p>
+
+                        </div>
+                    </div>
+                    <div class="col s12 m4">
+                        <div class="card-panel grey lighten-5 detailed_info_card">
+                            <h5 class="teal-text"><i class="fas fa-warehouse teal-text prefix"></i> Garage</h5>
+                            <p> {{ record.garage_name }}</p>
+                            <p>{{ record.garage_contact }}</p>
+                            <p>{{ record.garage_phone }}</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="row detailed_info_row">
+                        <div class="col s12 s12">
+                            <div class="card-panel grey lighten-5 detailed_info_card">
+                                <h5 class="teal-text"><i class="fas fa-info teal-text"></i> Service Info</h5>
+                                <p>
+                                    {{ record.service_desc }}
+                                </p>
+                                <h6 class="teal-text"><i class="fas fa-list teal-text"></i> Service Items</h6>
+                                <ol>
+                                    {% if record.service_items|length >= 1 %}
+                                        {% for item in record.service_items %}
+                                            {% if item|length >= 1 %}
+                                                <li>{{ item }}</li>
+                                            {% else %}
+                                                <p>No details provided</p>
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% else %}
+                                            <p>No details provided</p>
+                                    {% endif %}
+                                </ol>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
-                    <div class="col s12 s12">
-                        <div class="card-panel grey ">
-                            <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-                                I am convenient because I require little markup to use effectively. I am similar to what is
-                                called a panel in other frameworks.
-                            </span>
+                            <div class="col s4 m4 center-align">
+                                <a class="waves-effect teal darken-2 waves-light btn-large">Back</a>
+                            </div>
+                            <div class="col s4 m4 center-align">
+                                <a class="waves-effect teal darken-4 waves-light btn-large">Edit</a>
+                            </div>
+                            <div class="col s4 m4 center-align">
+                                <a class="waves-effect red darken-4 waves-light btn-large">Delete</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                    <div class="col s4 m4">
-                        <div class="card-panel">
-                            <p>placeholder - back button</p>
-                        </div>
-                    </div>
-                    <div class="col s4 m4">
-                        <div class="card-panel">
-                            <p>placeholder - edit button</p>
-                        </div>
-                    </div>
-                    <div class="col s4 m4">
-                        <div class="card-panel">
-                            <p>placeholder - delete button</p>
-                        </div>
-                    </div>
                 </div>
-            </div>
-            
-        </div>
 
     {% endblock %}

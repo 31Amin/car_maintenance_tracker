@@ -125,3 +125,27 @@ main {
     white-space: nowrap;
   }
 }
+
+/* -_-_-_-_-_-_-_-_-_-_ Detailed Info Page _-_-_-_-_-_-_-_-_-_- */
+.row{
+    margin-bottom:10px !important;
+    margin-right:1px !important
+}
+.detailed_info_card {
+    margin-bottom:0px !important
+}
+.detailed_info_card p{
+    padding-left: 35px;
+}
+.detailed_info_card h6{
+    padding-left: 40px;
+}
+.detailed_info_card ol{
+    padding-left: 70px;
+}
+
+@media(min-width: 992px){
+    .detailed_info_card{
+        min-height: 260px;
+    }
+}
