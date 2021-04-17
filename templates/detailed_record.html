@@ -65,7 +65,7 @@
                                 <a class="waves-effect teal darken-2 waves-light btn-large">Back</a>
                             </div>
                             <div class="col s4 m4 center-align">
-                                <a class="waves-effect teal darken-4 waves-light btn-large">Edit</a>
+                                <a href="{{ url_for('edit_record', record_id=record._id) }}" class="waves-effect teal darken-4 waves-light btn-large">Edit</a>
                             </div>
                             <div class="col s4 m4 center-align">
                                 <a class="waves-effect red darken-4 waves-light btn-large">Delete</a>
