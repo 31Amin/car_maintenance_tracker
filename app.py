@@ -149,10 +149,46 @@ def add_record():
 
 
 # edit a maintenance record.
-@app.route("/edit_record", methods=["GET", "POST"])
-def edit_record():
-    return render_template("edit_record.html")
+@app.route("/edit_record/<record_id>", methods=["GET", "POST"])
+def edit_record(record_id):
+    if request.method == "POST":
+        car_details = mongo.db.cars.find_one(
+            {"reg_no": request.form.get("reg_no")})
+        make = car_details["make"]
+        model = car_details["model"]
 
+        garage_details = mongo.db.garage.find_one(
+            {"garage_name": request.form.get("garage_name")})
+        contact = garage_details["garage_contact"]
+        phone = garage_details["garage_phone"]
+
+        paid = "yes" if request.form.get("service_paid") else "no"
+
+        details = {
+            "reg_no": request.form.get("reg_no"),
+            "username": session["user"],
+            "service_date": request.form.get("service_date"),
+            "service_cost": request.form.get("service_cost"),
+            "service_desc": request.form.get("service_desc"),
+            "service_paid": paid,
+            "odometer_reading": request.form.get("odometer_reading"),
+            "car_make": make,
+            "car_model": model,
+            "garage_name": request.form.get("garage_name"),
+            "garage_contact": contact,
+            "garage_phone": phone,
+            "service_items": request.form.getlist("service_items")
+
+        }
+
+    cars = mongo.db.cars.find({"user": session["user"]})
+    garages = mongo.db.garage.find(
+        {"garage_status": "active"}).sort("garage_name", 1)
+
+    record = mongo.db.maintenance.find_one({"_id": ObjectId(record_id)})
+
+    return render_template(
+        "edit_record.html", cars=cars, garages=garages, record=record)
 
 # Page for user to add a new car.
 @app.route("/addcar/<username>", methods=["GET", "POST"])

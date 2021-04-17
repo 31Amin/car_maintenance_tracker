@@ -2,12 +2,12 @@
 {% block content %}
  <h3 class="teal-text text-darken-4 center-align text-shadow">Edit Record</h3>
 <div class="row">
-    <form class="col s12 m6 offset-m3" method="POST" action="{{ url_for('add_record') }}">
+    <form class="col s12 m6 offset-m3" method="POST" action="{{ url_for('edit_record', record_id=record_id) }}">
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-bars prefix teal-text"></i>
                 <select id="reg_no" name="reg_no" class="validate select_car" required>
-                    <option  value="reg_no" disabled selected>Choose Car</option>
+                    <option  value="reg_no" selected>{{ record.reg_no }}</option>
                     {% for car in cars %}
                     <option  value="{{ car.reg_no }}">{{ car.reg_no }}</option>
                     {% endfor %}
@@ -17,7 +17,7 @@
             <div class="input-field col s12">
                 <i class="fas fa-bars prefix teal-text"></i>
                 <select id="garage_name" name="garage_name" class="validate" required>
-                    <option value="" disabled selected>Garage / Service Center</option>
+                    <option value="" selected>{{ record.garage_name }}</option>
                     {% for gar in garages %}
                     <option value="{{ gar.garage_name }}">{{ gar.garage_name }}</option>
                     {% endfor %}
@@ -28,17 +28,20 @@
         <div class="row">
             <div class="input-field col s6">
                 <i class="fas fa-calendar-alt prefix teal-text"></i>
-                <input placeholder="Service Date" id="service_date" name="service_date" type="text" class="datepicker validate">
+                <input placeholder="Service Date" id="service_date" name="service_date" type="text" 
+                class="datepicker validate" value="{{ record.service_date }}">
                 <label for="servicedate" class="teal-text">Date</label>
             </div>
             <div class="input-field col s6">
                 <i class="fas fa-tachometer-alt prefix teal-text"></i>
-                <input placeholder="Odometer Reading" id="odometer_reading" name="odometer_reading" type="number" class="validate">
+                <input placeholder="Odometer Reading" id="odometer_reading" name="odometer_reading" 
+                type="number" class="validate" value="{{ record.odometer_reading }}">
                 <label for="odometer_reading" class="teal-text">Odometer Reading (Km)</label>
             </div>
             <div class="input-field col s6">
                 <i class="fas fa-euro-sign prefix teal-text"></i>
-                <input placeholder="Cost (No € symbol)" id="service_cost" name="service_cost" type="number" step=".01" class="validate">
+                <input placeholder="Cost (No € symbol)" id="service_cost" name="service_cost" type="number"
+                 step=".01" class="validate" value="{{ record.service_cost }}">
                 <label for="service_cost" class="teal-text">Service Cost</label>
             </div>
             <div class="input-field col s6 center-align">
@@ -55,7 +58,8 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-sticky-note prefix teal-text"></i>
-                <textarea placeholder="Provided short description of the work carried out." id="service_desc" name="service_desc" class="materialize-textarea"></textarea>
+                <textarea placeholder="Provided short description of the work carried out." id="service_desc" 
+                name="service_desc" class="materialize-textarea">{{ record.service_desc }}</textarea>
                 <label for="service_desc" class="teal-text">Service Work - Summary</label>
             </div>
         </div>
@@ -77,8 +81,8 @@
                 </div>
             </div>
             <div class="row">
-                <button type="Submit" class="col s12 m3 offset-m2 btn-large red darken-2">
-                     Cancel <i class="far fa-window-close"></i>
+                <button type="Submit" class="col s12 m3 offset-m2 btn-large teal darken-2">
+                     Save Chnage <i class="far fa-save"></i>
                 </button>
                 <button type="Submit" class="col s12 m3 offset-m2 btn-large teal darken-2">
                      Save Chnage <i class="far fa-save"></i>
