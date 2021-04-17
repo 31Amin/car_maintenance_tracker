@@ -47,11 +47,17 @@
             <div class="input-field col s6 center-align">
                 <div class="switch">
                     <i class="fas fa-file-invoice prefix teal-text"></i>
-                    <label for="service_paid" class="teal-text">
+                    {% if record.service_paid == "yes" %}
+                        <label for="service_paid" class="teal-text">
+                            <input type="checkbox" id="service_paid" name="service_paid" checked>
+                                <span class="lever"></span>
+                        </label>
+                    {% else %}
+                        <label for="service_paid" class="teal-text">
                         <input type="checkbox" id="service_paid" name="service_paid">
-                        <span class="lever"></span>
-                        Invoice Paid
+                            <span class="lever"></span>
                     </label>
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -66,24 +72,36 @@
 
         <div class="row">
             <div class="col s10 offset-s1">
-                <h6 class="fas fa-list teal-text list_icon">  Add detailed list of service items.</h6>
+                <h6 class="fas fa-list teal-text list_icon"> Add detailed list of service items.</h6>
             </div>
+
             <div class="input-field col s10 offset-s1 item">
-                <input placeholder="Add service line item" id="service_items" name="service_items" type="text"
-                    class="validate black-text">
-                <label for="service_items"></label>
+                {% if record.service_items|length >= 1 %}
+                    {% for item in record.service_items %}
+                        {% if item|length >= 1 %}
+                        <input placeholder="Add service line item" id="service_items" name="service_items" type="text"
+                                    class="validate black-text addtional_line" value="{{ item }}"><label for="service_items"></label>
+                        {% else %}
+                                <input placeholder="Add service line item" id="service_items" name="service_items" type="text"
+                                    class="validate black-text"><label for="service_items"></label>
+                        {% endif %}
+                    {% endfor %}
+                {% else %}
+                        <input placeholder="Add service line item" id="service_items" name="service_items" type="text"
+                            class="validate black-text"><label for="service_items"></label>
+                {% endif %}
             </div>
             <div class="row">
                 <div class="col s12 s10 offset-s1">                    
                     <i role="button" class="far fa-plus-square add_item teal-text item_button" aria-label="Add Service Item"></i>
-                    <i role="button" class="far fa-minus-square red-text remove_item item_button" aria-label="Remove Service Item"></i>
-                    <p>Add addtional lines</p>
+                    <i role="button" class="far fa-minus-square red-text remove_item_edit item_button" aria-label="Remove Service Item"></i>
+                    <p>Add / Remove</p>
                 </div>
             </div>
             <div class="row">
-                <button type="Submit" class="col s12 m3 offset-m2 btn-large teal darken-2">
-                     Save Chnage <i class="far fa-save"></i>
-                </button>
+                <div class="col s12 m3 offset-m2">
+                     <a href="{{ url_for('detailed_record', record_id=record._id) }}" class="btn-large teal darken-4">Return</a>
+                </div>
                 <button type="Submit" class="col s12 m3 offset-m2 btn-large teal darken-2">
                      Save Chnage <i class="far fa-save"></i>
                 </button>
