@@ -148,6 +148,12 @@ def add_record():
     return render_template("add_record.html", cars=cars, garages=garages)
 
 
+# edit a maintenance record.
+@app.route("/edit_record", methods=["GET", "POST"])
+def edit_record():
+    return render_template("edit_record.html")
+
+
 # Page for user to add a new car.
 @app.route("/addcar/<username>", methods=["GET", "POST"])
 def addcar(username):
