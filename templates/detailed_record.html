@@ -11,10 +11,10 @@
                             <p> <strong class="teal-text text-darken-2">User ID </strong>{{ record.username }}</p>
                             <p><strong class="teal-text text-darken-2">Date </strong> {{ record.service_date }}</p>
                             <p><strong class="teal-text text-darken-2">Cost </strong> € {{ record.service_cost }}</p>
-                            {% if record.service_paid == "Yes" %}
-                            <p><strong class="teal-text text-darken-2">Service Paid </strong></p>
+                            {% if record.service_paid == "yes" %}
+                                <p><strong class="teal-text text-darken-2">Service Paid </strong></p>
                             {% else %}
-                            <p><strong class="red-text text-darken-2">Service Unpaid </strong></p>
+                                <p><strong class="red-text text-darken-2">Service Unpaid </strong></p>
                             {% endif %}
                         </div>
                     </div>
@@ -62,7 +62,7 @@
                     </div>
                     <div class="row">
                             <div class="col s4 m4 center-align">
-                                <a class="waves-effect teal darken-2 waves-light btn-large">Back</a>
+                                <a href="{{ url_for('tracker') }}" class="btn-large teal darken-2">Return <i class="fas fa-undo-alt"></i></a>
                             </div>
                             <div class="col s4 m4 center-align">
                                 <a href="{{ url_for('edit_record', record_id=record._id) }}" class="waves-effect teal darken-4 waves-light btn-large">Edit</a>
