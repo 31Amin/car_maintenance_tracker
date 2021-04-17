@@ -152,6 +152,7 @@ def add_record():
 @app.route("/edit_record/<record_id>", methods=["GET", "POST"])
 def edit_record(record_id):
     if request.method == "POST":
+        print("ran")
         car_details = mongo.db.cars.find_one(
             {"reg_no": request.form.get("reg_no")})
         make = car_details["make"]
@@ -164,7 +165,7 @@ def edit_record(record_id):
 
         paid = "yes" if request.form.get("service_paid") else "no"
 
-        details = {
+        edit_details = {
             "reg_no": request.form.get("reg_no"),
             "username": session["user"],
             "service_date": request.form.get("service_date"),
@@ -180,6 +181,9 @@ def edit_record(record_id):
             "service_items": request.form.getlist("service_items")
 
         }
+        mongo.db.maintenance.update({"_id": ObjectId(record_id)}, edit_details)
+        flash("Record Updated")
+        return redirect(url_for("tracker"))
 
     cars = mongo.db.cars.find({"user": session["user"]})
     garages = mongo.db.garage.find(
@@ -189,6 +193,7 @@ def edit_record(record_id):
 
     return render_template(
         "edit_record.html", cars=cars, garages=garages, record=record)
+
 
 # Page for user to add a new car.
 @app.route("/addcar/<username>", methods=["GET", "POST"])
