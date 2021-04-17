@@ -33,15 +33,15 @@
             </div>
             <div class="input-field col s6">
                 <i class="fas fa-tachometer-alt prefix teal-text"></i>
-                <input placeholder="Odometer Reading (Enter Numbers only)" id="odometer_reading" name="odometer_reading" type="number" class="validate">
-                <label for="odometer_reading" class="teal-text">Odometer Reading</label>
+                <input placeholder="Odometer Reading" id="odometer_reading" name="odometer_reading" type="number" class="validate">
+                <label for="odometer_reading" class="teal-text">Odometer Reading (Km)</label>
             </div>
             <div class="input-field col s6">
                 <i class="fas fa-euro-sign prefix teal-text"></i>
-                <input placeholder="Cost (Do not add currency symbol)" id="service_cost" name="service_cost" type="number" class="validate">
+                <input placeholder="Cost (No € symbol)" id="service_cost" name="service_cost" type="number" step=".01" class="validate">
                 <label for="service_cost" class="teal-text">Service Cost</label>
             </div>
-            <div class="input-field col s6">
+            <div class="input-field col s6 center-align">
                 <div class="switch">
                     <i class="fas fa-file-invoice prefix teal-text"></i>
                     <label for="service_paid" class="teal-text">
@@ -61,25 +61,26 @@
         </div>
 
         <div class="row">
-            <div class="col s10 offset-m1">
+            <div class="col s10 offset-s1">
                 <h6 class="fas fa-list teal-text list_icon">  Add detailed list of service items.</h6>
             </div>
-            <div class="input-field col s10 offset-m1 item">
+            <div class="input-field col s10 offset-s1 item">
                 <input placeholder="Add service line item" id="service_items" name="service_items" type="text"
                     class="validate black-text">
                 <label for="service_items"></label>
             </div>
             <div class="row">
-                <div class="col s12 s10 offset-m1">
+                <div class="col s12 s10 offset-s1">                    
                     <i role="button" class="far fa-plus-square add_item teal-text item_button" aria-label="Add Service Item"></i>
                     <i role="button" class="far fa-minus-square red-text remove_item item_button" aria-label="Remove Service Item"></i>
+                    <p>Add addtional lines</p>
                 </div>
             </div>
             <div class="row">
-                    <button type="submit" class="col s8 m8 offset-m2 btn-large teal darken-2">
-                        Add Record<i class="fas fa-plus"></i>
-                    </button>
-                </div>
+                <button type="Submit" class="col s12 m8 offset-m2 btn-large teal darken-2">
+                     Add Record <i class="fas fa-plus"></i>
+                </button>
+          </div>
         </div>
     </form>
 </div>

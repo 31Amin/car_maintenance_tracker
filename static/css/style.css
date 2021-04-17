@@ -96,7 +96,12 @@ main {
 .admin_help{
     text-decoration: underline;
 }
-
+.datepicker-day-button{
+    color: black;
+}
+.invoice{
+    font-size: 50%;
+}
 .admin_help:hover{
     text-decoration: none;
     font-size: 110%;
