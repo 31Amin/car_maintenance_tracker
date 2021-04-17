@@ -7,40 +7,40 @@
             <form class="col s12 m6 offset-m3" method="POST" action="{{ url_for('addcar', username=username, email=email) }}">
                 <div class="row"></div>
                 <div class="row">
-                    <div class="col s6 m6">
+                    <div class="col s12 m6">
                         <div class="input-field">
                             <i class="fas fa-pencil-alt prefix teal-text"></i>
-                            <input placeholder="Car Reg (in form 131-A-123456)." id="reg_no" name="reg_no" type="text" class="validate white-text" required>
-                            <label for="reg_no" class="white-text">Car Registration Number</label>
+                            <input placeholder="Car Reg (in form 131-A-123456)." id="reg_no" name="reg_no" type="text" class="validate" required>
+                            <label for="reg_no" class="teal-text text-darken-2">Car Registration Number</label>
                         </div>
                     </div>
-                    <div class="col s3 m3">
+                    <div class="col s6 m3">
                         <h6 class="teal-text center-align">Registered User</h6>
                         <p id="username" name="username" class="center-align">{{ username }}</p>
                     </div>
-                    <div class="col s3 m3">
-                        <h6 class="teal-text center-align">Contact e-mai</h6>
+                    <div class="col s6 m3">
+                        <h6 class="teal-text center-align">Contact e-mail</h6>
                         <p id="email" name="email" class="center-align">{{ email }}</p>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col s6 m6">
+                    <div class="col s12 m6">
                         <div class="input-field">
                             <i class="fas fa-pencil-alt prefix teal-text"></i>
-                            <input placeholder="Make of car" id="make" name="make" type="text" class="validate white-text" required>
-                            <label for="make" class="white-text">Make</label>
+                            <input placeholder="Make of car" id="make" name="make" type="text" class="validate" required>
+                            <label for="make" class="teal-text text-darken-2">Make</label>
                         </div>
                     </div>
-                    <div class="col s6 m6">
+                    <div class="col s12 m6">
                         <div class="input-field">
                             <i class="fas fa-pencil-alt prefix teal-text"></i>
-                            <input placeholder="Model of car" id="model" name="model" type="text" class="validate white-text" required>
-                            <label for="model" class="white-text">Model</label>
+                            <input placeholder="Model of car" id="model" name="model" type="text" class="validate" required>
+                            <label for="model" class="teal-text text-darken-2">Model</label>
                         </div>
                     </div>
                 </div>                
                 <div class="row">
-                    <button type="submit" class="col s8 m8 offset-m2 btn-large teal darken-2">
+                    <button type="submit" class="col s12 m8 offset-m2 btn-large teal darken-2">
                         Register Car<i class="fas fa-car"></i>
                     </button>
                 </div>
