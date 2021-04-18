@@ -26,7 +26,6 @@ def login():
     if request.method == "POST":
         user = mongo.db.directory.find_one(
             {"username": request.form.get("username").lower()})
-
         if user:
             if check_password_hash(
                 user["password"], request.form.get
@@ -47,16 +46,22 @@ def login():
 
 @app.route("/tracker")
 def tracker():
-    if session["user"] == "admin":
-        user_cars = list(mongo.db.cars.find())
-        logs = list(mongo.db.maintenance.find().sort("service_date", -1))
-        return render_template("tracker.html", logs=logs, user_cars=user_cars)
+    if session:
+        if session["user"] == "admin":
+            user_cars = list(mongo.db.cars.find())
+            logs = list(mongo.db.maintenance.find().sort("service_date", -1))
+            return render_template(
+                "tracker.html", logs=logs, user_cars=user_cars)
 
-    else:
-        user_cars = list(mongo.db.cars.find(
-            {"user": session["user"]}))
-        logs = list(mongo.db.maintenance.find().sort("service_date", -1))
-        return render_template("tracker.html", logs=logs, user_cars=user_cars)
+        else:
+            user_cars = list(mongo.db.cars.find(
+                {"user": session["user"]}))
+            logs = list(mongo.db.maintenance.find().sort("service_date", -1))
+            return render_template(
+                "tracker.html", logs=logs, user_cars=user_cars)
+
+    flash("Login to site required")
+    return redirect(url_for("login"))
 
 
 @app.route("/detailed_record<record_id>")
