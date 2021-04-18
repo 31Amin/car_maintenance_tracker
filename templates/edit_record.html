@@ -4,27 +4,27 @@
     <div class="row">
         <form class="col s12 m6 offset-m3" method="POST" action="{{ url_for('edit_record', record_id=record._id) }}">
             <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-bars prefix teal-text"></i>
-                    <select id="reg_no" name="reg_no" class="validate select_car" required>
-                        <option value="reg_no" selected>{{ record.reg_no }}</option>
-                        {% for car in cars %}
-                            <option>{{ car.reg_no }}</option>
-                        {% endfor %}
-                        <label for="reg_no"></label>
-                    </select>
-                </div>
-                <div class="input-field col s12">
-                    <i class="fas fa-bars prefix teal-text"></i>
-                    <select id="garage_name" name="garage_name" class="validate" required>
-                        <option value="" selected>{{ record.garage_name }}</option>
-                        {% for gar in garages %}
-                            <option >{{ gar.garage_name }}</option>
-                        {% endfor %}
-                        <label for="garage_name"></label>
-                    </select>
-                </div>
+            <div class="input-field col s12">
+                <i class="fas fa-bars prefix teal-text"></i>
+                <select id="reg_no" name="reg_no" class="validate select_car" required>
+                    <option  value="reg_no" disabled selected>Choose Car</option>
+                    {% for car in cars %}
+                    <option  value="{{ car.reg_no }}">{{ car.reg_no }}</option>
+                    {% endfor %}
+                    <label for="reg_no"></label>
+                </select>
             </div>
+            <div class="input-field col s12">
+                <i class="fas fa-bars prefix teal-text"></i>
+                <select id="garage_name" name="garage_name" class="validate" required>
+                    <option value="" disabled selected>Garage / Service Center</option>
+                    {% for gar in garages %}
+                    <option value="{{ gar.garage_name }}">{{ gar.garage_name }}</option>
+                    {% endfor %}
+                    <label for="garage_name"></label>
+                </select>
+            </div>
+        </div>
             <div class="row">
                 <div class="input-field col s6">
                     <i class="fas fa-calendar-alt prefix teal-text"></i>
