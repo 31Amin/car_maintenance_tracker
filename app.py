@@ -19,8 +19,6 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-
-
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -140,7 +138,6 @@ def add_record():
             "garage_contact": contact,
             "garage_phone": phone,
             "service_items": request.form.getlist("service_items")
-
         }
 
         mongo.db.maintenance.insert_one(details)
@@ -154,10 +151,10 @@ def add_record():
 
 
 # edit a maintenance record.
-@app.route("/edit_record/<record_id>", methods=["GET", "POST"])
+@app.route("/edit_record<record_id>", methods=["GET", "POST"])
 def edit_record(record_id):
     if request.method == "POST":
-        print("ran")
+        print("test")
         car_details = mongo.db.cars.find_one(
             {"reg_no": request.form.get("reg_no")})
         make = car_details["make"]

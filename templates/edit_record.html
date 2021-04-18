@@ -9,7 +9,7 @@
                     <select id="reg_no" name="reg_no" class="validate select_car" required>
                         <option value="reg_no" selected>{{ record.reg_no }}</option>
                         {% for car in cars %}
-                            <option value="{{ car.reg_no }}">{{ car.reg_no }}</option>
+                            <option>{{ car.reg_no }}</option>
                         {% endfor %}
                         <label for="reg_no"></label>
                     </select>
@@ -19,7 +19,7 @@
                     <select id="garage_name" name="garage_name" class="validate" required>
                         <option value="" selected>{{ record.garage_name }}</option>
                         {% for gar in garages %}
-                            <option value="{{ gar.garage_name }}">{{ gar.garage_name }}</option>
+                            <option >{{ gar.garage_name }}</option>
                         {% endfor %}
                         <label for="garage_name"></label>
                     </select>
