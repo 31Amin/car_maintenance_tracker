@@ -21,41 +21,53 @@
                 <li>
                     <div class="collapsible-header">
                         <i class="fas fa-chevron-down teal-text text-darken-2"></i>
-                        <div class="col m4 s6">
+                        <div class="col m4 s8">
                             <h6>Logs for {{cars.reg_no }}</h6>
                         </div>
-                        <div class="col m4 s3">
+                        <div class="col m4 s2">
                             <h6>{{cars.make }}</h6>
                         </div>
-                        <div class="col m4 s3">
+                        <div class="col m4 s2">
                             <h6>{{cars.model }}</h6>
                         </div>
                     </div>
                     <div class="collapsible-body">
+                        <div class="row m8 offset-m2">
+                                                <div class="col s6 m3">
+                                                    <h6 class="teal-text text-darken-4">Service Date</h6>
+                                                </div>
+                                                <div class="col s3 m3">
+                                                    <h6 class="teal-text text-darken-4">Cost</h6>
+                                                </div>
+                                                <div class="col s3 m3">
+                                                    <h6 class="teal-text text-darken-4">Invoice</h6>
+                                                </div>
+                                                <div class="col s3 m3">
+                                                </div>
+                                                <div class="col s3 m3">
+                                                </div>
+                                            </div>
                             {% for log in logs %}
                                 {% if log.reg_no == cars.reg_no %}
-                                    <ul class="collapsible popout">
-                                        <li>
-                                            <div class="row">
-                                                <div class="col m4">
+                                            <div class="row m8 offset-m2 grey lighten-3">
+                                                <div class="col s6 m3">
                                                     {{ logs[loop.index0].service_date }}
                                                 </div>
-                                                <div class="col m2">
+                                                <div class="col s3 m3">
                                                     € {{ logs[loop.index0].service_cost }}
                                                 </div>
-                                                <div class="col m2">
+                                                <div class="col s3 m3">
                                                 {% if logs[loop.index0].service_paid == "no" %}
                                                     <span class="red-text">Unpaid</span>
                                                 {% else %}
                                                     <span>Paid</span>
                                                 {% endif %}
                                                 </div>
-                                                <div class="col m4">
-                                                    <a href="{{ url_for('detailed_record', record_id=logs[loop.index0]._id) }}" class="btn-small teal darken-2">Details</a>
+                                                <div class="col s12 m3 center-align">
+                                                    <a href="{{ url_for('detailed_record', record_id=logs[loop.index0]._id) }}" class="btn teal darken-2 tracker_button">Details</a>
                                                 </div>
                                             </div>
-                                        </li>
-                                    </ul>
+                                      
                                 {% endif %}
                             {% endfor %}
                     </div>
