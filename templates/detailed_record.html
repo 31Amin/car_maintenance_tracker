@@ -62,13 +62,13 @@
                     </div>
                     <div class="row">
                             <div class="col s4 m4 center-align">
-                                <a href="{{ url_for('tracker') }}" class="btn teal darken-2 btn-rounded">Return</a>
+                                <a href="{{ url_for('tracker') }}" class="btn teal darken-2 btn-rounded detailed_record_button">Return</a>
                             </div>
                             <div class="col s4 m4 center-align">
-                                <a href="{{ url_for('edit_record', record_id=record._id) }}" class="waves-effect teal darken-4 waves-light btn">Edit</a>
+                                <a href="{{ url_for('edit_record', record_id=record._id) }}" class="waves-effect teal darken-2 waves-light btn detailed_record_button">Edit</a>
                             </div>
                             <div class="col s4 m4 center-align">
-                                <button data-target="modal1" class="btn modal-trigger">Delete</button>
+                                <button data-target="modal1" class="btn modal-trigger detailed_record_button red">Delete</button>
                             </div>
                     </div>
                     <!-- Confirm deletion modal -->
