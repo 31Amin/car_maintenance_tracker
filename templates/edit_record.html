@@ -4,12 +4,16 @@
     <div class="row">
         <form class="col s12 m6 offset-m3" method="POST" action="{{ url_for('edit_record', record_id=record._id) }}">
             <div class="row">
-            <div class="input-field col s12">
+             <div class="input-field col s12">
                 <i class="fas fa-bars prefix teal-text"></i>
                 <select id="reg_no" name="reg_no" class="validate select_car" required>
-                    <option  value="reg_no" disabled selected>Choose Car</option>
+                    <option  value="" disabled>Choose Car</option>
                     {% for car in cars %}
-                    <option  value="{{ car.reg_no }}">{{ car.reg_no }}</option>
+                        {% if car.reg_no == record.reg_no %}
+                            <option  value="{{ car.reg_no }}" selected>{{ car.reg_no }}</option>
+                        {% else %}
+                            <option  value="{{ car.reg_no }}" selected>{{ car.reg_no }}</option>
+                        {% endif %}
                     {% endfor %}
                     <label for="reg_no"></label>
                 </select>
@@ -17,9 +21,13 @@
             <div class="input-field col s12">
                 <i class="fas fa-bars prefix teal-text"></i>
                 <select id="garage_name" name="garage_name" class="validate" required>
-                    <option value="" disabled selected>Garage / Service Center</option>
+                    <option value="" disabled>Garage / Service Center</option>
                     {% for gar in garages %}
-                    <option value="{{ gar.garage_name }}">{{ gar.garage_name }}</option>
+                        {% if gar.reg_no == record.reg_no %}
+                            <option value="{{ gar.garage_name }}" selected>{{ gar.garage_name }}</option>
+                        {% else %}
+                            <option value="{{ gar.garage_name }}">{{ gar.garage_name }}</option>
+                        {% endif %}
                     {% endfor %}
                     <label for="garage_name"></label>
                 </select>
