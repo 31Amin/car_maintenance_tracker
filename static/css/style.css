@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Condensed:wght@300;400;700&display=swap');
+/* -_-_-_-_-_-_-_-_-_-_ Headings _-_-_-_-_-_-_-_-_-_- */
+
+h1, h2, h3, h4, h5{
+    font-family: "Roboto Condensed", sans-serif;
+}
+p {
+    font-family: "serrat", sans-serif;
+}
 
 /* -_-_-_-_-_-_-_-_-_-_ Sticky Footer  _-_-_-_-_-_-_-_-_-_- */
 body {
@@ -33,6 +42,11 @@ main {
     background-color: #004d40;
 }
 
+/* -_-_-_-_-_-_-_-_-_-_ Buttons _-_-_-_-_-_-_-_-_-_- */
+.detailed_record_button{
+    min-width: 80%;
+    border-radius: 8px;
+}
 /* -_-_-_-_-_-_-_-_-_-_ Footer _-_-_-_-_-_-_-_-_-_- */
 .footer-copyright  {
     font-size: 10px;
