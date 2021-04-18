@@ -4,6 +4,7 @@ $(document).ready(function () {
     $('select').formSelect();
     $(".remove_item").hide();
     $('.tooltipped').tooltip();
+    $('.modal').modal();
     $('.datepicker').datepicker({
          format: "dd, mmmm, yyyy",
         yearRange: 3,

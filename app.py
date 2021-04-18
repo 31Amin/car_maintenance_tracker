@@ -184,14 +184,15 @@ def edit_record(record_id):
 
         }
         mongo.db.maintenance.update({"_id": ObjectId(record_id)}, edit_details)
+        record = mongo.db.maintenance.find_one({"_id": ObjectId(record_id)})
         flash("Record Updated")
-        return redirect(url_for("tracker"))
+        return render_template("detailed_record.html", record=record)
+
+    record = mongo.db.maintenance.find_one({"_id": ObjectId(record_id)})
 
     cars = mongo.db.cars.find({"user": session["user"]})
     garages = mongo.db.garage.find(
         {"garage_status": "active"}).sort("garage_name", 1)
-
-    record = mongo.db.maintenance.find_one({"_id": ObjectId(record_id)})
 
     return render_template(
         "edit_record.html", cars=cars, garages=garages, record=record)
@@ -225,6 +226,14 @@ def addcar(username):
         flash("Your car has been added to the database")
 
     return render_template("addcar.html", username=username, email=email)
+
+
+# Functions to delete a record from the DB.
+@app.route("/delete_record/<record_id>")
+def delete_record(record_id):
+    mongo.db.maintenance.remove({"_id": ObjectId(record_id)})
+    flash("Record has been removed from the DB.")
+    return redirect(url_for("tracker"))
 
 
 # Functions for add gagrage page - add garage, activate / deactivate

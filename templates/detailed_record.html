@@ -62,15 +62,24 @@
                     </div>
                     <div class="row">
                             <div class="col s4 m4 center-align">
-                                <a href="{{ url_for('tracker') }}" class="btn-large teal darken-2">Return <i class="fas fa-undo-alt"></i></a>
+                                <a href="{{ url_for('tracker') }}" class="btn teal darken-2 btn-rounded">Return</a>
                             </div>
                             <div class="col s4 m4 center-align">
-                                <a href="{{ url_for('edit_record', record_id=record._id) }}" class="waves-effect teal darken-4 waves-light btn-large">Edit</a>
+                                <a href="{{ url_for('edit_record', record_id=record._id) }}" class="waves-effect teal darken-4 waves-light btn">Edit</a>
                             </div>
                             <div class="col s4 m4 center-align">
-                                <a class="waves-effect red darken-4 waves-light btn-large">Delete</a>
+                                <button data-target="modal1" class="btn modal-trigger">Delete</button>
                             </div>
-                        </div>
+                    </div>
+                    <!-- Confirm deletion modal -->
+                    <div id="modal1" class="modal">
+                        <div class="modal-content">
+                        <h4 class="teal-text text-darken-4 center-align text-shadow">Confirm Deletion</h4>
+                        <p>Are you sure you want to delete the record?</p>
+                          <a href="#!" class="modal-close btn red">No</a>
+                        <a href="{{ url_for('delete_record', record_id=record._id) }}" class="modal-close btn green">Yes</a>
+                    </div>
+                    </div>
                 </div>
 
     {% endblock %}
