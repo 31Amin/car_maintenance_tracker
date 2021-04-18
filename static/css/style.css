@@ -7,6 +7,12 @@ h1, h2, h3, h4, h5{
 p {
     font-family: "serrat", sans-serif;
 }
+.header-title{
+    font-family: "Roboto Condensed", sans-serif;
+}
+a {
+    font-family: "serrat", sans-serif;
+}
 
 /* -_-_-_-_-_-_-_-_-_-_ Sticky Footer  _-_-_-_-_-_-_-_-_-_- */
 body {
@@ -47,6 +53,23 @@ main {
     min-width: 80%;
     border-radius: 8px;
 }
+.edit_record_button{
+    max-width: 40%;
+    border-radius: 8px;
+}
+.tracker_button{
+    border-radius: 8px;
+    min-width: 60%;
+    margin-left: 20%;
+    height: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+@media(min-width: 992px){
+    .tracker_button{
+        min-width: 80%;
+    }    
+}
 /* -_-_-_-_-_-_-_-_-_-_ Footer _-_-_-_-_-_-_-_-_-_- */
 .footer-copyright  {
     font-size: 10px;
@@ -75,6 +98,10 @@ main {
 }
 .delete_icon:hover{
    font-size: 150%;
+}
+.records_list_tracker{
+    margin-bottom:0px !important;
+    margin-top:0px !important;
 }
 /* -_-_-_-_-_-_-_-_-_-_  Add Record Page _-_-_-_-_-_-_-_-_-_- */
 /* Remove arrows from number boxes
