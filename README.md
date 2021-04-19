@@ -133,10 +133,32 @@ location. Under that I included a hero image with crisp white text to capture th
 
 
 ### <ins>UX_Testing</ins>
+As part of the UX testing all pages were tested for the following criteria;
+- 1 Pages renders on the device, with now obvious distortion.
+- 2 All colours and text is consistent and displays well to the user
+- 3 All links within the page work as expected
+- 4 All fields, that should be accessible for editing / adding data work as expected
+- 5 Any buttons on the page are accessible and displayed appropriately for the screen size.
+- 6 Any other issues the tester sees related to UX. 
+
+| Page | Desktop | Tablet | Mobile | Issues |
+| --- | --- | --- | --- | --- |
+|register|Pass|Pass|Pass|Link below register box failed on live site, link was for git pot test site.|
+|login|Pass|Pass|Pass|Link below register box failed on live site, link was for git pot test site.||
+|tracker|Pass|Pass|Pass|Some modifications were made to better display the lists. One column was removed from the lits of records for display on mobile to iprove the lay out|
+|detailed information|Pass|Pass|Pass|The cards on the top of the page, were differnt sizes depending on the data from the record, set a min height to ensure they all remain the same height.|
+|add record|Pass|Pass|Pass||
+|edit record|Pass|Pass|Pass||
+|manage garages|Pass|Pass|Pass||
+|add car|Pass|Pass|Pass||
+|user profile|Pass|Pass|Pass||
+
+**Note:** Early in testing, it was obvious that there were issues with the site on a table devise. 
+Testing was suspended and all pages were updated with addtionl size for medium devices to improve the layout on a tablet device. 
+Testing, was resumed after this fix was applied to all pages. 
 
 [Index](#Index)
 ### <ins>Functional_Testing</ins>
-
 
 **Maintenance Records (tracker.html)**
 | Test | Expected outcome | Results | Issues|
