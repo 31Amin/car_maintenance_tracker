@@ -129,6 +129,21 @@ location. Under that I included a hero image with crisp white text to capture th
 ## <ins>Testing</ins>
 
 
+Maintenance Records (tracker.html)
+| Test | Expected outcome | Results | Issues|
+| --- | --- | --- | --- |
+|Check data is reterived and populated from DB| Rsults shoud include all cars registered to a user with list of records for each car listed|Pass|Some UX detailed in UX Testing section|
+|Test Details button|Button should launch detailed records page for selected record and populate all data|Pass|None|
+
+Service Record (detailed record.html)
+| Test | Expected outcome | Results | Issues|
+| --- | --- | --- | --- |
+|All data populates|Validate that all data is populating, the correct data is populating|Pass|None|
+|Return Button|Retuen button should take the user back to the main record page|Pass||
+|Edit Button|The edit button should take the user to the edit record page and populate the correct record information|Pass|Inital issues, with the two drop down menue, the options were populating but the information from the selected record was now <br> Updated to check the list of the selected data and mark as selected when found|
+|Delete Button|Open a modal to confirm deletion|Pass|Note: Delete button does not process and DB action, it onlys launches the modal for confirmation.|
+|Confirmation Modal<br>1. Confirm it opens correctly <br> 2. Test No button. <br> 3. Test yes button.<br> 4. Confirm the correct record is deleted and no other record is effected|Selecting No on the confirmation panel should retun the user to the edit screen with no action take <br> selecting yes should initiate the update to the DB to delete the record. The selected record should be removed from the DB.|Pass|Page & functions work as expected|
+
 [Index](#Index)
 - - - -
 
