@@ -144,6 +144,29 @@ Service Record (detailed record.html)
 |Delete Button|Open a modal to confirm deletion|Pass|Note: Delete button does not process and DB action, it onlys launches the modal for confirmation.|
 |Confirmation Modal<br>1. Confirm it opens correctly <br> 2. Test No button. <br> 3. Test yes button.<br> 4. Confirm the correct record is deleted and no other record is effected|Selecting No on the confirmation panel should retun the user to the edit screen with no action take <br> selecting yes should initiate the update to the DB to delete the record. The selected record should be removed from the DB.|Pass|Page & functions work as expected|
 
+Add Maintenance Record (addrecord.html)
+| Test | Expected outcome | Results | Issues|
+| --- | --- | --- | --- |
+|Drop down - Cars|Only cars registered to the a user should be shown in the list|Pass||
+|Drop down - Garages|Only active garages should show in the list|Pass|One issue to resolve, Garages that were disabled, and should not be selectable where showing in the list. <br> updated to the DB query in Python to only pull records with active flag set.|
+|Date Picker|Displays and allows date to be selected|Pass||
+|Toggle Switch|Toggles on / off|Pass||
+|+ - Buttons|Add / Remove lines from the detailed list section|Pass|Opted to hide the - (remove) button on load, as its only needed if user adds line they then want to remove.|
+| Add Record Button|Collects all data & adds new record to the DB|Pass||
+
+
+Edit Record (edit_record.html)
+| Test | Expected outcome | Results | Issues|
+| --- | --- | --- | --- |
+|Fields Accecpt Data|data can be entered with out issue|Pass|Had to fix issue on service cost field, it was only taking numbers but as filed for cost, it needed to take up to two desimal places if requried. <br> added step=".01" to the field.|
+|Data|All record data is correctly entered to the form|Passed|See above for inital issue on reg no & garage fields|
+|Ediable|All data fields can be edicated|Pass|All fields where tested to ensure they could be edited|
+|Return Button|Returns returns user to detailed record page|Pass||
+|+ / - buttons|Ensure buttons work to add remove lines|Pass|Save button, sent the edited data to the DB and updated the correct record|
+|Save Chnage Button|Sends the updtes to the DB and saves the updated record|Pass| Initaly failed, <br> the initial page was a copy of the add record and the - (remove button) was hidden, updated JS to not hide on edit page. <br> Due to the way the buttons were coded in the add record page, JS had to be updated to allow them function on edit page.|
+|||||
+|||||
+
 [Index](#Index)
 - - - -
 
