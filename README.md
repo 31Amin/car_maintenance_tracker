@@ -13,6 +13,9 @@
     - [Future Enhancements](#Future_Enhancements)
 - [Technologies Used](#Technologies_Used)
 - [Testing](#Testing)
+    -[UX Testin](#UX_Testing)
+    -[Functional Testing](#Functional_Testing)
+    -[User testin](#User_Testing)
 - [Deployment](#Deployment)
 - [Credits](#Credits)
     - [Content](#Content)
@@ -129,13 +132,19 @@ location. Under that I included a hero image with crisp white text to capture th
 ## <ins>Testing</ins>
 
 
-Maintenance Records (tracker.html)
+### <ins>UX_Testing</ins>
+
+[Index](#Index)
+### <ins>Functional_Testing</ins>
+
+
+**Maintenance Records (tracker.html)**
 | Test | Expected outcome | Results | Issues|
 | --- | --- | --- | --- |
 |Check data is reterived and populated from DB| Rsults shoud include all cars registered to a user with list of records for each car listed|Pass|Some UX detailed in UX Testing section|
 |Test Details button|Button should launch detailed records page for selected record and populate all data|Pass|None|
 
-Service Record (detailed record.html)
+**Service Record (detailed record.html)**
 | Test | Expected outcome | Results | Issues|
 | --- | --- | --- | --- |
 |All data populates|Validate that all data is populating, the correct data is populating|Pass|None|
@@ -144,7 +153,7 @@ Service Record (detailed record.html)
 |Delete Button|Open a modal to confirm deletion|Pass|Note: Delete button does not process and DB action, it onlys launches the modal for confirmation.|
 |Confirmation Modal<br>1. Confirm it opens correctly <br> 2. Test No button. <br> 3. Test yes button.<br> 4. Confirm the correct record is deleted and no other record is effected|Selecting No on the confirmation panel should retun the user to the edit screen with no action take <br> selecting yes should initiate the update to the DB to delete the record. The selected record should be removed from the DB.|Pass|Page & functions work as expected|
 
-Add Maintenance Record (addrecord.html)
+**Add Maintenance Record (addrecord.html)**
 | Test | Expected outcome | Results | Issues|
 | --- | --- | --- | --- |
 |Drop down - Cars|Only cars registered to the a user should be shown in the list|Pass||
@@ -155,7 +164,7 @@ Add Maintenance Record (addrecord.html)
 | Add Record Button|Collects all data & adds new record to the DB|Pass||
 
 
-Edit Record (edit_record.html)
+**Edit Record (edit_record.html)**
 | Test | Expected outcome | Results | Issues|
 | --- | --- | --- | --- |
 |Fields Accecpt Data|data can be entered with out issue|Pass|Had to fix issue on service cost field, it was only taking numbers but as filed for cost, it needed to take up to two desimal places if requried. <br> added step=".01" to the field.|
@@ -164,8 +173,10 @@ Edit Record (edit_record.html)
 |Return Button|Returns returns user to detailed record page|Pass||
 |+ / - buttons|Ensure buttons work to add remove lines|Pass|Save button, sent the edited data to the DB and updated the correct record|
 |Save Chnage Button|Sends the updtes to the DB and saves the updated record|Pass| Initaly failed, <br> the initial page was a copy of the add record and the - (remove button) was hidden, updated JS to not hide on edit page. <br> Due to the way the buttons were coded in the add record page, JS had to be updated to allow them function on edit page.|
-|||||
-|||||
+
+[Index](#Index)
+
+### <ins>User_Testing</ins>
 
 [Index](#Index)
 - - - -
