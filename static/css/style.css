@@ -60,15 +60,17 @@ main {
 .tracker_button{
     border-radius: 8px;
     min-width: 60%;
-    margin-left: 20%;
+    text-align: center;
     height: 30px;
     margin-top: 5px;
     margin-bottom: 5px;
 }
 @media(min-width: 992px){
     .tracker_button{
-        min-width: 80%;
-    }    
+        height: 30px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
 }
 /* -_-_-_-_-_-_-_-_-_-_ Footer _-_-_-_-_-_-_-_-_-_- */
 .footer-copyright  {
@@ -102,6 +104,9 @@ main {
 .records_list_tracker{
     margin-bottom:0px !important;
     margin-top:0px !important;
+}
+.tracker_info_row{
+    margin-top: 8px;
 }
 /* -_-_-_-_-_-_-_-_-_-_  Add Record Page _-_-_-_-_-_-_-_-_-_- */
 /* Remove arrows from number boxes
@@ -181,7 +186,7 @@ main {
     margin-bottom:0px !important
 }
 .detailed_info_card p{
-    padding-left: 35px;
+    padding-left: 30px;
 }
 .detailed_info_card h6{
     padding-left: 40px;
@@ -189,9 +194,9 @@ main {
 .detailed_info_card ol{
     padding-left: 70px;
 }
-
-@media(min-width: 992px){
+@media(min-width: 500px){
     .detailed_info_card{
         min-height: 260px;
+        padding-bottom: 10px !important;
     }
 }

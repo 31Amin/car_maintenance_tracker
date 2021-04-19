@@ -16,18 +16,18 @@
 {% endif %}
 <div class="row">
     {% for cars in user_cars %}
-        <div class="col s12 m6 offset-m3">
+        <div class="col s12 m10 offset-m1 l6 offset-l3">
             <ul class="collapsible">
                 <li>
                     <div class="collapsible-header">
                         <i class="fas fa-chevron-down teal-text text-darken-2"></i>
-                        <div class="col m4 s8">
-                            <h6>Logs for {{cars.reg_no }}</h6>
+                        <div class="col s6 m6 l6 valign-wrapper">
+                            <h6> <span class="hide-on-small-only">Logs for</span> {{cars.reg_no }}</h6>
                         </div>
-                        <div class="col m4 s2">
+                        <div class="col s3 m3 l3">
                             <h6>{{cars.make }}</h6>
                         </div>
-                        <div class="col m4 s2">
+                        <div class="col s3 m3 l3">
                             <h6>{{cars.model }}</h6>
                         </div>
                     </div>
@@ -36,34 +36,38 @@
                                                 <div class="col s6 m3">
                                                     <h6 class="teal-text text-darken-4">Service Date</h6>
                                                 </div>
-                                                <div class="col s3 m3">
+                                                <div class="col s3 m2">
                                                     <h6 class="teal-text text-darken-4">Cost</h6>
                                                 </div>
-                                                <div class="col s3 m3">
+                                                <div class="col s3 m2">
                                                     <h6 class="teal-text text-darken-4">Invoice</h6>
                                                 </div>
-                                                <div class="col s3 m3">
+                                                <div class="col s3 m3 hide-on-small-only">
+                                                    <h6 class="teal-text text-darken-4">Garage</h6>
                                                 </div>
-                                                <div class="col s3 m3">
+                                                <div class="col s3 m2">
                                                 </div>
                                             </div>
                             {% for log in logs %}
                                 {% if log.reg_no == cars.reg_no %}
                                             <div class="row m8 offset-m2 grey lighten-3">
-                                                <div class="col s6 m3">
+                                                <div class="col s6 m3 tracker_info_row">
                                                     {{ logs[loop.index0].service_date }}
                                                 </div>
-                                                <div class="col s3 m3">
+                                                <div class="col s3 m2 tracker_info_row">
                                                     € {{ logs[loop.index0].service_cost }}
                                                 </div>
-                                                <div class="col s3 m3">
+                                                <div class="col s3 m2 tracker_info_row">
                                                 {% if logs[loop.index0].service_paid == "no" %}
                                                     <span class="red-text">Unpaid</span>
                                                 {% else %}
                                                     <span>Paid</span>
                                                 {% endif %}
                                                 </div>
-                                                <div class="col s12 m3 center-align">
+                                                <div class="col s3 m3 hide-on-small-only tracker_info_row">
+                                                     {{ logs[loop.index0].garage_name }}
+                                                </div>
+                                                <div class="col s12 m2 center-align">
                                                     <a href="{{ url_for('detailed_record', record_id=logs[loop.index0]._id) }}" class="btn teal darken-2 tracker_button">Details</a>
                                                 </div>
                                             </div>
