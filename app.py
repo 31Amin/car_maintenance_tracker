@@ -192,8 +192,7 @@ def edit_record(record_id):
         cars = mongo.db.cars.find()
     else:
         cars = mongo.db.cars.find({"user": session["user"]})
-    garages = mongo.db.garage.find(
-        {"garage_status": "active"}).sort("garage_name", 1)
+    garages = mongo.db.garage.find().sort("garage_name", 1)
 
     return render_template(
         "edit_record.html", cars=cars, garages=garages, record=record)

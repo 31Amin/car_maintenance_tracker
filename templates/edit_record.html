@@ -23,7 +23,7 @@
                 <select id="garage_name" name="garage_name" class="validate" required>
                     <option value="" disabled>Garage / Service Center</option>
                     {% for gar in garages %}
-                        {% if gar.reg_no == record.reg_no %}
+                        {% if gar.garage_name == record.garage_name %}
                             <option value="{{ gar.garage_name }}" selected>{{ gar.garage_name }}</option>
                         {% else %}
                             <option value="{{ gar.garage_name }}">{{ gar.garage_name }}</option>
