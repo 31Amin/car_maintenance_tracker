@@ -68,7 +68,7 @@
                                 <a href="{{ url_for('edit_record', record_id=record._id) }}" class="waves-effect teal darken-2 waves-light btn detailed_record_button">Edit</a>
                             </div>
                             <div class="col s4 m4 center-align">
-                                <button data-target="modal1" class="btn modal-trigger detailed_record_button red">Delete</button>
+                                <button data-target="modal1" class="btn modal-trigger detailed_record_button red red_buttom">Delete</button>
                             </div>
                     </div>
                     <!-- Confirm deletion modal -->
@@ -76,8 +76,8 @@
                         <div class="modal-content">
                         <h4 class="teal-text text-darken-4 center-align text-shadow">Confirm Deletion</h4>
                         <p>Are you sure you want to delete the record?</p>
-                          <a href="#!" class="modal-close btn red">No</a>
-                        <a href="{{ url_for('delete_record', record_id=record._id) }}" class="modal-close btn green">Yes</a>
+                          <a href="#!" class="modal-close btn red confirmation_red_buttom">No</a>
+                        <a href="{{ url_for('delete_record', record_id=record._id) }}" class="modal-close btn green teal darken-2">Yes</a>
                     </div>
                     </div>
                 </div>

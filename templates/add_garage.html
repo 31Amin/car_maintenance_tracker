@@ -33,8 +33,8 @@
                     </div>
                 </div>
                 <div class="row">
-                    <button type="submit" class="col s12 m10 offset-m1 l6 offset-l3 btn-large teal darken-2">
-                        Register Garage<i class="fas fa-plus"></i>
+                    <button type="submit" class="col s8 offset-s2 m4 offset-m4 l4 offset-l4 btn teal darken-2">
+                        Register Garage <i class="fas fa-plus"></i>
                     </button>
                 </div>
             </form>
@@ -42,18 +42,18 @@
             <div class="row">
                     <ul class="collapsible col s12 m10 offset-m1 l6 offset-l3">
                         <li class="active">
-                            <div class="collapsible-header teal-text text-darken-4 center-align chevron">
+                            <div class="collapsible-header teal-text text-darken-2 center-align chevron">
                                 <h5>List of Garages <i class="fas fa-chevron-up chevron_icon"></i></h5>
                             </div>
                             <div class="collapsible-body">
 
-                                <table class="striped highlight responsive-table" >
+                                <table class="striped responsive-table" >
                                     <thead>
                                         <tr class="teal darken-2 center-align white-text">
                                             <th>Name</th>
                                             <th>Contact Name</th>
-                                            <th class="hide-on-small-only">Contact No.</th>
-                                            <th class="center-align">Actions</th>
+                                            <th >Contact No.</th>
+                                            <th class="center-align">Status</th>
                                         </tr>
                                     </thead>
                                     <body>
@@ -61,14 +61,14 @@
                                         <tr>
                                             <td >{{ garage.garage_name }}</td>
                                             <td>{{ garage.garage_contact }}</td>
-                                            <td class="hide-on-small-only">{{ garage.garage_phone }}</td>
+                                            <td >{{ garage.garage_phone }}</td>
                                             {% if garage.garage_status == "active" %}
                                                 <td class="center-align"> 
-                                                    <a href="{{ url_for('deactivate_garage', garage_id=garage._id) }}" class="btn-small red accent-4 act_deact_buttom">Deactivate</a>
+                                                    <a href="{{ url_for('deactivate_garage', garage_id=garage._id) }}" class="btn-small red accent-4 red_buttom">Deactivate</a>
                                                 </td>
                                             {% else %}
                                                <td class="center-align"> 
-                                                    <a href="{{ url_for('activate_garage', garage_id=garage._id) }}" class="btn-small green accent-4 act_deact_buttom">Activate</a>
+                                                    <a href="{{ url_for('activate_garage', garage_id=garage._id) }}" class="btn-small green accent-4 green_buttom">Activate</a>
                                                 </td>
                                             {% endif %}
                                         </tr>

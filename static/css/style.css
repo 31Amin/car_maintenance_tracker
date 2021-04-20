@@ -49,13 +49,16 @@ main {
 }
 
 /* -_-_-_-_-_-_-_-_-_-_ Buttons _-_-_-_-_-_-_-_-_-_- */
+.btn:hover{
+    background-color: #004d40 !important;
+}
 .detailed_record_button{
     min-width: 80%;
     border-radius: 8px;
 }
 .edit_record_button{
-    max-width: 40%;
     border-radius: 8px;
+    min-width: 90% !important;
 }
 .tracker_button{
     border-radius: 8px;
@@ -65,6 +68,27 @@ main {
     margin-top: 5px;
     margin-bottom: 5px;
 }
+.green_buttom{
+    border-radius: 8px;
+    width: 80%;
+    color: white;
+}
+.green_buttom:hover{
+    background-color: #1b5e20 !important ;
+}
+.red_buttom{
+    border-radius: 8px;
+    width: 80%;
+    color: white;
+}
+.red_buttom:hover{
+    background-color: #e53935 !important ;
+}
+.confirmation_red_buttom:hover{
+    background-color: #e53935 !important ;
+}
+
+
 @media(min-width: 992px){
     .tracker_button{
         height: 30px;
@@ -152,12 +176,7 @@ main {
     text-decoration: none;
     font-size: 110%;
 }
-.act_deact_buttom{
-    width: 80%;
-    border: 1px solid black;
-    border-radius: 5%;
-    color: white;
-}
+
 /* -_-_-_-_-_-_-_-_-_-_ Manage Garages Page _-_-_-_-_-_-_-_-_-_- */
 
 @media screen and (max-width: 600px) {
@@ -175,6 +194,9 @@ main {
   .table td {
     white-space: nowrap;
   }
+}
+.responsive-table tr td{
+    min-width: 150px;
 }
 
 /* -_-_-_-_-_-_-_-_-_-_ Detailed Info Page _-_-_-_-_-_-_-_-_-_- */
