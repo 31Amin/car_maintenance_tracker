@@ -150,7 +150,7 @@ As part of the UX testing all pages were tested for the following criteria;
 |add record|Pass|Pass|Pass||
 |edit record|Pass|Pass|Pass||
 |manage garages|Pass|Pass|Pass||
-|add car|Pass|Pass|Pass||
+|add car|Pass|Pass|Pass|spelling error on text above form.|
 |user profile|Pass|Pass|Pass||
 
 **Note:** Early in testing, it was obvious that there were issues with the site on a table devise. 
@@ -159,6 +159,23 @@ Testing, was resumed after this fix was applied to all pages.
 
 [Index](#Index)
 ### <ins>Functional_Testing</ins>
+
+**Register (register.html)**
+| Test | Expected outcome | Results | Issues|
+| --- | --- | --- | --- |
+|Fields are accesable|Fields should accecp data and validate for min requirements set. |Pass||
+|Register Button|Button should collect data from from and create an account.<br> Data should be validated with DB to ensure userid does not already exist|Pass||
+
+**Login (login.html)**
+| Test | Expected outcome | Results | Issues|
+| --- | --- | --- | --- |
+|Fields are accesable| The username and password accecpt data from the user|Pass||
+|login Button|Button logs user on and prsents message if there is an issue. Redirects user to profile page upon longin|Pass||
+
+**User profile (userprofile.html)**
+| Test | Expected outcome | Results | Issues|
+| --- | --- | --- | --- |
+|Data Check|All data is correct for the logged in user|Pass||
 
 **Maintenance Records (tracker.html)**
 | Test | Expected outcome | Results | Issues|
@@ -195,6 +212,27 @@ Testing, was resumed after this fix was applied to all pages.
 |Return Button|Returns returns user to detailed record page|Pass||
 |+ / - buttons|Ensure buttons work to add remove lines|Pass|Save button, sent the edited data to the DB and updated the correct record|
 |Save Chnage Button|Sends the updtes to the DB and saves the updated record|Pass| Initaly failed, <br> the initial page was a copy of the add record and the - (remove button) was hidden, updated JS to not hide on edit page. <br> Due to the way the buttons were coded in the add record page, JS had to be updated to allow them function on edit page.|
+
+**Edit Add Car (addcar.html)**
+| Test | Expected outcome | Results | Issues|
+| --- | --- | --- | --- |
+|||||
+|||||
+
+**Manage Garages Record (add_garage.html)**
+Manage Garage pages has two functions, 
+- 1 Add a new garage to the DB
+- 2 Update existing garages to activate or deactive them.
+    (With only active garages being avaliable for slection by users. )
+
+| Test | Expected outcome | Results | Issues|
+| --- | --- | --- | --- |
+|Add garage form, fields are accessable|Fields are accessable and can be filled out.|Pass||
+|Button|Button collects data from Form and creates a record in the DB.|Pass||
+|List of Garages is displayed and accessable|List canb be read and button shows|Pass|Initaly, the list was not working on mobile and table, it was not responsive and the button was off the phone screen<br> updated the table to a responsive class table from Materlize.|
+
+
+
 
 [Index](#Index)
 
