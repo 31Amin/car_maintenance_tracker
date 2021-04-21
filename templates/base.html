@@ -17,7 +17,6 @@
 
     <body>
         <header>
-            <main>
                 <nav class="navbar-extended teal darken-4">
                     <div class="nav-wrapper">
                         {% if session.user %}
@@ -82,10 +81,10 @@
             {% endwith %}
         </section>
 
-        <main>
+
             {% block content %}
             {% endblock %}
-        </main>
+
 
     <footer class="page-footer teal darken-4">
         <div class="container">
