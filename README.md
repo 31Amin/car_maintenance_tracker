@@ -1,5 +1,5 @@
-# **Holiday Planner** 
-<img src="/assets/readmeAssets/car-mtn-tracker.png">
+# **Car Maintenance Tracker** 
+<img src="/assets/readmeAssets/car-mtn-tracker.jpg">
 
 ## Index
 
@@ -24,45 +24,32 @@
 
 - - - -
 ## **<ins>Introduction</ins>**
+This is the thirdof my milestone projects, as part of the Code Institute full stack developer course  The project car maintenance tracking tool. It has a front end using Flask framework, with Materlize CSS library for the majority of the styling. The project also contains, custom HTMl, CSS & Javascript.
 
 ## **<ins>Project_Motivation</ins>**
 
 
 
 ## **<ins>UX</ins>**
-Once the concept of the site was developed, as part of the UX design phase I decided to make the site a one page site with distinctive containers for each 
-section. The site would have 6 major components,
 
-   - Header
-   - Introduction
-   - Destinations Information. 
-   - Interactive Map
-   - Form
-   - Footer
-
-Bootstrap was chosen as the main library for the major design elements, it provides the responsiveness required to ensure the site looks good and works well 
-across all device sizes. On top of bootstrap, custom CSS was used to provide a unique look and feel and set the site apart. 
-
-**Header**
-The header consists of a nav bar, locked to the top of the screen as the page is long the user always has access to the nav bar to jump to the desired 
-location. Under that I included a hero image with crisp white text to capture the users attention. 
-
-**Introduction**
 
 
 ### <ins>User_Stories</ins>
 
-**Site User;**
-- 1
-- 2
-- 3
-- 4
+**Fleet Owner;**
+1. Having a fleet of company cars, I want a single tool, where all the maintenance records are logged.
+2. Company cars are operated by employees, service & maintenance is arranged by employee, so they system should allow for the employee to input the records & update records.
+3. There is a list of approved garages for service and maintenance to be carried out, a list of of the garagges should be available to the employee when entering the record and the list should be able to be updated by the admin. 
 
-**Site Owner;**
-- A
-- B
-- C
+**Record Owner;**
+1. Simple form when entering data. 
+2. Ability to register a car to the system.
+3. View of the records entered by me, with the ability to view, edit & delete as required. 
 
+**Site Administrator Owner;**
+1. Ability to view all records entered in to the system. 
+2. Access to add garages or edit the current list in the DB.
+3. Ability to edit or delete records if required from the system.
 
 ### <ins>Wireframes</ins>
 
@@ -134,12 +121,12 @@ location. Under that I included a hero image with crisp white text to capture th
 
 ### <ins>UX_Testing</ins>
 As part of the UX testing all pages were tested for the following criteria;
-- 1 Pages renders on the device, with now obvious distortion.
-- 2 All colours and text is consistent and displays well to the user
-- 3 All links within the page work as expected
-- 4 All fields, that should be accessible for editing / adding data work as expected
-- 5 Any buttons on the page are accessible and displayed appropriately for the screen size.
-- 6 Any other issues the tester sees related to UX. 
+1. Pages renders on the device, with now obvious distortion.
+2. All colours and text is consistent and displays well to the user
+3. All links within the page work as expected
+4. All fields, that should be accessible for editing / adding data work as expected
+5. Any buttons on the page are accessible and displayed appropriately for the screen size.
+6. Any other issues the tester sees related to UX. 
 
 | Page | Desktop | Tablet | Mobile | Issues |
 | --- | --- | --- | --- | --- |
@@ -223,8 +210,8 @@ Testing, was resumed after this fix was applied to all pages.
 
 **Manage Garages Record (add_garage.html)**
 Manage Garage pages has two functions, 
-- 1 Add a new garage to the DB
-- 2 Update existing garages to activate or deactive them.
+1. Add a new garage to the DB
+2. Update existing garages to activate or deactive them.
     (With only active garages being avaliable for slection by users. )
 
 | Test | Expected outcome | Results | Issues|
