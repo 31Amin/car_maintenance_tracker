@@ -216,8 +216,10 @@ Testing, was resumed after this fix was applied to all pages.
 **Edit Add Car (addcar.html)**
 | Test | Expected outcome | Results | Issues|
 | --- | --- | --- | --- |
-|||||
-|||||
+|Fields are accessable & function||||
+|Drops downs are populated with correct data<br> User should see onl cars register to there userid. <br>only garages marked as active should be avaliable for slection|Pass|||
+|+ / - Buttons|Buttons should add or remoove lines from the Form.|Pass||
+|Add record Button|Button should colleect the data from the form and create a new record in the DB and take the user to the maintenance record page|Pass||
 
 **Manage Garages Record (add_garage.html)**
 Manage Garage pages has two functions, 
@@ -230,9 +232,7 @@ Manage Garage pages has two functions,
 |Add garage form, fields are accessable|Fields are accessable and can be filled out.|Pass||
 |Button|Button collects data from Form and creates a record in the DB.|Pass||
 |List of Garages is displayed and accessable|List canb be read and button shows|Pass|Initaly, the list was not working on mobile and table, it was not responsive and the button was off the phone screen<br> updated the table to a responsive class table from Materlize.|
-
-
-
+|Activate / Deactivate Button|The button should toggle the status of the garage and reload the page|Pass||
 
 [Index](#Index)
 
