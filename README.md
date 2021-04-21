@@ -1,5 +1,5 @@
 # **Holiday Planner** 
-<img src="https://t4.ftcdn.net/jpg/00/57/93/05/240_F_57930538_Ytnz8Lk6JnQc1GA1cPfFVJ39o2KBBFUa.jpg">
+<img src="/assets/readmeAssets/car-mtn-tracker.png">
 
 ## Index
 
