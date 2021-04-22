@@ -84,6 +84,9 @@ main {
 .red_buttom:hover{
     background-color: #e53935 !important ;
 }
+.confirmation_red_buttom{
+    margin-right: 10px !important;
+}
 .confirmation_red_buttom:hover{
     background-color: #e53935 !important ;
 }
