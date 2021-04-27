@@ -17,6 +17,7 @@
     - [UX Testin](#UX_Testing)
     - [Functional Testing](#Functional_Testing)
     - [User testin](#User_Testing)
+    - [Code Validation](#Code_Validation)
 - [Deployment](#Deployment)
 - [Credits](#Credits)
     - [Content](#Content)
@@ -289,6 +290,15 @@ Manage Garage pages has two functions,
 [Index](#Index)
 
 ### <ins>User_Testing</ins>
+
+### <ins>Code_Validation</ins>
+
+|Code|Testing|Tool|Link|
+| --- | --- | --- | --- |
+|HTML|Validate HTML code|W3C - Markup Validation Service|https://validator.w3.org/|
+|CSS|Validate CSS code|W3C - CSS Validation Service|https://jigsaw.w3.org/css-validator/|
+|JS|Validate JS code|JSHint - Static Code Analysis Tool|https://jshint.com/|
+|Python|Python Validation|Inbuilt Validator in gitpod|gitpod.io|
 
 [Index](#Index)
 - - - -
