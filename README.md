@@ -87,6 +87,7 @@ Data in the collection;
 - password (stored in hashed format for security)
 
 **Cars;**
+
 The cars collections, holds data on cars registered on the site. Users can register their cars and only registered cars are avilable to create maintenance records for.
 Data in the collection;
 - Car Registartion
@@ -98,6 +99,7 @@ Note: user & e-mail are autopopulated to the DB based on logon user at the time 
 
 
 **Garage;**
+
 The garages collection has a list of garages that can be used when creating a record. Only the Admin can add or edit the list of gagrages. 
 Data in the collection;
 - Garage Name
@@ -107,6 +109,7 @@ Data in the collection;
 
 
 **Maintenance;**
+
 The maintenance collection is populated with the records created by users. 
 Data in the collection;
 - Car Registartion (user can only selected pre-registered under their username)
@@ -342,18 +345,6 @@ through providing media and content for the site.
 
 In addtion to the list aboved, see the [Technologies Used](#Technologies_Used) and the [Acknowledgements](#Acknowledgements) section for others that we would like 
 to extend our thanks and apperication to.
-
-[Index](#Index)
-- - - -
-
-### <ins>Media</ins>
-
-| Details | Site | Link |
-| --- | --- | --- |
-| Google Maps | Google Maps API | https://cloud.google.com/maps-platform/ |
-| Video - Ireland – a luxury destination |  Discover Ireland - YouTube | https://www.youtube.com/watch?v=rvSdyIhpdrM&feature=youtu.be |
-| Images | Discover Ireland | https://www.discoverireland.ie/ |
-
 
 [Index](#Index)
 - - - -
