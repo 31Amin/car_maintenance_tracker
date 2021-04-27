@@ -8,6 +8,7 @@
 - [UX](#UX) 
     - [User Stories](#User_Stories)
     - [Wireframes](#Wireframes)
+- [Database](#Database) 
 - [Features](#Features)
     - [Existing Features](#Existing_Features)
     - [Future Enhancements](#Future_Enhancements)
@@ -24,14 +25,25 @@
 
 - - - -
 ## **<ins>Introduction</ins>**
-This is the thirdof my milestone projects, as part of the Code Institute full stack developer course  The project car maintenance tracking tool. It has a front end using Flask framework, with Materlize CSS library for the majority of the styling. The project also contains, custom HTMl, CSS & Javascript.
+This is the third of my milestone projects, as part of the Code Institute full stack developer course  The project car maintenance tracking tool. It has a front end using Flask framework, 
+with Materlize CSS library for the majority of the styling. The project also contains, custom HTMl, CSS & Javascript.
 
 ## **<ins>Project_Motivation</ins>**
 
+The car maintenance tracker site is designed to be a application that allows organisations or individuals to record and track maintenance carried out on their vehicles.
+The system would have two aspects to it;
+1. User Side. <br>
+    The user would have the ability to register a car(s) and input maintenance records for the car. 
+2. Admin Side. <br>
+    The administrator would have the ability to add Garages (which are approved for use) and deactivate them from user view if required. 
 
+The concept was to create an application, that was easy to use, accessible on all devices types and would require minimum training for users. 
 
 ## **<ins>UX</ins>**
-
+For the UX, I choose the Materialize CSS library as the primary CSS elements, applying custom CSS where required. The design of the applications, was a basic design on white background. 
+As the applications is a functional one I felt the simpler design with minimal graphics was best. The app is used to input data (records), edit and view the records so I don't expect the 
+user to be on the site longer than is necessary for them to complete the task. 
+In the base HTML, a common header and footer is used, across all the pages, the only element that vaires are the page links depending on the user type and session cookie. 
 
 
 ### <ins>User_Stories</ins>
@@ -58,6 +70,16 @@ This is the thirdof my milestone projects, as part of the Code Institute full st
 | --- | --- |
 | Title 1 | add link here |
 
+[Index](#Index)
+- - - -
+## **<ins>Database</ins>**
+The application, would require a databse backend, I chose mongoDB for the project. 
+The database has four collections within it;
+
+Cars;
+Directory;
+Garage;
+Maintenance;
 
 [Index](#Index)
 - - - -
