@@ -65,11 +65,11 @@ In the base HTML, a common header and footer is used, across all the pages, the 
 3. Ability to edit or delete records if required from the system.
 
 ### <ins>Wireframes</ins>
-
+Linked below, wireframes for the individual pages of the site.
 
 | Title | Link to Wireframe (pdf) |
 | --- | --- |
-| Title 1 | add link here |
+| Wireframes | https://app.box.com/s/vv4zin9yayy6prcylrb7gz2zwltx4coz |
 
 [Index](#Index)
 - - - -
