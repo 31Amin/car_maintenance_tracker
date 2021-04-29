@@ -27,7 +27,7 @@
 - - - -
 ## **<ins>Introduction</ins>**
 This is the third of my milestone projects, as part of the Code Institute full stack developer course  The project car maintenance tracking tool. It has a front end using Flask framework, 
-with Materlize CSS library for the majority of the styling. The project also contains, custom HTMl, CSS & Javascript.
+with Materlize CSS library for the majority of the styling. The project also contains, custom HTMl, CSS & JavaScript.
 
 ## **<ins>Project_Motivation</ins>**
 
@@ -146,7 +146,7 @@ Data in the collection;
 [Index](#Index)
 - - - -
 ## <ins>Technologies_Used</ins>
-**Balsamiq**    https://balsamiq.com/wireframes/
+**Balsamiq**  https://balsamiq.com/wireframes/
 - Basamiq was used in the design phase to create wireframes of the proposed web site.
 
 **Github** https://github.com/
@@ -156,15 +156,17 @@ Data in the collection;
 **Gitpod** https://www.gitpod.io/
 - Gitpod was the IDE used for the development throughout the project.
 
-**Bootstrap** https://getbootstrap.com/
-- Bootstrap library was chosen for the initial layout & to provide responsiveness across devices sizes, layout was customised on top of bootstrap.
+**Heroku** https://id.heroku.com/login
+- Heroku cloud use for hosting the live application
 
-**Google Maps API** https://cloud.google.com/maps-platform/
-- Google Maps API to create the map
-- plotting the locations based on location data.
+**MongoDB** https://www.mongodb.com
+- MongoDB was used as the backend DB for the project
 
 **Google Fonts** https://fonts.google.com/
 - Google fonts provided fonts for the project (Roboto Condensed & Serrat)
+
+**Materializec** https://materializecss.com/about.html
+- CSS Frameword
 
 **Font Awesome** https://fontawesome.com/
 - Icons used through the web site are sourced from Font Awesome
@@ -174,6 +176,9 @@ Data in the collection;
 
 **HTML Formatter** https://webformatter.com/html
 - HTML code was run through HTML formatter to fix any indentation issues.
+
+**JSHint** https://jshint.com/
+- JavaScript code validate through JSHint
 
 **ami.responsivedesign** http://ami.responsivedesign.is/#
 - The project was tested on ami.responsivedesign
@@ -333,29 +338,14 @@ repository on GitHub Docs [Cloning a repository](https://docs.github.com/en/gith
 [Index](#Index)
 - - - -
 
-## <ins>Credits</ins>
-The developers of the Holiday Planner site would like to thank all those who contributed directly or indirectly to the development of the site, or 
-through providing media and content for the site.
-
-- - - -
-
-| Details | Site | Link |
-| --- | --- | --- |
-| Discover Ireland images & video | Discover Ireland | https://www.discoverireland.ie/ |
-
-In addtion to the list aboved, see the [Technologies Used](#Technologies_Used) and the [Acknowledgements](#Acknowledgements) section for others that we would like 
-to extend our thanks and apperication to.
-
-[Index](#Index)
-- - - -
 
 ### <ins>Acknowledgements</ins>
-| Name | Acknowledgement | Acknowledgement |
+| Name | Area | Descrption |
 | --- | --- | --- |
-| Rahul Lakhanpal | Project Mentor | Rahul provided the advice & input needed to develop the site. He also guided me with the layout and ascetics to ensure a modern look and feel. |
-| Caroline Taylor | Content Provider | Helped to source images and content for the site. Reviewed included text|
-| Caroline Taylor | User Acceptance Testing | Provided user functional testing and user acceptance testing |
-| Discover Ireland | Content | For images and video content included |
+| Rahul Lakhanpal | Project Mentor | For all the guidance and input on UK and guiding me through the project with advise and direction. |
+| Caroline Taylor | Testing | For help with User Testing and feeback |
+|MongoDB|DB Hosting|For providing a free backend DB for the aplication|
+|Heroku|Live Site Hosting|For providing a free cloud enviroument to host the application|
 
 [Index](#Index)
 - - - -
