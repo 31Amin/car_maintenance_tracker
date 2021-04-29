@@ -158,6 +158,7 @@ def add_record():
     flash("Login to site required")
     return redirect(url_for("login"))
 
+
 # edit a maintenance record.
 @app.route("/edit_record<record_id>", methods=["GET", "POST"])
 def edit_record(record_id):
@@ -191,8 +192,10 @@ def edit_record(record_id):
                 "service_items": request.form.getlist("service_items")
 
             }
-            mongo.db.maintenance.update({"_id": ObjectId(record_id)}, edit_details)
-            record = mongo.db.maintenance.find_one({"_id": ObjectId(record_id)})
+            mongo.db.maintenance.update(
+                {"_id": ObjectId(record_id)}, edit_details)
+            record = mongo.db.maintenance.find_one(
+                {"_id": ObjectId(record_id)})
             flash("Record Updated")
             return render_template("detailed_record.html", record=record)
 
@@ -208,6 +211,7 @@ def edit_record(record_id):
 
     flash("Login to site required")
     return redirect(url_for("login"))
+
 
 # Page for user to add a new car.
 @app.route("/addcar/<username>", methods=["GET", "POST"])
@@ -240,6 +244,7 @@ def addcar(username):
         return render_template("addcar.html", username=username, email=email)
     flash("Login to site required")
     return redirect(url_for("login"))
+
 
 # Functions to delete a record from the DB.
 @app.route("/delete_record/<record_id>")
@@ -275,6 +280,7 @@ def add_garage():
         return render_template("add_garage.html", lst_garages=lst_garages)
     flash("Login to site required")
     return redirect(url_for("login"))
+
 
 # Deactivate Garage
 @app.route("/deactivate_garage/<garage_id>")
