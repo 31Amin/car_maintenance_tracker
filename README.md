@@ -8,7 +8,6 @@
 - [UX](#UX) 
     - [User Stories](#User_Stories)
     - [Wireframes](#Wireframes)
-- [Database](#Database) 
 - [Features](#Features)
     - [Existing Features](#Existing_Features)
     - [Future Enhancements](#Future_Enhancements)
@@ -19,6 +18,9 @@
     - [User testin](#User_Testing)
     - [Code Validation](#Code_Validation)
 - [Deployment](#Deployment)
+    - [Live Deployment](#Live_Deployment)
+    - [Local Deployment](#Local_Deployment)
+- [Database](#Database) 
 - [Credits](#Credits)
     - [Content](#Content)
     - [Media](#Media)
@@ -73,63 +75,7 @@ Linked below, wireframes for the individual pages of the site.
 
 [Index](#Index)
 - - - -
-## **<ins>Database</ins>**
-The application, would require a databse backend, I chose mongoDB for the project. 
-The database has four collections within it;
 
-**Directory;**
-
-The directory collection holds all the suer data, records are created when a user registers on the siet.
-Data in the collection;
-- Name
-- e-mail address
-- user Name
-- password (stored in hashed format for security)
-
-**Cars;**
-
-The cars collections, holds data on cars registered on the site. Users can register their cars and only registered cars are avilable to create maintenance records for.
-Data in the collection;
-- Car Registartion
-- make
-- model
-- user
-- e-mail
-Note: user & e-mail are autopopulated to the DB based on logon user at the time of registration.
-
-
-**Garage;**
-
-The garages collection has a list of garages that can be used when creating a record. Only the Admin can add or edit the list of gagrages. 
-Data in the collection;
-- Garage Name
-- Garage Contact Name
-- Gargage Contact Phone No.
-- Garage Status (active, when available for selection by user)
-
-
-**Maintenance;**
-
-The maintenance collection is populated with the records created by users. 
-Data in the collection;
-- Car Registartion (user can only selected pre-registered under their username)
-- Car make - Populated from Car collection based on reg number selected
-- Car Model - same as car make.
-- usename - based on the user logged when the record is created
-- Service Date - user input as the time of record creation
-- Service cost - user input as the time of record creation
-- Service Paid - user input as the time of record creation, can be yes / no
-- Service Description -  - user input as the time of record creation short description of service
-- Odometer Reading  - user input as the time of record creation
-- Garage Name - selected from list of active garages in garage collection
-- Garage Contact - populated from Garage collection based on reg number selected
-- Garage Phone No. - as garage name above
-- Service Items - as garage name above
-
-<img src="/assets/readmeAssets/collections_mongoDB.jpg">
-
-[Index](#Index)
-- - - -
 ## **<ins>Features</ins>**
 
 ### <ins>Existing_Features</ins>
@@ -306,38 +252,94 @@ Manage Garage pages has two functions,
 |HTML|Validate HTML code|W3C - Markup Validation Service|https://validator.w3.org/|
 |CSS|Validate CSS code|W3C - CSS Validation Service|https://jigsaw.w3.org/css-validator/|
 |JS|Validate JS code|JSHint - Static Code Analysis Tool|https://jshint.com/|
-|Python|Python Validation|Inbuilt Validator in gitpod|gitpod.io|
+|Python|Python PEP8 compliant|PEP8 online|http://pep8online.com/checkresult|
 
 [Index](#Index)
 - - - -
 
 ## <ins>Deployment</ins>
-The project was developed using GitHub as the repository and I choose to deploy the live project on GitHub Pages,
-The live site can be accessed at https://meltaylor78.github.io/holiday_planner/
+The live version of the site is deployed on Heroku (free cloud account) or as an alternate you can create a copy and run the app locally.
 
-**Important Note**
-The main data for the locations and data that drives the interactive map are contained in the location.js file.
-This file drives the menus for the map. Ensure this file remains correctly linked if you deploy the site or make a local copy of the repo.
+### <ins>Live_Deployment</ins>
+I choose Heroku as the cloud platform to deploy the project. 
+- At www.heroku.com, you can create free account. 
+- Once you have your account set-up, create an app on Heroku (will require a unique name).
+- Link the app, to you git repository for the project, you can connect to your git and search for the repository. 
+- I chose to set my app to automaticly deploy, meaning any update pushed to git auto deploys on Heroku. 
+- In the seettigs tab, you need to add the config variales, (IP / DB / URI / Port  Secret_Key) mirrowing whats in the env.py file.
 
-**To complete the deployment;**
-- From the Github repository 
-- Navigate to the settings tab on the top of the repository page
-- Scroll down to the section GitHub Pages. 
-- In this GitHub Pages section, complete the deployment selection;
-- Select the Branch to deploy from the first menu
-    -	Select the folder from the second menu
-    -	Save the settings
-Further updates can be made, such as custom domain and enforce HTTPS. I did not opt for a custom domain but did select to enforce HTTPS 
-for the additional security it offers. 
+Note: Ensure you have set-up the Procfile & Requirments.txt, to allow Heroku understand the set-up & requirements
 
-GitHub also provides the option to clone the repository, cloning allows you to make a local copy of the repository on your machine. 
-You can complete this using the code drop down menu to get details to clone the repositor. You can find more information on how to clone a 
-repository on GitHub Docs [Cloning a repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
+### <ins>Local_Deployment</ins>
+
+To Clone the repository;
+From the Github repository (@ https://github.com/meltaylor78/car_maintenance_tracker)
+- click on the code button <img src="/assets/readmeAssets/Code_button.jpg"> and copy the link provided.
+- In a Terminal or IDE
+- Chnage the directory to the desired location on your dirive
+- Type git clone, followed by the url you copied above
+Note: as an alternate, Git also allows the repository to be downloaed as a zip file. 
 
 
 [Index](#Index)
 - - - -
+## **<ins>Database</ins>**
+The application, would require a databse backend, I chose mongoDB for the project. 
+The database has four collections within it;
 
+**Directory;**
+
+The directory collection holds all the suer data, records are created when a user registers on the siet.
+Data in the collection;
+- Name
+- e-mail address
+- user Name
+- password (stored in hashed format for security)
+
+**Cars;**
+
+The cars collections, holds data on cars registered on the site. Users can register their cars and only registered cars are avilable to create maintenance records for.
+Data in the collection;
+- Car Registartion
+- make
+- model
+- user
+- e-mail
+Note: user & e-mail are autopopulated to the DB based on logon user at the time of registration.
+
+
+**Garage;**
+
+The garages collection has a list of garages that can be used when creating a record. Only the Admin can add or edit the list of gagrages. 
+Data in the collection;
+- Garage Name
+- Garage Contact Name
+- Gargage Contact Phone No.
+- Garage Status (active, when available for selection by user)
+
+
+**Maintenance;**
+
+The maintenance collection is populated with the records created by users. 
+Data in the collection;
+- Car Registartion (user can only selected pre-registered under their username)
+- Car make - Populated from Car collection based on reg number selected
+- Car Model - same as car make.
+- usename - based on the user logged when the record is created
+- Service Date - user input as the time of record creation
+- Service cost - user input as the time of record creation
+- Service Paid - user input as the time of record creation, can be yes / no
+- Service Description -  - user input as the time of record creation short description of service
+- Odometer Reading  - user input as the time of record creation
+- Garage Name - selected from list of active garages in garage collection
+- Garage Contact - populated from Garage collection based on reg number selected
+- Garage Phone No. - as garage name above
+- Service Items - as garage name above
+
+<img src="/assets/readmeAssets/collections_mongoDB.jpg">
+
+[Index](#Index)
+- - - -
 
 ### <ins>Acknowledgements</ins>
 | Name | Area | Descrption |
