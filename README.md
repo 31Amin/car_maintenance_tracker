@@ -19,9 +19,9 @@ The project is deployed and live on Heroku
     - [Future Enhancements](#Future_Enhancements)
 - [Technologies Used](#Technologies_Used)
 - [Testing](#Testing)
-    - [UX Testin](#UX_Testing)
+    - [UX Testing](#UX_Testing)
     - [Functional Testing](#Functional_Testing)
-    - [User testin](#User_Testing)
+    - [User Testing](#User_Testing)
     - [Code Validation](#Code_Validation)
 - [Deployment](#Deployment)
     - [Live Deployment](#Live_Deployment)
@@ -35,7 +35,7 @@ The project is deployed and live on Heroku
 - - - -
 ## **<ins>Introduction</ins>**
 This is the third of my milestone projects, as part of the Code Institute full stack developer course  The project car maintenance tracking tool. It has a front end using Flask framework, 
-with Materlize CSS library for the majority of the styling. The project also contains, custom HTMl, CSS & JavaScript.
+with Materlize CSS library for the majority of the styling. The project also contains, custom HTML, CSS & JavaScript.
 
 ## **<ins>Project_Motivation</ins>**
 
@@ -52,15 +52,14 @@ The concept was to create an application, that was easy to use, accessible on al
 For the UX, I choose the Materialize CSS library as the primary CSS elements, applying custom CSS where required. The design of the applications, was a basic design on white background. 
 As the applications is a functional one I felt the simpler design with minimal graphics was best. The app is used to input data (records), edit and view the records so I don't expect the 
 user to be on the site longer than is necessary for them to complete the task. 
-In the base HTML, a common header and footer is used, across all the pages, the only element that vaires are the page links depending on the user type and session cookie. 
-
+In the base HTML, a common header and footer is used, across all the pages, the only element that varies are the page links depending on the user type and session cookie. 
 
 ### <ins>User_Stories</ins>
 
 **Fleet Owner;**
 1. Having a fleet of company cars, I want a single tool, where all the maintenance records are logged.
 2. Company cars are operated by employees, service & maintenance is arranged by employee, so they system should allow for the employee to input the records & update records.
-3. There is a list of approved garages for service and maintenance to be carried out, a list of of the garagges should be available to the employee when entering the record and the list should be able to be updated by the admin. 
+3. There is a list of approved garages for service and maintenance to be carried out, a list of the garages should be available to the employee when entering the record and the list should be able to be updated by the admin. 
 
 **Record Owner;**
 1. Simple form when entering data. 
@@ -90,31 +89,30 @@ This section describes the features that are available in the current release of
 The initial deploy of the application comes with the following features,
 
 **User;**
--	can register account
--	can register a car under their ID
--	can see all records they have created
--	can create, edit and delete a record for a registered car
+-   can register account
+-   can register a car under their ID
+-   can see all records they have created
+-   can create, edit and delete a record for a registered car
 
 **Admin**
--	can view, edit and delete all records
--	can add a garage to the database
--	can deactivate a garage (meaning it is no longer available for selection by user)
--	can reactivate a garage (making it available to user)
+-   can view, edit and delete all records
+-   can add a garage to the database
+-   can deactivate a garage (meaning it is no longer available for selection by user)
+-   can reactivate a garage (making it available to user)
 
 ### <ins>Future_Enhancements</ins>
 
 In addition to the existing features, some future planned features included.
 
 **User;**
--	ability to change password
--	ability to update their contact e-mail
--	generate reports from the DB for their records
--	ability to remove registered car (without impacting records for that car)
+-   ability to change password
+-   ability to update their contact e-mail
+-   generate reports from the DB for their records
+-   ability to remove registered car (without impacting records for that car)
 
 **Admin**
--	ability to manage users, suspend, delete, update & force password reset.
--	generate reports for all records in the DB
-
+-   ability to manage users, suspend, delete, update & force password reset.
+-   generate reports for all records in the DB
 
 [Index](#Index)
 - - - -
@@ -139,7 +137,7 @@ In addition to the existing features, some future planned features included.
 - Google fonts provided fonts for the project (Roboto Condensed & Serrat)
 
 **Materializec** https://materializecss.com/about.html
-- CSS Frameword
+- CSS Framework
 
 **Font Awesome** https://fontawesome.com/
 - Icons used through the web site are sourced from Font Awesome
@@ -158,13 +156,11 @@ In addition to the existing features, some future planned features included.
 - image used in readme file was taken from ami.responsivedesign site
 
 **w3schools** https://www.w3schools.com
-- For addtional code explanations & features to use.
-
+- For additional code explanations & features to use.
 
 [Index](#Index)
 - - - -
 ## <ins>Testing</ins>
-
 
 ### <ins>UX_Testing</ins>
 As part of the UX testing all pages were tested for the following criteria;
@@ -177,18 +173,18 @@ As part of the UX testing all pages were tested for the following criteria;
 
 | Page | Desktop | Tablet | Mobile | Issues |
 | --- | --- | --- | --- | --- |
-|register|Pass|Pass|Pass|Link below register box failed on live site, link was for git pot test site.|
-|login|Pass|Pass|Pass|Link below register box failed on live site, link was for git pot test site.||
-|tracker|Pass|Pass|Pass|Some modifications were made to better display the lists. One column was removed from the lits of records for display on mobile to iprove the lay out|
-|detailed information|Pass|Pass|Pass|The cards on the top of the page, were differnt sizes depending on the data from the record, set a min height to ensure they all remain the same height.|
-|add record|Pass|Pass|Pass||
-|edit record|Pass|Pass|Pass||
-|manage garages|Pass|Pass|Pass||
-|add car|Pass|Pass|Pass|spelling error on text above form.|
-|user profile|Pass|Pass|Pass||
+| register | Pass | Pass | Pass | Link below register box failed on live site, link was for git pot test site.|
+| login | Pass | Pass | Pass | Link below register box failed on live site, link was for git pot test site.||
+| tracker | Pass | Pass | Pass | Some modifications were made to better display the lists. One column was removed from the list of records for display on mobile to improve the lay out|
+| detailed information |Pass |Pass | Pass |The cards on the top of the page, were different sizes depending on the data from the record, set a min height to ensure they all remain the same height.|
+| add record | Pass |Pass | Pass ||
+| edit record | Pass | Pass | Pass ||
+| manage garages | Pass | Pass | Pass ||
+| add car | Pass |Pass | Pass | spelling error on text above form.|
+| user profile |Pass | Pass | Pass ||
 
 **Note:** Early in testing, it was obvious that there were issues with the site on a table devise. 
-Testing was suspended and all pages were updated with addtionl size for medium devices to improve the layout on a tablet device. 
+Testing was suspended and all pages were updated with addition size for medium devices to improve the layout on a tablet device. 
 Testing, was resumed after this fix was applied to all pages. 
 
 [Index](#Index)
@@ -197,89 +193,108 @@ Testing, was resumed after this fix was applied to all pages.
 **Register (register.html)**
 | Test | Expected outcome | Results | Issues|
 | --- | --- | --- | --- |
-|Fields are accesable|Fields should accecp data and validate for min requirements set. |Pass||
-|Register Button|Button should collect data from from and create an account.<br> Data should be validated with DB to ensure userid does not already exist|Pass||
+| Fields are accessible | Fields should accept data and validate for min requirements set. | Pass ||
+| Register Button | Button should collect data from from and create an account.<br> Data should be validated with DB to ensure userid does not already exist | Pass ||
 
 **Login (login.html)**
 | Test | Expected outcome | Results | Issues|
 | --- | --- | --- | --- |
-|Fields are accesable| The username and password accecpt data from the user|Pass||
-|login Button|Button logs user on and prsents message if there is an issue. Redirects user to profile page upon longin|Pass||
+|Fields are accessible| The username and password accept data from the user | Pass||
+|login Button | Button logs user on and presents message if there is an issue. Redirects user to profile page upon login | Pass||
 
 **User profile (userprofile.html)**
 | Test | Expected outcome | Results | Issues|
 | --- | --- | --- | --- |
-|Data Check|All data is correct for the logged in user|Pass||
+|Data Check | All data is correct for the logged in user | Pass||
 
 **Maintenance Records (tracker.html)**
 | Test | Expected outcome | Results | Issues|
 | --- | --- | --- | --- |
-|Check data is reterived and populated from DB| Rsults shoud include all cars registered to a user with list of records for each car listed|Pass|Some UX detailed in UX Testing section|
-|Test Details button|Button should launch detailed records page for selected record and populate all data|Pass|None|
+|Check data is rederived and populated from DB| Results should include all cars registered to a user with list of records for each car listed | Pass | Some UX detailed in UX Testing section|
+|Test Details button | Button should launch detailed records page for selected record and populate all data | Pass | None|
 
 **Service Record (detailed record.html)**
 | Test | Expected outcome | Results | Issues|
 | --- | --- | --- | --- |
-|All data populates|Validate that all data is populating, the correct data is populating|Pass|None|
-|Return Button|Retuen button should take the user back to the main record page|Pass||
-|Edit Button|The edit button should take the user to the edit record page and populate the correct record information|Pass|Inital issues, with the two drop down menue, the options were populating but the information from the selected record was now <br> Updated to check the list of the selected data and mark as selected when found|
-|Delete Button|Open a modal to confirm deletion|Pass|Note: Delete button does not process and DB action, it onlys launches the modal for confirmation.|
-|Confirmation Modal<br>1. Confirm it opens correctly <br> 2. Test No button. <br> 3. Test yes button.<br> 4. Confirm the correct record is deleted and no other record is effected|Selecting No on the confirmation panel should retun the user to the edit screen with no action take <br> selecting yes should initiate the update to the DB to delete the record. The selected record should be removed from the DB.|Pass|Page & functions work as expected|
+|All data populates | Validate that all data is populating, the correct data is populating | Pass | None|
+|Return Button | Retune button should take the user back to the main record page |Pass||
+|Edit Button | The edit button should take the user to the edit record page and populate the correct record information | Pass |Initial issues, with the two drop down menu, the options were populating but the information from the selected record was now <br> Updated to check the list of the selected data and mark as selected when found|
+|Delete Button | Open a modal to confirm deletion | Pass| Note: Delete button does not process and DB action, it only launches the modal for confirmation.|
+|Confirmation Modal<br>1. Confirm it opens correctly <br> 2. Test No button. <br> 3. Test yes button.<br> 4. Confirm the correct record is deleted and no other record is effected | Selecting No on the confirmation panel should return the user to the edit screen with no action take <br> selecting yes should initiate the update to the DB to delete the record. The selected record should be removed from the DB.| Pass | Page & functions work as expected|
 
 **Add Maintenance Record (addrecord.html)**
 | Test | Expected outcome | Results | Issues|
 | --- | --- | --- | --- |
-|Drop down - Cars|Only cars registered to the a user should be shown in the list|Pass||
-|Drop down - Garages|Only active garages should show in the list|Pass|One issue to resolve, Garages that were disabled, and should not be selectable where showing in the list. <br> updated to the DB query in Python to only pull records with active flag set.|
-|Date Picker|Displays and allows date to be selected|Pass||
-|Toggle Switch|Toggles on / off|Pass||
-|+ - Buttons|Add / Remove lines from the detailed list section|Pass|Opted to hide the - (remove) button on load, as its only needed if user adds line they then want to remove.|
-| Add Record Button|Collects all data & adds new record to the DB|Pass||
-
+|Drop down – Cars | Only cars registered to the a user should be shown in the list |Pass||
+|Drop down – Garages | Only active garages should show in the list | Pass| One issue to resolve, Garages that were disabled, and should not be selectable where showing in the list. <br> updated to the DB query in Python to only pull records with active flag set.|
+|Date Picker| Displays and allows date to be selected |Pass||
+|Toggle Switch| Toggles on / off| Pass||
+|+ - Buttons| Add / Remove lines from the detailed list section | Pass| Opted to hide the - (remove) button on load, as its only needed if user adds line they then want to remove.|
+| Add Record Button| Collects all data & adds new record to the DB| Pass||
 
 **Edit Record (edit_record.html)**
 | Test | Expected outcome | Results | Issues|
 | --- | --- | --- | --- |
-|Fields Accecpt Data|data can be entered with out issue|Pass|Had to fix issue on service cost field, it was only taking numbers but as filed for cost, it needed to take up to two desimal places if requried. <br> added step=".01" to the field.|
-|Data|All record data is correctly entered to the form|Passed|See above for inital issue on reg no & garage fields|
-|Ediable|All data fields can be edicated|Pass|All fields where tested to ensure they could be edited|
-|Return Button|Returns returns user to detailed record page|Pass||
-|+ / - buttons|Ensure buttons work to add remove lines|Pass|Save button, sent the edited data to the DB and updated the correct record|
-|Save Chnage Button|Sends the updtes to the DB and saves the updated record|Pass| Initaly failed, <br> the initial page was a copy of the add record and the - (remove button) was hidden, updated JS to not hide on edit page. <br> Due to the way the buttons were coded in the add record page, JS had to be updated to allow them function on edit page.|
+|Fields accept data |data can be entered without issue |Pass| Had to fix issue on service cost field, it was only taking numbers but as filed for cost, it needed to take up to two decimal places if required. <br> added step=".01" to the field.|
+| Data| All record data is correctly entered to the form| Pass| See above for initial issue on reg no & garage fields|
+|Editable | All data fields can be edited | Pass| All fields where tested to ensure they could be edited|
+|Return Button | Returns user to detailed record page | Pass||
+|+ / - buttons | Ensure buttons work to add remove lines | Pass| Save button, sent the edited data to the DB and updated the correct record|
+|Save Change Button | Sends the updates to the DB and saves the updated record | Pass| Initially failed, <br> the initial page was a copy of the add record and the - (remove button) was hidden, updated JS to not hide on edit page. <br> Due to the way the buttons were coded in the add record page, JS had to be updated to allow them function on edit page.|
 
-**Edit Add Car (addcar.html)**
+**Add Car (addcar.html)**
 | Test | Expected outcome | Results | Issues|
 | --- | --- | --- | --- |
-|Fields are accessable & function||||
-|Drops downs are populated with correct data<br> User should see onl cars register to there userid. <br>only garages marked as active should be avaliable for slection|Pass|||
-|+ / - Buttons|Buttons should add or remoove lines from the Form.|Pass||
-|Add record Button|Button should colleect the data from the form and create a new record in the DB and take the user to the maintenance record page|Pass||
+|Fields are accessible & function | All fields in the form are working | Pass||
+|Drops downs are populated with correct data | User should see only cars register to their userid. <br>only garages marked as active should be available for selection | Pass|||
+|+ / - Buttons | Buttons should add or remove lines from the Form. | Pass||
+|Add record Button | Button should collect the data from the form and create a new record in the DB and take the user to the maintenance record page | Pass||
 
 **Manage Garages Record (add_garage.html)**
 Manage Garage pages has two functions, 
 1. Add a new garage to the DB
-2. Update existing garages to activate or deactive them.
-    (With only active garages being avaliable for slection by users. )
+2. Update existing garages to activate or deactivate them.
+    (With only active garages being available for selection by users. )
 
 | Test | Expected outcome | Results | Issues|
 | --- | --- | --- | --- |
-|Add garage form, fields are accessable|Fields are accessable and can be filled out.|Pass||
-|Button|Button collects data from Form and creates a record in the DB.|Pass||
-|List of Garages is displayed and accessable|List canb be read and button shows|Pass|Initaly, the list was not working on mobile and table, it was not responsive and the button was off the phone screen<br> updated the table to a responsive class table from Materlize.|
-|Activate / Deactivate Button|The button should toggle the status of the garage and reload the page|Pass||
+|Add garage form, fields are accessible | Fields are accessible and can be filled out | Pass||
+|Button | Button collects data from Form and creates a record in the DB.| Pass ||
+|List of Garages is displayed and accessible | List can be read and button shows | Pass| Initially, the list was not working on mobile and table, it was not responsive and the button was off the phone screen<br> updated the table to a responsive class table from Materlize.|
+|Activate / Deactivate Button | The button should toggle the status of the garage and reload the page | Pass||
 
 [Index](#Index)
 
-### <ins>User_Testing</ins>
+## **<ins>User_Testing</ins>**
+User testing was completed on the site, having a user complete the following steps to ensure there were no issues;
+
+| Test | Expected outcome | Results | Issues|
+| --- | --- | --- | --- |
+| Create an ID| New ID on the database | Pass||
+| Login | successful login | Pass||
+| Register a car | add a new car to the DB | Pass | |
+| Create a record | add new maintenance record to the DB | Pass | |
+| View records | View list of records & detailed view of individual record  | Pass | |
+| Edit a record | edit an existing record | Pass | |
+| Delete a record | remove a record from the DB | Pass | |
+
+In addition, the admin has additional functionality.
+
+| Test | Expected outcome | Results | Issues|
+| --- | --- | --- | --- |
+| Register a garage| Add a new garage to the DB and ensure it shows up for users | Pass||
+| Deactivate a garage | update the active flag on the garage in the DB and ensure its not shown for users to select | Pass||
+| Reactivate a garage | update the active flag in the DB for a previously deactivated garage. Ensure garage shows up for user | Pass | |
+
 
 ### <ins>Code_Validation</ins>
 
-|Code|Testing|Tool|Link|
+|Code| Testing| Tool| Link|
 | --- | --- | --- | --- |
-|HTML|Validate HTML code|W3C - Markup Validation Service|https://validator.w3.org/|
-|CSS|Validate CSS code|W3C - CSS Validation Service|https://jigsaw.w3.org/css-validator/|
-|JS|Validate JS code|JSHint - Static Code Analysis Tool|https://jshint.com/|
-|Python|Python PEP8 compliant|PEP8 online|http://pep8online.com/checkresult|
+|HTML| Validate HTML code|W3C - Markup Validation Service| https://validator.w3.org/|
+|CSS| Validate CSS code|W3C - CSS Validation Service | https://jigsaw.w3.org/css-validator/|
+|JS | Validate JS code | JSHint - Static Code Analysis Tool | https://jshint.com/|
+|Python | Python PEP8 compliant|PEP8 online | http://pep8online.com/checkresult|
 
 [Index](#Index)
 - - - -
@@ -292,10 +307,8 @@ I choose Heroku as the cloud platform to deploy the project.
 - At www.heroku.com, you can create free account. 
 - Once you have your account set-up, create an app on Heroku (will require a unique name).
 - Link the app, to you git repository for the project, you can connect to your git and search for the repository. 
-- I chose to set my app to automaticly deploy, meaning any update pushed to git auto deploys on Heroku. 
-- In the seettigs tab, you need to add the config variales, (IP / DB / URI / Port  Secret_Key) mirrowing whats in the env.py file.
-
-Note: Ensure you have set-up the Procfile & Requirments.txt, to allow Heroku understand the set-up & requirements
+- I chose to set my app to automatically deploy, meaning any update pushed to git auto deploys on Heroku. 
+- In the settings tab, you need to add the config variables, (IP / DB / URI / Port  Secret_Key) mirroring what’s in the env.py file.
 
 ### <ins>Local_Deployment</ins>
 
@@ -303,20 +316,20 @@ To Clone the repository;
 From the Github repository (@ https://github.com/meltaylor78/car_maintenance_tracker)
 - click on the code button <img src="/assets/readmeAssets/Code_button.jpg"> and copy the link provided.
 - In a Terminal or IDE
-- Chnage the directory to the desired location on your dirive
+- Change the directory to the desired location on your drive
 - Type git clone, followed by the url you copied above
-Note: as an alternate, Git also allows the repository to be downloaed as a zip file. 
+Note: as an alternate, Git also allows the repository to be downloaded as a zip file. 
 
 
 [Index](#Index)
 - - - -
 ## **<ins>Database</ins>**
-The application, would require a databse backend, I chose mongoDB for the project. 
+The application, would require a database backend, I chose mongoDB for the project. 
 The database has four collections within it;
 
 **Directory;**
 
-The directory collection holds all the suer data, records are created when a user registers on the siet.
+The directory collection holds all the suer data, records are created when a user registers on the site.
 Data in the collection;
 - Name
 - e-mail address
@@ -325,23 +338,23 @@ Data in the collection;
 
 **Cars;**
 
-The cars collections, holds data on cars registered on the site. Users can register their cars and only registered cars are avilable to create maintenance records for.
+The cars collections, holds data on cars registered on the site. Users can register their cars and only registered cars are available to create maintenance records for.
 Data in the collection;
-- Car Registartion
+- Car Registration
 - make
 - model
 - user
 - e-mail
-Note: user & e-mail are autopopulated to the DB based on logon user at the time of registration.
+Note: user & e-mail are auto populated to the DB based on logon user at the time of registration.
 
 
 **Garage;**
 
-The garages collection has a list of garages that can be used when creating a record. Only the Admin can add or edit the list of gagrages. 
+The garages collection has a list of garages that can be used when creating a record. Only the Admin can add or edit the list of garages. 
 Data in the collection;
 - Garage Name
 - Garage Contact Name
-- Gargage Contact Phone No.
+- Garage Contact Phone No.
 - Garage Status (active, when available for selection by user)
 
 
@@ -349,10 +362,10 @@ Data in the collection;
 
 The maintenance collection is populated with the records created by users. 
 Data in the collection;
-- Car Registartion (user can only selected pre-registered under their username)
+- Car Registration (user can only selected pre-registered under their username)
 - Car make - Populated from Car collection based on reg number selected
 - Car Model - same as car make.
-- usename - based on the user logged when the record is created
+- username - based on the user logged when the record is created
 - Service Date - user input as the time of record creation
 - Service cost - user input as the time of record creation
 - Service Paid - user input as the time of record creation, can be yes / no
@@ -369,12 +382,12 @@ Data in the collection;
 - - - -
 
 ### <ins>Acknowledgements</ins>
-| Name | Area | Descrption |
+| Name | Area | Description |
 | --- | --- | --- |
 | Rahul Lakhanpal | Project Mentor | For all the guidance and input on UK and guiding me through the project with advise and direction. |
-| Caroline Taylor | Testing | For help with User Testing and feeback |
-|MongoDB|DB Hosting|For providing a free backend DB for the aplication|
-|Heroku|Live Site Hosting|For providing a free cloud enviroument to host the application|
+| Caroline Taylor | Testing | For help with User Testing and feedback |
+|MongoDB | DB Hosting | For providing a free backend DB for the application|
+|Heroku | Live Site Hosting |For providing a free cloud environment to host the application|
 
 [Index](#Index)
 - - - -
