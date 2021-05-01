@@ -1,6 +1,12 @@
 # **Car Maintenance Tracker** 
 <img src="/assets/readmeAssets/car-mtn-tracker.jpg">
 
+- - - -
+
+## Project Live Link https://car-mtn-tracker.herokuapp.com/
+The project is deployed and live on Heroku
+
+- - - -
 ## Index
 
 - [Introduction](#Introduction)
@@ -77,16 +83,37 @@ Linked below, wireframes for the individual pages of the site.
 - - - -
 
 ## **<ins>Features</ins>**
+This section describes the features that are available in the current release of the application and planned features for future releases.
 
 ### <ins>Existing_Features</ins>
-- 1
-- 2
-- 3
-- 4
 
+The initial deploy of the application comes with the following features,
 
+**User;**
+-	can register account
+-	can register a car under their ID
+-	can see all records they have created
+-	can create, edit and delete a record for a registered car
+
+**Admin**
+-	can view, edit and delete all records
+-	can add a garage to the database
+-	can deactivate a garage (meaning it is no longer available for selection by user)
+-	can reactivate a garage (making it available to user)
 
 ### <ins>Future_Enhancements</ins>
+
+In addition to the existing features, some future planned features included.
+
+**User;**
+-	ability to change password
+-	ability to update their contact e-mail
+-	generate reports from the DB for their records
+-	ability to remove registered car (without impacting records for that car)
+
+**Admin**
+-	ability to manage users, suspend, delete, update & force password reset.
+-	generate reports for all records in the DB
 
 
 [Index](#Index)
