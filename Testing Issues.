@@ -1,9 +1,0 @@
-Testing Issues. 
-
-1 - Login & Register page, links to lohin page from register and visa versa failed. 
-    Reason, I sued the links from the Gitpod test page, teshing on live site failed.
-
-2. Add record, entering the cost of the service did not allow desimal places. 
-    Added - type=".01" to allow up to 2 desimal places.
-
-3. 
