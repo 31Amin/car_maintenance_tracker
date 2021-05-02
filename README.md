@@ -296,6 +296,11 @@ In addition, the admin has additional functionality.
 |JS | Validate JS code | JSHint - Static Code Analysis Tool | https://jshint.com/|
 |Python | Python PEP8 compliant|PEP8 online | http://pep8online.com/checkresult|
 
+As part of the validation process, I generated a Lighthouse report for the site, to check for any serios issues.
+Report summary below. 
+
+<img src="/assets/readmeAssets/LH_Report_MS3.png">
+
 [Index](#Index)
 - - - -
 
