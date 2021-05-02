@@ -36,7 +36,7 @@ $(".remove_item_edit").click(function () {
     $(".addtional_line").last().remove();
     });
 
-$(".select_car").change(function() {
+$(".record_submit").click(function() {
     var selected_car = $( "#reg_no" ).val();
     console.log(selected_car)
     });
