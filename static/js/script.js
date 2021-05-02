@@ -37,7 +37,10 @@ $(".remove_item_edit").click(function () {
     });
 
 $(".record_submit").click(function() {
-    var selected_car = $( "#reg_no" ).val();
-    console.log(selected_car)
-    });
+    let selected_car = $( "#reg_no" ).val();
+    let selected_gar = $( "#garage_name" ).val();
+    if (selected_car == null){
+        $( '.select-dropdown' ).css({'border-bottom': 'solid 1px red !important'})
+    }
+})
     

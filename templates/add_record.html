@@ -7,7 +7,7 @@
             <div class="input-field col s12">
                 <i class="fas fa-bars prefix teal-text"></i>
                 <select id="reg_no" name="reg_no" class="validate select_car" required>
-                    <option  value="reg_no" disabled selected>Choose Car</option>
+                    <option value="reg_no" disabled selected>Choose Car</option>
                     {% for car in cars %}
                     <option  value="{{ car.reg_no }}">{{ car.reg_no }}</option>
                     {% endfor %}
@@ -77,7 +77,7 @@
                 </div>
             </div>
             <div class="row">
-                <button type="Submit" class="col s8 offset-s2 m4 offset-m4 l4 offset-l4 btn teal darken-2">
+                <button type="Submit" class="col s8 offset-s2 m4 offset-m4 l4 offset-l4 btn teal darken-2 record_submit">
                      Add Record <i class="fas fa-plus"></i>
                 </button>
           </div>

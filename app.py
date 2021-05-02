@@ -31,15 +31,15 @@ def login():
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(request.form.get("username")))
                 return redirect(url_for(
-                    "userprofile", username=session["user"]))
+                    "userprofile", username=session["user"], _external=True, _scheme='https'))
             else:
                 flash("Incorrect Username and/or Password")
-                return redirect(url_for("login"))
+                return redirect(url_for("login", _external=True, _scheme='https'))
         else:
             # username doesn't exist
             flash("Incorrect Username and/or Password")
-            return redirect(url_for("login"))
-    return render_template("login.html")
+            return redirect(url_for("login", _external=True, _scheme='https'))
+    return render_template("login.html", _external=True, _scheme='https')
 
 
 @app.route("/tracker")
@@ -314,4 +314,4 @@ def logout():
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=False)
+            debug=True)
