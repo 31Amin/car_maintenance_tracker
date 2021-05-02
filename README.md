@@ -34,23 +34,23 @@ The project is deployed and live on Heroku
 
 - - - -
 ## **<ins>Introduction</ins>**
-This is the third of my milestone projects, as part of the Code Institute full stack developer course  The project car maintenance tracking tool. It has a front end using Flask framework, 
+This is the third of my milestone projects, as part of the Code Institute full stack developer course. The project is a car maintenance tracking tool. It has a front end using Flask framework, 
 with Materlize CSS library for the majority of the styling. The project also contains, custom HTML, CSS & JavaScript.
 
 ## **<ins>Project_Motivation</ins>**
 
-The car maintenance tracker site is designed to be a application that allows organisations or individuals to record and track maintenance carried out on their vehicles.
-The system would have two aspects to it;
+The car maintenance tracker site is designed to be an application that allows organisations or individuals to record and track maintenance carried out on their vehicles.
+The system has two aspects to it;
 1. User Side. <br>
-    The user would have the ability to register a car(s) and input maintenance records for the car. 
+    The user would have the ability to register a car(s) and input maintenance records for that car. 
 2. Admin Side. <br>
     The administrator would have the ability to add Garages (which are approved for use) and deactivate them from user view if required. 
 
-The concept was to create an application, that was easy to use, accessible on all devices types and would require minimum training for users. 
+The concept was to create an application, that was easy to use, accessible on all device types and would require minimum training for users. 
 
 ## **<ins>UX</ins>**
-For the UX, I choose the Materialize CSS library as the primary CSS elements, applying custom CSS where required. The design of the applications, was a basic design on white background. 
-As the applications is a functional one I felt the simpler design with minimal graphics was best. The app is used to input data (records), edit and view the records so I don't expect the 
+For the UX, I choose the Materialize CSS library for the primary CSS elements, applying custom CSS where required. The design of the applications, was a minimalist design on white background. 
+As the application is a functional one I felt the simpler design with minimal graphics was best. The app is used to input data (records), edit and view the records so I don't expect the 
 user to be on the site longer than is necessary for them to complete the task. 
 In the base HTML, a common header and footer is used, across all the pages, the only element that varies are the page links depending on the user type and session cookie. 
 
@@ -59,12 +59,12 @@ In the base HTML, a common header and footer is used, across all the pages, the 
 **Fleet Owner;**
 1. Having a fleet of company cars, I want a single tool, where all the maintenance records are logged.
 2. Company cars are operated by employees, service & maintenance is arranged by employee, so they system should allow for the employee to input the records & update records.
-3. There is a list of approved garages for service and maintenance to be carried out, a list of the garages should be available to the employee when entering the record and the list should be able to be updated by the admin. 
+3. There is a list of approved garages where service and maintenance can be carried out, a list of the garages should be available to the employee when entering the record and the list should be able to be updated by the admin. 
 
 **Record Owner;**
 1. Simple form when entering data. 
 2. Ability to register a car to the system.
-3. View of the records entered by me, with the ability to view, edit & delete as required. 
+3. View the records entered by me, with the ability to view, edit & delete as required. 
 
 **Site Administrator Owner;**
 1. Ability to view all records entered in to the system. 
@@ -128,7 +128,7 @@ In addition to the existing features, some future planned features included.
 - Gitpod was the IDE used for the development throughout the project.
 
 **Heroku** https://id.heroku.com/login
-- Heroku cloud use for hosting the live application
+- Heroku cloud used for hosting the live application
 
 **MongoDB** https://www.mongodb.com
 - MongoDB was used as the backend DB for the project
@@ -164,7 +164,7 @@ In addition to the existing features, some future planned features included.
 
 ### <ins>UX_Testing</ins>
 As part of the UX testing all pages were tested for the following criteria;
-1. Pages renders on the device, with now obvious distortion.
+1. All pages renders on the device, with no obvious distortion.
 2. All colours and text is consistent and displays well to the user
 3. All links within the page work as expected
 4. All fields, that should be accessible for editing / adding data work as expected
@@ -183,7 +183,7 @@ As part of the UX testing all pages were tested for the following criteria;
 | add car | Pass |Pass | Pass | spelling error on text above form.|
 | user profile |Pass | Pass | Pass ||
 
-**Note:** Early in testing, it was obvious that there were issues with the site on a table devise. 
+**Note:** Early in testing, it was obvious that there were issues with the site on a table device. 
 Testing was suspended and all pages were updated with addition size for medium devices to improve the layout on a tablet device. 
 Testing, was resumed after this fix was applied to all pages. 
 
@@ -194,7 +194,7 @@ Testing, was resumed after this fix was applied to all pages.
 | Test | Expected outcome | Results | Issues|
 | --- | --- | --- | --- |
 | Fields are accessible | Fields should accept data and validate for min requirements set. | Pass ||
-| Register Button | Button should collect data from from and create an account.<br> Data should be validated with DB to ensure userid does not already exist | Pass ||
+| Register Button | Button should collect data from the form and create an account.<br> Data should be validated with DB to ensure userid does not already exist | Pass ||
 
 **Login (login.html)**
 | Test | Expected outcome | Results | Issues|
@@ -210,17 +210,17 @@ Testing, was resumed after this fix was applied to all pages.
 **Maintenance Records (tracker.html)**
 | Test | Expected outcome | Results | Issues|
 | --- | --- | --- | --- |
-|Check data is rederived and populated from DB| Results should include all cars registered to a user with list of records for each car listed | Pass | Some UX detailed in UX Testing section|
+|Check data is rederived and populated from DB| Results should include all cars registered to a user with a list of records for each car listed | Pass | Some UX detailed in UX Testing section|
 |Test Details button | Button should launch detailed records page for selected record and populate all data | Pass | None|
 
 **Service Record (detailed record.html)**
 | Test | Expected outcome | Results | Issues|
 | --- | --- | --- | --- |
 |All data populates | Validate that all data is populating, the correct data is populating | Pass | None|
-|Return Button | Retune button should take the user back to the main record page |Pass||
+|Return Button | Return button should take the user back to the main record page |Pass||
 |Edit Button | The edit button should take the user to the edit record page and populate the correct record information | Pass |Initial issues, with the two drop down menu, the options were populating but the information from the selected record was now <br> Updated to check the list of the selected data and mark as selected when found|
 |Delete Button | Open a modal to confirm deletion | Pass| Note: Delete button does not process and DB action, it only launches the modal for confirmation.|
-|Confirmation Modal<br>1. Confirm it opens correctly <br> 2. Test No button. <br> 3. Test yes button.<br> 4. Confirm the correct record is deleted and no other record is effected | Selecting No on the confirmation panel should return the user to the edit screen with no action take <br> selecting yes should initiate the update to the DB to delete the record. The selected record should be removed from the DB.| Pass | Page & functions work as expected|
+|Confirmation Modal<br>1. Confirm it opens correctly <br> 2. Test No button. <br> 3. Test yes button.<br> 4. Confirm the correct record is deleted and no other record is effected | Selecting No on the confirmation panel should return the user to the edit screen with no action taken <br> selecting yes should initiate the update to the DB to delete the record. The selected record should be removed from the DB.| Pass | Page & functions work as expected|
 
 **Add Maintenance Record (addrecord.html)**
 | Test | Expected outcome | Results | Issues|
@@ -235,7 +235,7 @@ Testing, was resumed after this fix was applied to all pages.
 **Edit Record (edit_record.html)**
 | Test | Expected outcome | Results | Issues|
 | --- | --- | --- | --- |
-|Fields accept data |data can be entered without issue |Pass| Had to fix issue on service cost field, it was only taking numbers but as filed for cost, it needed to take up to two decimal places if required. <br> added step=".01" to the field.|
+|Fields accept data |data can be entered without issue |Pass| Had to fix issue on service cost field, it was only taking numbers but as field for cost, it needed to take up to two decimal places if required. <br> added step=".01" to the field.|
 | Data| All record data is correctly entered to the form| Pass| See above for initial issue on reg no & garage fields|
 |Editable | All data fields can be edited | Pass| All fields where tested to ensure they could be edited|
 |Return Button | Returns user to detailed record page | Pass||
@@ -304,7 +304,7 @@ The live version of the site is deployed on Heroku (free cloud account) or as an
 
 ### <ins>Live_Deployment</ins>
 I choose Heroku as the cloud platform to deploy the project. 
-- At www.heroku.com, you can create free account. 
+- At www.heroku.com, you can create a free account. 
 - Once you have your account set-up, create an app on Heroku (will require a unique name).
 - Link the app, to you git repository for the project, you can connect to your git and search for the repository. 
 - I chose to set my app to automatically deploy, meaning any update pushed to git auto deploys on Heroku. 
@@ -329,7 +329,7 @@ The database has four collections within it;
 
 **Directory;**
 
-The directory collection holds all the suer data, records are created when a user registers on the site.
+The directory collection holds all the user data, records are created when a user registers on the site.
 Data in the collection;
 - Name
 - e-mail address
@@ -362,14 +362,14 @@ Data in the collection;
 
 The maintenance collection is populated with the records created by users. 
 Data in the collection;
-- Car Registration (user can only selected pre-registered under their username)
+- Car Registration (user can only select pre-registered cars under their username)
 - Car make - Populated from Car collection based on reg number selected
 - Car Model - same as car make.
 - username - based on the user logged when the record is created
 - Service Date - user input as the time of record creation
 - Service cost - user input as the time of record creation
 - Service Paid - user input as the time of record creation, can be yes / no
-- Service Description -  - user input as the time of record creation short description of service
+- Service Description -  - user input at the time of record creation short description of service
 - Odometer Reading  - user input as the time of record creation
 - Garage Name - selected from list of active garages in garage collection
 - Garage Contact - populated from Garage collection based on reg number selected
