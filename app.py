@@ -154,9 +154,9 @@ def add_record():
         cars = mongo.db.cars.find({"user": session["user"]})
         garages = mongo.db.garage.find(
             {"garage_status": "active"}).sort("garage_name", 1)
-        return render_template("add_record.html", cars=cars, garages=garages)
+        return render_template("add_record.html", cars=cars, garages=garages, _external=True, _scheme='https')
     flash("Login to site required")
-    return redirect(url_for("login"))
+    return redirect(url_for("login", _external=True, _scheme='https'))
 
 
 # edit a maintenance record.

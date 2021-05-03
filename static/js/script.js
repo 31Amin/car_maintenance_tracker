@@ -3,6 +3,8 @@ $(document).ready(function () {
     $('.collapsible').collapsible();
     $('select').formSelect();
     $(".remove_item").hide();
+    $(".record_error_car").hide();
+    $(".record_error_garage").hide();
     $('.tooltipped').tooltip();
     $('.modal').modal();
     $('.datepicker').datepicker({
@@ -36,11 +38,21 @@ $(".remove_item_edit").click(function () {
     $(".addtional_line").last().remove();
     });
 
+// Error message for user if garage or car not selected
 $(".record_submit").click(function() {
     let selected_car = $( "#reg_no" ).val();
     let selected_gar = $( "#garage_name" ).val();
     if (selected_car == null){
-        $( '.select-dropdown' ).css({'border-bottom': 'solid 1px red !important'})
+        $(".record_error_car").show();
+    }
+    else if (selected_gar == null){
+        $(".record_error_garage").show();
     }
 })
-    
+
+$(".select_car").change(function() {
+    $(".record_error_car").hide();
+})
+$(".select_garage").change(function() {
+    $(".record_error_garage").hide();
+})

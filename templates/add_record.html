@@ -16,7 +16,7 @@
             </div>
             <div class="input-field col s12">
                 <i class="fas fa-bars prefix teal-text"></i>
-                <select id="garage_name" name="garage_name" class="validate" required>
+                <select id="garage_name" name="garage_name" class="validate select_garage" required>
                     <option value="" disabled selected>Garage / Service Center</option>
                     {% for gar in garages %}
                     <option value="{{ gar.garage_name }}">{{ gar.garage_name }}</option>
@@ -77,6 +77,14 @@
                 </div>
             </div>
             <div class="row">
+                <div class="row">
+                    <div class="col col s8 offset-s2 m4 offset-m4 l4 offset-l4 red-text center-align record_error_car">
+                        <p>Please select a car for your submission</p>
+                    </div>
+                    <div class="col col s8 offset-s2 m4 offset-m4 l4 offset-l4 red-text center-align record_error_garage">
+                        <p>Please select a garage for your submission</p>
+                    </div>
+                </div>
                 <button type="Submit" class="col s8 offset-s2 m4 offset-m4 l4 offset-l4 btn teal darken-2 record_submit">
                      Add Record <i class="fas fa-plus"></i>
                 </button>
