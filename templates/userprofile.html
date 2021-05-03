@@ -1,9 +1,7 @@
 
 {% extends "base.html" %}
     {% block content %}
-
-         <h3 class="teal-text text-darken-4 center-align text-shadow">User Profile</h3>
-        
+        <h3 class="teal-text text-darken-4 center-align text-shadow">User Profile</h3>
         <div class="row">
             <div class="col s12 m10 offset-m1 l6 offset-l3">
                 <div class="card-panel profile_card ">
@@ -15,28 +13,29 @@
                             </ul>
                         </li>
                         <div class="row"></div>
-                        <li> <i class="fas fa-user-cog prefix teal-text"></i> <strong>Username : </strong> 
+                        <li> <i class="fas fa-user-cog prefix teal-text"></i> <strong>Username : </strong>
                             <ul>
                                 <li>{{ username }}</li>
                             </ul>
                         </li>
                         <div class="row"></div>
-                        <li> <i class="fas fa-envelope-open prefix teal-text"></i> <strong>Contact e-mail : </strong> 
+                        <li> <i class="fas fa-envelope-open prefix teal-text"></i> <strong>Contact e-mail : </strong>
                             <ul>
                                 <li>{{ email }}</li>
                             </ul>
                         </li>
                     </ul>
-                </div>    
+                </div>
             </div>
             <div class="col s12 m10 offset-m1 l6 offset-l3">
                 <div class="card-panel center-align">
                     <h6 class="teal-text text-darken-2 center-align text-shadow">Assistance</h6>
                     <p>If you need any assistance or support with the application<br>
-                    Send an e-mail to : <a href="mailto:meltaylor78@gmailcom?subject=Car Maintenance Tracker App - From User {{ username }}" class="admin_help blue-text">Admin Help</a>
+                        Send an e-mail to : <a
+                            href="mailto:meltaylor78@gmailcom?subject=Car Maintenance Tracker App - From User {{ username }}"
+                            class="admin_help blue-text">Admin Help</a>
                     </p>
-                </div>    
+                </div>
             </div>
         </div>
-    
     {% endblock %}

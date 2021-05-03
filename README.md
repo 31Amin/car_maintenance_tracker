@@ -273,7 +273,7 @@ User testing was completed on the site, having a user complete the following ste
 | Create an ID| New ID on the database | Pass||
 | Login | successful login | Pass||
 | Register a car | add a new car to the DB | Pass | |
-| Create a record | add new maintenance record to the DB | Pass | |
+| Create a record | add new maintenance record to the DB | Pass | On the add record page user testing raised two issues <br> 1. If user forgets to select the car or garage from the drop down, <br> the submit button did not work but there was no obvious indication what the issue was. <br> 2. Some fields that should be required were not set as such. <br> **Fix.** <br> Added error message for car & garage fields. <br> Added required class to the fields that must b e filled.  |
 | View records | View list of records & detailed view of individual record  | Pass | |
 | Edit a record | edit an existing record | Pass | |
 | Delete a record | remove a record from the DB | Pass | |

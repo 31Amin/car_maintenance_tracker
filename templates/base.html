@@ -20,26 +20,26 @@
         <nav class="navbar-extended teal darken-4">
             <div class="nav-wrapper">
                 {% if session.user %}
-                <a href="{{ url_for('tracker') }}" class="fas fa-car"><Span class="header-title">Car Maintenance
-                        Tracker</Span></a>
+                <a href="{{ url_for('tracker') }}" class="fas fa-car"><span class="header-title">Car Maintenance
+                        Tracker</span></a>
                 {% else %}
-                <a href="{{ url_for('login') }}" class="fas fa-car"><Span class="header-title">Car Maintenance
-                        Tracker</Span></a>
+                <a href="{{ url_for('login') }}" class="fas fa-car"><span class="header-title">Car Maintenance
+                        Tracker</span></a>
                 {% endif %}
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     {% if session.user %}
-                    <li><a href="{{ url_for('tracker') }}">Maintenance Records</a></li>
-                    <li><a href="{{ url_for('add_record') }}">Add Record</a></li>
-                    <li><a href="{{ url_for('userprofile', username=session['user']) }}">User Profile</a></li>
-                    <li><a href="{{ url_for('addcar', username=session['user']) }}">Register Car</a></li>
+                        <li><a href="{{ url_for('tracker') }}">Maintenance Records</a></li>
+                        <li><a href="{{ url_for('add_record') }}">Add Record</a></li>
+                        <li><a href="{{ url_for('userprofile', username=session['user']) }}">User Profile</a></li>
+                        <li><a href="{{ url_for('addcar', username=session['user']) }}">Register Car</a></li>
                     {% if session.user|lower == "admin"|lower or session.user|lower == "administrator" %}
-                    <li><a href="{{ url_for('add_garage') }}">Manage Garages</a></li>
+                        <li><a href="{{ url_for('add_garage') }}">Manage Garages</a></li>
                     {% endif %}
-                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
                     {% else %}
-                    <li><a href="{{ url_for('login') }}">Login</a></li>
-                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                        <li><a href="{{ url_for('login') }}">Login</a></li>
+                        <li><a href="{{ url_for('register') }}">Register</a></li>
                     {% endif %}
                 </ul>
             </div>
@@ -51,36 +51,34 @@
                 <h5 class="center-align white-text">Car Maintenance Tracker</h5>
             </li>
             {% if session.user %}
-            <li><a class="white-text" href="{{ url_for('tracker') }}">Maintenance Records</a></li>
-            <li><a class="white-text" href="{{ url_for('add_record') }}">Add Record</a></li>
-            <li><a class="white-text" href="{{ url_for('userprofile', username=session['user']) }}">User Profile</a>
-            </li>
-            <li><a class="white-text" href="{{ url_for('addcar', username=session['user']) }}">Register Car</a></li>
+                <li><a class="white-text" href="{{ url_for('tracker') }}">Maintenance Records</a></li>
+                <li><a class="white-text" href="{{ url_for('add_record') }}">Add Record</a></li>
+                <li><a class="white-text" href="{{ url_for('userprofile', username=session['user']) }}">User Profile</a>
+                </li>
+                <li><a class="white-text" href="{{ url_for('addcar', username=session['user']) }}">Register Car</a></li>
             {% if session.user|lower == "admin"|lower or session.user|lower == "administrator" %}
-            <li><a class="white-text" href="{{ url_for('add_garage') }}">Manage Garages</a></li>
+                <li><a class="white-text" href="{{ url_for('add_garage') }}">Manage Garages</a></li>
             {% endif %}
-            <li><a class="white-text" href="{{ url_for('logout') }}">Logout</a></li>
+                <li><a class="white-text" href="{{ url_for('logout') }}">Logout</a></li>
             {% else %}>
-            <li><a class="white-text" href="{{ url_for('login') }}">Login</a></li>
-            <li><a class="white-text" href="{{ url_for('register') }}">Register</a></li>
+                <li><a class="white-text" href="{{ url_for('login') }}">Login</a></li>
+                <li><a class="white-text" href="{{ url_for('register') }}">Register</a></li>
             {% endif %}
         </ul>
     </header>
-
     <section>
         {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        {% for message in messages %}
-        <div class="row">
-            <div class="col s12 m10 offset-m1 l6 offset-l3 grey lighten-2">
-                <h5 class="teal-text darken-2 center-align">{{ message }}</h5>
-            </div>
-        </div>
-        {% endfor %}
-        {% endif %}
+            {% if messages %}
+                {% for message in messages %}
+                <div class="row">
+                    <div class="col s12 m10 offset-m1 l6 offset-l3 grey lighten-2">
+                        <h5 class="teal-text darken-2 center-align">{{ message }}</h5>
+                    </div>
+                </div>
+                {% endfor %}
+            {% endif %}
         {% endwith %}
     </section>
-
     <main>
         {% block content %}
         {% endblock %}
@@ -115,5 +113,4 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
-
 </html>

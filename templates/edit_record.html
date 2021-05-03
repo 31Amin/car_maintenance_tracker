@@ -2,37 +2,38 @@
 {% block content %}
     <h3 class="teal-text text-darken-4 center-align text-shadow">Edit Record</h3>
     <div class="row">
-        <form class="col s12 m10 offset-m1 l6 offset-l3" method="POST" action="{{ url_for('edit_record', record_id=record._id) }}">
+        <form class="col s12 m10 offset-m1 l6 offset-l3" method="POST"
+            action="{{ url_for('edit_record', record_id=record._id) }}">
             <div class="row">
-             <div class="input-field col s12">
-                <i class="fas fa-bars prefix teal-text"></i>
-                <select id="reg_no" name="reg_no" class="validate select_car" required>
-                    <option  value="" disabled>Choose Car</option>
-                    {% for car in cars %}
-                        {% if car.reg_no == record.reg_no %}
-                            <option  value="{{ car.reg_no }}" selected>{{ car.reg_no }}</option>
-                        {% else %}
-                            <option  value="{{ car.reg_no }}" selected>{{ car.reg_no }}</option>
-                        {% endif %}
-                    {% endfor %}
-                    <label for="reg_no"></label>
-                </select>
+                <div class="input-field col s12">
+                    <i class="fas fa-bars prefix teal-text"></i>
+                    <select id="reg_no" name="reg_no" class="validate select_car" required>
+                        <option value="" disabled>Choose Car</option>
+                            {% for car in cars %}
+                                {% if car.reg_no == record.reg_no %}
+                                    <option value="{{ car.reg_no }}" selected>{{ car.reg_no }}</option>
+                                {% else %}
+                                    <option value="{{ car.reg_no }}" selected>{{ car.reg_no }}</option>
+                                {% endif %}
+                            {% endfor %}
+                        <label for="reg_no"></label>
+                    </select>
+                </div>
+                <div class="input-field col s12">
+                    <i class="fas fa-bars prefix teal-text"></i>
+                    <select id="garage_name" name="garage_name" class="validate" required>
+                        <option value="" disabled>Garage / Service Center</option>
+                            {% for gar in garages %}
+                                {% if gar.garage_name == record.garage_name %}
+                                    <option value="{{ gar.garage_name }}" selected>{{ gar.garage_name }}</option>
+                                {% else %}
+                                    <option value="{{ gar.garage_name }}">{{ gar.garage_name }}</option>
+                                {% endif %}
+                            {% endfor %}
+                        <label for="garage_name"></label>
+                    </select>
+                </div>
             </div>
-            <div class="input-field col s12">
-                <i class="fas fa-bars prefix teal-text"></i>
-                <select id="garage_name" name="garage_name" class="validate" required>
-                    <option value="" disabled>Garage / Service Center</option>
-                    {% for gar in garages %}
-                        {% if gar.garage_name == record.garage_name %}
-                            <option value="{{ gar.garage_name }}" selected>{{ gar.garage_name }}</option>
-                        {% else %}
-                            <option value="{{ gar.garage_name }}">{{ gar.garage_name }}</option>
-                        {% endif %}
-                    {% endfor %}
-                    <label for="garage_name"></label>
-                </select>
-            </div>
-        </div>
             <div class="row">
                 <div class="input-field col s6">
                     <i class="fas fa-calendar-alt prefix teal-text"></i>
@@ -56,15 +57,15 @@
                     <div class="switch">
                         <i class="fas fa-file-invoice prefix teal-text"></i>
                         {% if record.service_paid == "yes" %}
-                        <label for="service_paid" class="teal-text">
-                            <input type="checkbox" id="service_paid" name="service_paid" checked>
-                            <span class="lever"></span>
-                        </label>
+                            <label for="service_paid" class="teal-text">
+                                <input type="checkbox" id="service_paid" name="service_paid" checked>
+                                <span class="lever"></span>
+                            </label>
                         {% else %}
-                        <label for="service_paid" class="teal-text">
-                            <input type="checkbox" id="service_paid" name="service_paid">
-                            <span class="lever"></span>
-                        </label>
+                            <label for="service_paid" class="teal-text">
+                                <input type="checkbox" id="service_paid" name="service_paid">
+                                <span class="lever"></span>
+                            </label>
                         {% endif %}
                     </div>
                 </div>
@@ -77,12 +78,12 @@
                     <label for="service_desc" class="teal-text">Service Work - Summary</label>
                 </div>
             </div>
-
+    
             <div class="row">
                 <div class="col s10 offset-s1">
                     <h6 class="fas fa-list teal-text list_icon"> Add detailed list of service items.</h6>
                 </div>
-
+    
                 <div class="input-field col s10 offset-s1 item">
                     {% if record.service_items|length >= 1 %}
                         {% for item in record.service_items %}
@@ -91,12 +92,12 @@
                                     class="validate black-text addtional_line" value="{{ item }}"><label for="service_items"></label>
                             {% else %}
                                 <input placeholder="Add service line item" id="service_items" name="service_items" type="text"
-                                class="validate black-text"><label for="service_items"></label>
+                                    class="validate black-text"><label for="service_items"></label>
                             {% endif %}
                         {% endfor %}
-                    {% else %}
-                        <input placeholder="Add service line item" id="service_items" name="service_items" type="text"
-                            class="validate black-text"><label for="service_items"></label>
+                        {% else %}
+                            <input placeholder="Add service line item" id="service_items" name="service_items" type="text"
+                                class="validate black-text"><label for="service_items"></label>
                     {% endif %}
                 </div>
                 <div class="row">
@@ -116,7 +117,7 @@
                         <button type="submit" class="btn teal darken-2 edit_record_button">
                             Save
                         </button>
-                    </div> 
+                    </div>
                 </div>
             </div>
         </form>

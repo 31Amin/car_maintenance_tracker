@@ -49,31 +49,30 @@
                         </div>
                     </div>
                     {% for log in logs %}
-                    {% if log.reg_no == cars.reg_no %}
-                    <div class="row m8 offset-m2 grey lighten-3">
-                        <div class="col s5 m6 l3 tracker_info_row">
-                            {{ logs[loop.index0].service_date }}
-                        </div>
-                        <div class="col s4 m3 l2 tracker_info_row">
-                            € {{ logs[loop.index0].service_cost }}
-                        </div>
-                        <div class="col s3 m3 l2 tracker_info_row">
-                            {% if logs[loop.index0].service_paid == "no" %}
-                            <span class="red-text">Unpaid</span>
-                            {% else %}
-                            <span>Paid</span>
-                            {% endif %}
-                        </div>
-                        <div class="col s3 m3 l3 hide-on-med-and-down tracker_info_row">
-                            {{ logs[loop.index0].garage_name }}
-                        </div>
-                        <div class="col s12 m12 l2 center-align">
-                            <a href="{{ url_for('detailed_record', record_id=logs[loop.index0]._id) }}"
-                                class="btn teal darken-2 tracker_button">Details</a>
-                        </div>
-                    </div>
-
-                    {% endif %}
+                        {% if log.reg_no == cars.reg_no %}
+                            <div class="row m8 offset-m2 grey lighten-3">
+                                <div class="col s5 m6 l3 tracker_info_row">
+                                    {{ logs[loop.index0].service_date }}
+                                </div>
+                                <div class="col s4 m3 l2 tracker_info_row">
+                                    € {{ logs[loop.index0].service_cost }}
+                                </div>
+                                <div class="col s3 m3 l2 tracker_info_row">
+                                    {% if logs[loop.index0].service_paid == "no" %}
+                                    <span class="red-text">Unpaid</span>
+                                    {% else %}
+                                    <span>Paid</span>
+                                    {% endif %}
+                                </div>
+                                <div class="col s3 m3 l3 hide-on-med-and-down tracker_info_row">
+                                    {{ logs[loop.index0].garage_name }}
+                                </div>
+                                <div class="col s12 m12 l2 center-align">
+                                    <a href="{{ url_for('detailed_record', record_id=logs[loop.index0]._id) }}"
+                                        class="btn teal darken-2 tracker_button">Details</a>
+                                </div>
+                            </div>
+                        {% endif %}
                     {% endfor %}
                 </div>
             </li>

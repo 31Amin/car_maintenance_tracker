@@ -1,16 +1,19 @@
 {% extends "base.html" %}
     {% block content %}
-         <h3 class="teal-text text-darken-4 center-align text-shadow">Add a Car to the Database</h3>
-        <p class="center-align"><span class="red-text"><strong>Note : </strong></span> Only register a car you are the current users of, 
+        <h3 class="teal-text text-darken-4 center-align text-shadow">Add a Car to the Database</h3>
+        <p class="center-align"><span class="red-text"><strong>Note : </strong></span> Only register a car you are the current
+            users of,
             <br> your id will be associated with the car <br></p>
         <div class="row">
-            <form class="col s12 m10 offset-m1 l6 offset-l3" method="POST" action="{{ url_for('addcar', username=username, email=email) }}">
+            <form class="col s12 m10 offset-m1 l6 offset-l3" method="POST"
+                action="{{ url_for('addcar', username=username, email=email) }}">
                 <div class="row"></div>
                 <div class="row">
                     <div class="col s12 m6">
                         <div class="input-field">
                             <i class="fas fa-pencil-alt prefix teal-text"></i>
-                            <input placeholder="Car Reg (in form 131-A-123456)." id="reg_no" name="reg_no" type="text" class="validate" required>
+                            <input placeholder="Car Reg (in form 131-A-123456)." id="reg_no" name="reg_no" type="text"
+                                class="validate" required>
                             <label for="reg_no" class="teal-text text-darken-2">Car Registration Number</label>
                         </div>
                     </div>
@@ -38,14 +41,12 @@
                             <label for="model" class="teal-text text-darken-2">Model</label>
                         </div>
                     </div>
-                </div>                
+                </div>
                 <div class="row">
                     <button type="submit" class="col s8 offset-s2 m4 offset-m4 l4 offset-l4 btn teal darken-2">
                         Register Car<i class="fas fa-car"></i>
                     </button>
                 </div>
             </form>
-            
         </div>
-
     {% endblock %}

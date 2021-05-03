@@ -1,83 +1,86 @@
 {% extends "base.html" %}
-    {% block content %}
-         <h3 class="teal-text text-darken-4 center-align text-shadow">Manage Garages</h3>
-        
-        <div class="row">
-            <form class="col s12 m10 offset-m1 l6 offset-l3" method="POST" action="{{ url_for('add_garage') }}">
-                <div class="row"></div>
-                <div class="row">
-                     <h4 class="teal-text text-darken-2 center-align">Add Garages</h4>
-                    <div class="col s12 m12">
-                        <div class="input-field">
-                            <i class="fas fa-warehouse prefix teal-text"></i>
-                            <input placeholder="Name of Garage" id="garage_name" name="garage_name" type="text"
-                                class="validate" required>
-                            <label for="make" class="teal-text">Garage Name</label>
-                        </div>
-                    </div>
-                    <div class="col s12 m12">
-                        <div class="input-field">
-                            <i class="fas fa-id-badge prefix teal-text"></i>
-                            <input placeholder="Contact name for garage" id="garage_contact" name="garage_contact" type="text"
-                                class="validate" required>
-                            <label for="garage_contact" class="teal-text">Contact Name</label>
-                        </div>
-                    </div>
-                    <div class="col s12 m12">
-                        <div class="input-field">
-                            <i class="fas fa-phone prefix teal-text"></i>
-                            <input placeholder="Contact phone no." id="garage_phone" name="garage_phone" type="number"
-                                class="validate" required>
-                            <label for="garage_phone" class="teal-text">Contact Number</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <button type="submit" class="col s8 offset-s2 m4 offset-m4 l4 offset-l4 btn teal darken-2">
-                        Register Garage <i class="fas fa-plus"></i>
-                    </button>
-                </div>
-            </form>
+{% block content %}
+    <h3 class="teal-text text-darken-4 center-align text-shadow">Manage Garages</h3>
+
+    <div class="row">
+        <form class="col s12 m10 offset-m1 l6 offset-l3" method="POST" action="{{ url_for('add_garage') }}">
             <div class="row"></div>
             <div class="row">
-                    <ul class="collapsible col s12 m10 offset-m1 l6 offset-l3">
-                        <li class="active">
-                            <div class="collapsible-header teal-text text-darken-2 center-align chevron">
-                                <h5>List of Garages <i class="fas fa-chevron-up chevron_icon"></i></h5>
-                            </div>
-                            <div class="collapsible-body">
+                <h4 class="teal-text text-darken-2 center-align">Add Garages</h4>
+                <div class="col s12 m12">
+                    <div class="input-field">
+                        <i class="fas fa-warehouse prefix teal-text"></i>
+                        <input placeholder="Name of Garage" id="garage_name" name="garage_name" type="text" class="validate"
+                            required>
+                        <label for="make" class="teal-text">Garage Name</label>
+                    </div>
+                </div>
+                <div class="col s12 m12">
+                    <div class="input-field">
+                        <i class="fas fa-id-badge prefix teal-text"></i>
+                        <input placeholder="Contact name for garage" id="garage_contact" name="garage_contact" type="text"
+                            class="validate" required>
+                        <label for="garage_contact" class="teal-text">Contact Name</label>
+                    </div>
+                </div>
+                <div class="col s12 m12">
+                    <div class="input-field">
+                        <i class="fas fa-phone prefix teal-text"></i>
+                        <input placeholder="Contact phone no." id="garage_phone" name="garage_phone" type="number"
+                            class="validate" required>
+                        <label for="garage_phone" class="teal-text">Contact Number</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button type="submit" class="col s8 offset-s2 m4 offset-m4 l4 offset-l4 btn teal darken-2">
+                    Register Garage <i class="fas fa-plus"></i>
+                </button>
+            </div>
+        </form>
+        <div class="row"></div>
+        <div class="row">
+            <ul class="collapsible col s12 m10 offset-m1 l6 offset-l3">
+                <li class="active">
+                    <div class="collapsible-header teal-text text-darken-2 center-align chevron">
+                        <h5>List of Garages <i class="fas fa-chevron-up chevron_icon"></i></h5>
+                    </div>
+                    <div class="collapsible-body">
 
-                                <table class="striped responsive-table" >
-                                    <thead>
-                                        <tr class="teal darken-2 center-align white-text">
-                                            <th>Name</th>
-                                            <th>Contact Name</th>
-                                            <th >Contact No.</th>
-                                            <th class="center-align">Status</th>
-                                        </tr>
-                                    </thead>
-                                    <body>
-                                        {% for garage in lst_garages %}
-                                        <tr>
-                                            <td >{{ garage.garage_name }}</td>
-                                            <td>{{ garage.garage_contact }}</td>
-                                            <td >{{ garage.garage_phone }}</td>
-                                            {% if garage.garage_status == "active" %}
-                                                <td class="center-align"> 
-                                                    <a href="{{ url_for('deactivate_garage', garage_id=garage._id) }}" class="btn-small red accent-4 red_buttom">Deactivate</a>
-                                                </td>
-                                            {% else %}
-                                               <td class="center-align"> 
-                                                    <a href="{{ url_for('activate_garage', garage_id=garage._id) }}" class="btn-small green accent-4 green_buttom">Activate</a>
-                                                </td>
-                                            {% endif %}
-                                        </tr>
-                                        {% endfor %}
-                                    </body>
-                                </table>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                </div>
-    {% endblock %}
+                        <table class="striped responsive-table">
+                            <thead>
+                                <tr class="teal darken-2 center-align white-text">
+                                    <th>Name</th>
+                                    <th>Contact Name</th>
+                                    <th>Contact No.</th>
+                                    <th class="center-align">Status</th>
+                                </tr>
+                            </thead>
+
+                            <body>
+                                {% for garage in lst_garages %}
+                                <tr>
+                                    <td>{{ garage.garage_name }}</td>
+                                    <td>{{ garage.garage_contact }}</td>
+                                    <td>{{ garage.garage_phone }}</td>
+                                    {% if garage.garage_status == "active" %}
+                                        <td class="center-align">
+                                            <a href="{{ url_for('deactivate_garage', garage_id=garage._id) }}"
+                                                class="btn-small red accent-4 red_buttom">Deactivate</a>
+                                        </td>
+                                    {% else %}
+                                        <td class="center-align">
+                                            <a href="{{ url_for('activate_garage', garage_id=garage._id) }}"
+                                                class="btn-small green accent-4 green_buttom">Activate</a>
+                                        </td>
+                                    {% endif %}
+                                </tr>
+                                {% endfor %}
+                            </body>
+                        </table>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

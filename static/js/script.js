@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 $(document).ready(function () {
     $(".sidenav").sidenav({ edge: "right" });
     $('.collapsible').collapsible();
@@ -48,11 +50,11 @@ $(".record_submit").click(function() {
     else if (selected_gar == null){
         $(".record_error_garage").show();
     }
-})
-// Hide error once updated
+});
+// Hide error once field updated
 $(".select_car").change(function() {
     $(".record_error_car").hide();
-})
+});
 $(".select_garage").change(function() {
     $(".record_error_garage").hide();
-})
+});
