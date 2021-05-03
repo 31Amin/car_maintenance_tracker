@@ -31,15 +31,15 @@ def login():
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(request.form.get("username")))
                 return redirect(url_for(
-                    "userprofile", username=session["user"], _external=True, _scheme='https'))
+                    "userprofile", username=session["user"]))
             else:
                 flash("Incorrect Username and/or Password")
-                return redirect(url_for("login", _external=True, _scheme='https'))
+                return redirect(url_for("login"))
         else:
             # username doesn't exist
             flash("Incorrect Username and/or Password")
-            return redirect(url_for("login", _external=True, _scheme='https'))
-    return render_template("login.html", _external=True, _scheme='https')
+            return redirect(url_for("login"))
+    return render_template("login.html")
 
 
 @app.route("/tracker")
@@ -154,9 +154,9 @@ def add_record():
         cars = mongo.db.cars.find({"user": session["user"]})
         garages = mongo.db.garage.find(
             {"garage_status": "active"}).sort("garage_name", 1)
-        return render_template("add_record.html", cars=cars, garages=garages, _external=True, _scheme='https')
+        return render_template("add_record.html", cars=cars, garages=garages)
     flash("Login to site required")
-    return redirect(url_for("login", _external=True, _scheme='https'))
+    return redirect(url_for("login"))
 
 
 # edit a maintenance record.

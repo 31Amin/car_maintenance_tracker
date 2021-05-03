@@ -28,17 +28,17 @@
         <div class="row">
             <div class="input-field col s6">
                 <i class="fas fa-calendar-alt prefix teal-text"></i>
-                <input placeholder="Service Date" id="service_date" name="service_date" type="text" class="datepicker validate">
+                <input placeholder="Service Date" id="service_date" name="service_date" type="text" class="datepicker validate" required>
                 <label for="servicedate" class="teal-text">Date</label>
             </div>
             <div class="input-field col s6">
                 <i class="fas fa-tachometer-alt prefix teal-text"></i>
-                <input placeholder="Odometer Reading" id="odometer_reading" name="odometer_reading" type="number" class="validate">
+                <input placeholder="Odometer Reading" id="odometer_reading" name="odometer_reading" type="number" class="validate" required>
                 <label for="odometer_reading" class="teal-text">Odometer Reading (Km)</label>
             </div>
             <div class="input-field col s6">
                 <i class="fas fa-euro-sign prefix teal-text"></i>
-                <input placeholder="Cost (No € symbol)" id="service_cost" name="service_cost" type="number" step=".01" class="validate">
+                <input placeholder="Cost (No € symbol)" id="service_cost" name="service_cost" type="number" step=".01" class="validate" required>
                 <label for="service_cost" class="teal-text">Service Cost</label>
             </div>
             <div class="input-field col s6 center-align">
@@ -53,9 +53,9 @@
             </div>
         </div>
         <div class="row">
-            <div class="input-field col s12">
+            <div class="input-field col s12" required>
                 <i class="fas fa-sticky-note prefix teal-text"></i>
-                <textarea placeholder="Provided short description of the work carried out." id="service_desc" name="service_desc" class="materialize-textarea"></textarea>
+                <textarea placeholder="Short description of work carried out." id="service_desc" name="service_desc" class="materialize-textarea validate" required></textarea>
                 <label for="service_desc" class="teal-text">Service Work - Summary</label>
             </div>
         </div>

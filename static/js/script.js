@@ -49,7 +49,7 @@ $(".record_submit").click(function() {
         $(".record_error_garage").show();
     }
 })
-
+// Hide error once updated
 $(".select_car").change(function() {
     $(".record_error_car").hide();
 })
